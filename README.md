@@ -1,4 +1,4 @@
-<img src="https://github.com /> Hatter rouded gnome icons
+ Hatter rouded gnome icons
 ======
 
 Rounded square icon theme for linux desktops, Mainly Gnome on Fedora Workstation.
