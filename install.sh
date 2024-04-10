@@ -14,9 +14,11 @@ fi
 
 SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-THEME_NAME=Test
-COLOR_VARIANTS=('' '-light' '-dark')
-THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey' '-nord')
+THEME_NAME=Hatter
+COLOR_VARIANTS=('')
+# '-light' '-dark')
+THEME_VARIANTS=('')
+#'-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey' '-nord')
 
 themes=()
 colors=()
@@ -28,10 +30,8 @@ cat << EOF
   OPTIONS:
     -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
     -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-    -b, --bold              Install bolder panel icons version (1.5px size)
-    -r, --remove,
+    -r, --remove
     -u, --uninstall         Uninstall (remove) icon themes
-
     -h, --help              Show help
 EOF
 }
@@ -66,17 +66,17 @@ install() {
       sed -i "s/#ffffff/#363636/g" "${THEME_DIR}"/status/{16,22,24}/*
     fi
 
-    if [[ ${bold:-} == 'true' ]]; then
-      cp -r "${SRC_DIR}"/bold/*                                                              "${THEME_DIR}"
-    fi
+  #  if [[ ${bold:-} == 'true' ]]; then
+  #    cp -r "${SRC_DIR}"/bold/*                                                              "${THEME_DIR}"
+  #  fi
 
     if [[ $DESKTOP_SESSION == '/usr/share/xsessions/budgie-desktop' ]]; then
       cp -r "${SRC_DIR}"/src/status/symbolic-budgie/*.svg                                    "${THEME_DIR}"/status/symbolic
     fi
 
-    if [[ ${alternative:-} == 'true' ]]; then
-      cp -r "${SRC_DIR}"/alternative/*                                                       "${THEME_DIR}"
-    fi
+    #if [[ ${alternative:-} == 'true' ]]; then
+    #  cp -r "${SRC_DIR}"/alternative/*                                                       "${THEME_DIR}"
+    #fi
 
     if [[ ${theme} != '' ]]; then
       cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/scalable
@@ -89,9 +89,9 @@ install() {
     mkdir -p                                                                                 "${THEME_DIR}"/status
     cp -r "${SRC_DIR}"/src/status/{16,22,24}                                                 "${THEME_DIR}"/status
 
-    if [[ ${bold:-} == 'true' ]]; then
-      cp -r "${SRC_DIR}"/bold/status/{16,22,24}                                              "${THEME_DIR}"/status
-    fi
+   # if [[ ${bold:-} == 'true' ]]; then
+   #   cp -r "${SRC_DIR}"/bold/status/{16,22,24}                                              "${THEME_DIR}"/status
+   # fi
 
     # Change icon color for light theme
     sed -i "s/#ffffff/#363636/g" "${THEME_DIR}"/status/{16,22,24}/*
@@ -127,9 +127,9 @@ install() {
     mv -f "${THEME_DIR}"/places/scalable/user-trash-dark.svg "${THEME_DIR}"/places/scalable/user-trash.svg
     mv -f "${THEME_DIR}"/places/scalable/user-trash-full-dark.svg "${THEME_DIR}"/places/scalable/user-trash-full.svg
 
-    if [[ ${bold:-} == 'true' ]]; then
-      cp -r "${SRC_DIR}"/bold/*                                                              "${THEME_DIR}"
-    fi
+    #if [[ ${bold:-} == 'true' ]]; then
+    #  cp -r "${SRC_DIR}"/bold/*                                                              "${THEME_DIR}"
+    #fi
 
     if [[ ${alternative:-} == 'true' ]]; then
       cp -r "${SRC_DIR}"/alternative/apps/symbolic/*.svg                                     "${THEME_DIR}"/apps/symbolic
@@ -211,16 +211,16 @@ while [[ "$#" -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
-    -a|--alternative)
-      alternative='true'
-      echo "Installing 'alternative' version..."
-      shift
-      ;;
-    -b|--bold)
-      bold='true'
-      echo "Installing 'bold' version..."
-      shift
-      ;;
+   # -a|--alternative)
+   #   alternative='true'
+   #   echo "Installing 'alternative' version..."
+   #   shift
+   #   ;;
+  #  -b|--bold)
+  #    bold='true'
+  #    echo "Installing 'bold' version..."
+  #    shift
+  #    ;;
     -r|--remove|-u|--uninstall)
       remove='true'
       shift
