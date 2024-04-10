@@ -26,7 +26,7 @@ FollowsColorScheme=true
 KDE-Extensions=.svg
 
 # Directory list
-Directories=actions/16,actions/22,actions/24,actions/32,actions/symbolic,animations/16,animations/22,animations/24,apps/scalable,apps/symbolic,categories/32,categories/symbolic,places/symbolic,places/scalable,places/16,places/22,places/24,mimes/16,mimes/22,mimes/scalable,mimes/symbolic,devices/scalable,devices/symbolic,devices/16,devices/22,devices/24,emblems/16,emblems/22,emblems/24,emblems/symbolic,status/16,status/22,status/24,status/32,status/symbolic,preferences/32,actions@2x/16,actions@2x/22,actions@2x/24,actions@2x/32,actions@2x/symbolic,animations@2x/16,animations@2x/22,animations@2x/24,apps@2x/scalable,apps@2x/symbolic,categories@2x/32,categories@2x/symbolic,places@2x/symbolic,places@2x/scalable,places@2x/16,places@2x/22,places@2x/24,mimes@2x/16,mimes@2x/22,mimes@2x/scalable,mimes@2x/symbolic,devices@2x/scalable,devices@2x/symbolic,devices@2x/16,devices@2x/22,devices@2x/24,emblems@2x/16,emblems@2x/22,emblems@2x/24,emblems@2x/symbolic,status@2x/16,status@2x/22,status@2x/24,status@2x/32,status@2x/symbolic,preferences@2x/32
+Directories=actions/16,actions/22,actions/24,actions/32,actions/symbolic,animations/16,animations/22,animations/24,apps/scalable,apps/symbolic,categories/32,categories/symbolic,places/symbolic,places/scalable,places/16,places/22,places/24,mimes/16,mimes/22,mimes/scalable,mimes/symbolic,devices/scalable,devices/symbolic,devices/16,devices/22,devices/24,emblems/16,emblems/22,emblems/24,emblems/symbolic,status/16,status/22,status/24,status/32,status/symbolic,preferences/32,actions@2x/16,actions@2x/22,actions@2x/24,actions@2x/32,actions@2x/symbolic,animations@2x/16,animations@2x/22,animations@2x/24,apps@2x/scalable,apps@2x/symbolic,categories@2x/32,categories@2x/symbolic,places@2x/symbolic,places@2x/scalable,places@2x/16,places@2x/22,places@2x/24,mimes@2x/16,mimes@2x/22,mimes@2x/scalable,mimes@2x/symbolic,devices@2x/scalable,devices@2x/symbolic,devices@2x/16,devices@2x/22,devices@2x/24,emblems@2x/16,emblems@2x/22,emblems@2x/24,emblems@2x/symbolic,status@2x/16,status@2x/22,status@2x/24,status@2x/32,status@2x/symbolic,preferences@2x/32,games/scalable,games/256
 
 [actions/16]
 Size=16
@@ -311,6 +311,20 @@ Context=Applications
 MinSize=16
 MaxSize=512
 Type=Scalable
+
+[games/scalable]
+Size=64
+Scale=2
+Context=Applications
+MinSize=16
+MaxSize=512
+Type=Scalable
+
+[games/256]
+Size=256
+Scale=2
+Context=Applications
+Type=Fixed
 
 [apps@2x/symbolic]
 Size=16
