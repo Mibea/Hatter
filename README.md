@@ -13,7 +13,6 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 |:--------------------|:-------------|
 |-d, --dest           | Specify theme destination directory (Default: $HOME/.local/share/icons)|
 |-n, --name           | Specify theme name (Default: Hatter)|
-|-b, --bold           | Install bold panel icons version|
 |-r,--remove,-u,--uninstall | Uninstall (remove) icon themes|
 |-h, --help           | Show this help|
 
