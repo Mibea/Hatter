@@ -21,9 +21,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="6.2734375"
-     inkscape:cx="17.215442"
-     inkscape:cy="10.440847"
+     inkscape:zoom="12.546875"
+     inkscape:cx="21.519303"
+     inkscape:cy="33.43462"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -32,6 +32,18 @@
      inkscape:current-layer="svg16" />
   <defs
      id="defs10">
+    <linearGradient
+       id="linearGradient2"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#f8d94e;stop-opacity:1;"
+         offset="0.48289889"
+         id="stop13" />
+      <stop
+         style="stop-color:#deb207;stop-opacity:1;"
+         offset="1"
+         id="stop14" />
+    </linearGradient>
     <linearGradient
        id="linearGradient1"
        inkscape:collect="always">
@@ -156,6 +168,15 @@
        y1="1.058"
        x2="8.2019997"
        y2="15.800945"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2"
+       id="linearGradient14"
+       x1="7.0515328"
+       y1="-1.7422281"
+       x2="9.7892913"
+       y2="-1.7422281"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <image
@@ -332,17 +353,17 @@
        id="circle16" />
   </g>
   <path
-     style="opacity:1;fill:none;stroke:#f8d94e;stroke-width:0.30426484;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke;stroke-dasharray:none"
+     style="opacity:1;fill:none;stroke:url(#linearGradient14);stroke-width:0.62175859;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
      id="path16-8"
      sodipodi:type="arc"
-     sodipodi:cx="8.1140738"
-     sodipodi:cy="-1.0581082"
+     sodipodi:cx="8.4204121"
+     sodipodi:cy="-1.0577885"
      sodipodi:rx="1.058"
      sodipodi:ry="1.058"
      sodipodi:start="3.1415927"
      sodipodi:end="0"
      sodipodi:arc-type="arc"
-     d="m 7.0560738,-1.0581082 a 1.058,1.058 0 0 1 1.058,-1.058 1.058,1.058 0 0 1 1.0579999,1.058"
+     d="m 7.3624121,-1.0577885 a 1.058,1.058 0 0 1 1.058,-1.058 1.058,1.058 0 0 1 1.0579999,1.058"
      sodipodi:open="true"
      transform="rotate(90)" />
 </svg>
