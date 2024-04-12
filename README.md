@@ -1,4 +1,4 @@
- Hatter rouded gnome icons
+Hatter rounded gnome icons
 ======
 <img src="https://github.com/Mibea/Hatter/blob/main/Hatter-overview.png" align="center" />
 
