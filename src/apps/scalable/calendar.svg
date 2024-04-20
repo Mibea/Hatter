@@ -20,9 +20,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="12.546875"
-     inkscape:cx="29.927771"
-     inkscape:cy="29.449564"
+     inkscape:zoom="4.4359902"
+     inkscape:cx="-13.413014"
+     inkscape:cy="16.343589"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -1504,6 +1504,37 @@
        x2="60.001999"
        y2="31.969599"
        gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter95"
+       x="-0.14695404"
+       y="-0.14704597"
+       width="1.2939081"
+       height="1.2940919">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.5300537"
+         id="feGaussianBlur95" />
+    </filter>
+    <linearGradient
+       id="d-5"
+       x1="45"
+       x2="60.076"
+       y1="19"
+       y2="3.924"
+       gradientTransform="matrix(0,0.76356073,-0.76356073,0,63.056356,11.436074)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop5-38" />
+      <stop
+         offset="1"
+         stop-color="#b3b3b3"
+         id="stop6-8"
+         style="stop-color:#979797;stop-opacity:1;" />
+    </linearGradient>
   </defs>
   <image
      x="1.5593"
@@ -1658,4 +1689,13 @@
      fill="#613583"
      id="path18-1"
      style="fill:url(#linearGradient9);fill-opacity:0.26297474;stroke-width:0.53849" />
+  <path
+     d="m 33.300709,4.6539948 c 3.999996,0.999999 5.000001,7.0000042 6,11.0000002 0.969999,3.879996 3.180006,6.545001 9,8 3.992708,0.998177 7.984659,0.64321 9.988281,5.972656 V 29.487979 C 58.040078,22.439251 41.659221,5.8391998 34.087818,4.6891508 c -0.264999,-0.02 -0.528109,-0.03516 -0.787109,-0.03516 z"
+     style="display:inline;opacity:0.3;fill:#000000;fill-opacity:1;filter:url(#filter95)"
+     id="path5-6-0"
+     transform="matrix(0,0.78435979,-0.78435979,0,63.912108,11.780979)" />
+  <path
+     d="m 60.001999,38.160581 c -0.76356,3.05424 -5.344928,3.817804 -8.399169,4.581364 -2.962612,0.740654 -4.997505,2.428129 -6.108485,6.872048 -0.762169,3.048674 -0.491131,6.096771 -4.560485,7.626659 h 0.105887 c 5.382128,-0.190059 18.057276,-12.697837 18.935407,-18.479065 0.01521,-0.202343 0.02685,-0.403243 0.02684,-0.601006 z"
+     style="display:inline;fill:url(#d-5);stroke-width:0.76356"
+     id="path5-9" />
 </svg>
