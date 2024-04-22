@@ -17,7 +17,7 @@ fi
 SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 THEME_NAME=Hatter
-COLOR_VARIANTS=('' '-light' '-dark')
+COLOR_VARIANTS=('' '-dark')
 THEME_VARIANTS=('')
 
 themes=()
@@ -139,9 +139,6 @@ if [[ ${color} == '-light' ]]; then
       cp -r "${SRC_DIR}"/src/status/symbolic-budgie/*.svg                                    "${THEME_DIR}"/status/symbolic
     fi
 
-    #mv -f "${THEME_DIR}"/places/scalable/user-trash-dark.svg "${THEME_DIR}"/places/scalable/user-trash.svg
-    #mv -f "${THEME_DIR}"/places/scalable/user-trash-full-dark.svg "${THEME_DIR}"/places/scalable/user-trash-full.svg
-
     # Change icon color for dark theme
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices,places}/{16,22,24}/*
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices}/32/*
@@ -172,12 +169,6 @@ if [[ ${color} == '-light' ]]; then
     ln -s ../../${name}${theme}/status/24 ${name}${theme}-dark/status/24
     ln -s ../../${name}${theme}/status/32 ${name}${theme}-dark/status/32
   fi
-
-
-
-
-
-
 
   (
     cd "${THEME_DIR}"
