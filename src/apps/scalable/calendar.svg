@@ -20,9 +20,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="4.4359902"
-     inkscape:cx="-13.413014"
-     inkscape:cy="16.343589"
+     inkscape:zoom="8.8719804"
+     inkscape:cx="20.795808"
+     inkscape:cy="33.081678"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -35,15 +35,19 @@
        id="linearGradient172"
        inkscape:collect="always">
       <stop
-         style="stop-color:#bebeb8;stop-opacity:1;"
+         style="stop-color:#908e89;stop-opacity:1;"
          offset="0"
          id="stop172" />
       <stop
-         style="stop-color:#c9c9c4;stop-opacity:1;"
-         offset="0.49743903"
+         style="stop-color:#c0bfbc;stop-opacity:1;"
+         offset="0.20306522"
          id="stop174" />
       <stop
-         style="stop-color:#bebeb8;stop-opacity:1;"
+         style="stop-color:#c0bfbc;stop-opacity:1;"
+         offset="0.80008864"
+         id="stop3" />
+      <stop
+         style="stop-color:#908e89;stop-opacity:1;"
          offset="1"
          id="stop173" />
     </linearGradient>
@@ -1433,7 +1437,7 @@
          stop-color="#f1efeb"
          offset="0"
          id="stop1"
-         style="stop-color:#f5f5f4;stop-opacity:1;" />
+         style="stop-color:#ffffff;stop-opacity:1;" />
       <stop
          stop-color="#f1efeb"
          offset="0.78879344"
@@ -1508,13 +1512,13 @@
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
        id="filter95"
-       x="-0.14695404"
-       y="-0.14704597"
+       x="-0.14695406"
+       y="-0.14704598"
        width="1.2939081"
-       height="1.2940919">
+       height="1.294092">
       <feGaussianBlur
          inkscape:collect="always"
-         stdDeviation="1.5300537"
+         stdDeviation="1.5300538"
          id="feGaussianBlur95" />
     </filter>
     <linearGradient
@@ -1528,12 +1532,13 @@
       <stop
          offset="0"
          stop-color="#fff"
-         id="stop5-38" />
+         id="stop5-38"
+         style="stop-color:#f1f1f1;stop-opacity:1;" />
       <stop
          offset="1"
          stop-color="#b3b3b3"
          id="stop6-8"
-         style="stop-color:#979797;stop-opacity:1;" />
+         style="stop-color:#848484;stop-opacity:1;" />
     </linearGradient>
   </defs>
   <image
@@ -1603,7 +1608,7 @@
        d="m 108,96 c 0,2.210938 -1.78906,4 -4,4 -2.21094,0 -4,-1.789062 -4,-4 0,-2.210938 1.78906,-4 4,-4 2.21094,0 4,1.789062 4,4 z m 0,0"
        fill="#fbfafa"
        id="path24-6"
-       style="stroke:#c0bfbc;stroke-opacity:1" />
+       style="display:none;stroke:#c0bfbc;stroke-opacity:1" />
     <path
        d="m 28,73 c 0,2.210938 -1.789063,4 -4,4 -2.210938,0 -4,-1.789062 -4,-4 0,-2.210938 1.789062,-4 4,-4 2.210937,0 4,1.789062 4,4 z m 0,0"
        fill="#c0bfbc"
@@ -1691,11 +1696,11 @@
      style="fill:url(#linearGradient9);fill-opacity:0.26297474;stroke-width:0.53849" />
   <path
      d="m 33.300709,4.6539948 c 3.999996,0.999999 5.000001,7.0000042 6,11.0000002 0.969999,3.879996 3.180006,6.545001 9,8 3.992708,0.998177 7.984659,0.64321 9.988281,5.972656 V 29.487979 C 58.040078,22.439251 41.659221,5.8391998 34.087818,4.6891508 c -0.264999,-0.02 -0.528109,-0.03516 -0.787109,-0.03516 z"
-     style="display:none;opacity:0.3;fill:#000000;fill-opacity:1;filter:url(#filter95)"
+     style="display:inline;opacity:0.35;fill:#000000;fill-opacity:1;filter:url(#filter95)"
      id="path5-6-0"
      transform="matrix(0,0.78435979,-0.78435979,0,63.912108,11.780979)" />
   <path
      d="m 60.001999,38.160581 c -0.76356,3.05424 -5.344928,3.817804 -8.399169,4.581364 -2.962612,0.740654 -4.997505,2.428129 -6.108485,6.872048 -0.762169,3.048674 -0.491131,6.096771 -4.560485,7.626659 h 0.105887 c 5.382128,-0.190059 18.057276,-12.697837 18.935407,-18.479065 0.01521,-0.202343 0.02685,-0.403243 0.02684,-0.601006 z"
-     style="display:none;fill:url(#d-5);stroke-width:0.76356"
+     style="display:inline;fill:url(#d-5);stroke-width:0.76356"
      id="path5-9" />
 </svg>
