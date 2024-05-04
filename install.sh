@@ -8,17 +8,15 @@ DEST_DIR=
 # Destination directory
 if [ "$UID" -eq "$ROOT_UID" ]; then
   DEST_DIR="/usr/share/icons"
-
 else
   DEST_DIR="$HOME/.local/share/icons"
-
 fi
 
 SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 THEME_NAME=Hatter
-COLOR_VARIANTS=('' '-dark')
-THEME_VARIANTS=('')
+COLOR_VARIANTS=('' '-light' '-dark')
+THEME_VARIANTS=('' '-yaru')
 
 themes=()
 colors=()
@@ -30,8 +28,13 @@ cat << EOF
   OPTIONS:
     -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
     -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-    -r, --remove
+    -t, --theme VARIANT     Specify theme color variant(s) [default|yaru|all] (Default: blue)
+    -a, --alternative       Install alternative icons for software center and file-manager
+    -b, --bold              Install bolder panel icons version (1.5px size)
+
+    -r, --remove,
     -u, --uninstall         Uninstall (remove) icon themes
+
     -h, --help              Show help
 EOF
 }
@@ -52,40 +55,41 @@ install() {
   cp -r "${SRC_DIR}"/{COPYING,AUTHORS}                                                       "${THEME_DIR}"
   cp -r "${SRC_DIR}"/src/index.theme                                                         "${THEME_DIR}"
 
-                   		       
-
-  cd "${THEME_DIR}"
+  #cd "${THEME_DIR}"
   sed -i "s/${name}/${name}${theme}${color}/g" "${THEME_DIR}"/index.theme
 
   if [[ ${color} == '' ]]; then
     mkdir -p                                                                                 "${THEME_DIR}"/status
     cp -r "${SRC_DIR}"/src/{actions,animations,apps,categories,devices,emblems,mimes,places,preferences} "${THEME_DIR}"
-    cp -r "${SRC_DIR}"/src/status/{16,22,24,symbolic}                                     "${THEME_DIR}"/status
-
-    rm -rf "${THEME_DIR}"/places/scalable/user-trash{'','-full'}-dark.svg
+    cp -r "${SRC_DIR}"/src/status/{16,22,24,32,symbolic}                                     "${THEME_DIR}"/status
 
     if [[ ${black:-} == 'true' ]]; then
       sed -i "s/#ffffff/#363636/g" "${THEME_DIR}"/status/{16,22,24}/*
     fi
 
- 
+    if [[ ${bold:-} == 'true' ]]; then
+      cp -r "${SRC_DIR}"/bold/*                                                              "${THEME_DIR}"
+    fi
+
     if [[ $DESKTOP_SESSION == '/usr/share/xsessions/budgie-desktop' ]]; then
       cp -r "${SRC_DIR}"/src/status/symbolic-budgie/*.svg                                    "${THEME_DIR}"/status/symbolic
     fi
 
+    if [[ ${alternative:-} == 'true' ]]; then
+      cp -r "${SRC_DIR}"/alternative/*                                                       "${THEME_DIR}"
+    fi
 
     if [[ ${theme} != '' ]]; then
       cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/scalable
     fi
 
+    rm -rf "${THEME_DIR}"/places/scalable/user-trash{'','-full'}-dark.svg
+
     cp -r "${SRC_DIR}"/links/{actions,apps,categories,devices,emblems,mimes,places,status,preferences} "${THEME_DIR}"
+    ln -s "${THEME_DIR}"/preferences/32 "${THEME_DIR}"/preferences/22
   fi
 
-
-
-
-
-if [[ ${color} == '-light' ]]; then
+  if [[ ${color} == '-light' ]]; then
     mkdir -p                                                                                 "${THEME_DIR}"/status
     cp -r "${SRC_DIR}"/src/status/{16,22,24}                                                 "${THEME_DIR}"/status
 
@@ -139,13 +143,16 @@ if [[ ${color} == '-light' ]]; then
       cp -r "${SRC_DIR}"/src/status/symbolic-budgie/*.svg                                    "${THEME_DIR}"/status/symbolic
     fi
 
+    #mv -f "${THEME_DIR}"/places/scalable/user-trash-dark.svg "${THEME_DIR}"/places/scalable/user-trash.svg
+    #mv -f "${THEME_DIR}"/places/scalable/user-trash-full-dark.svg "${THEME_DIR}"/places/scalable/user-trash-full.svg
+
     # Change icon color for dark theme
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices,places}/{16,22,24}/*
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,devices}/32/*
     sed -i "s/#363636/#dedede/g" "${THEME_DIR}"/{actions,apps,categories,emblems,devices,mimes,places,status}/symbolic/*
 
-    cp -r "${SRC_DIR}"/links/actions/{16,22,24,symbolic}                                  "${THEME_DIR}"/actions
-    cp -r "${SRC_DIR}"/links/devices/{16,22,24,symbolic}                                  "${THEME_DIR}"/devices
+    cp -r "${SRC_DIR}"/links/actions/{16,22,24,32,symbolic}                                  "${THEME_DIR}"/actions
+    cp -r "${SRC_DIR}"/links/devices/{16,22,24,32,symbolic}                                  "${THEME_DIR}"/devices
     cp -r "${SRC_DIR}"/links/places/{16,22,24,scalable,symbolic}                             "${THEME_DIR}"/places
     cp -r "${SRC_DIR}"/links/status/symbolic                                                 "${THEME_DIR}"/status
     cp -r "${SRC_DIR}"/links/apps/symbolic                                                   "${THEME_DIR}"/apps
@@ -184,7 +191,6 @@ if [[ ${color} == '-light' ]]; then
     ln -sf status status@2x
   )
 
-
   gtk-update-icon-cache "${THEME_DIR}"
 }
 
@@ -212,7 +218,16 @@ while [[ "$#" -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
-
+    -a|--alternative)
+      alternative='true'
+      echo "Installing 'alternative' version..."
+      shift
+      ;;
+    -b|--bold)
+      bold='true'
+      echo "Installing 'bold' version..."
+      shift
+      ;;
     -r|--remove|-u|--uninstall)
       remove='true'
       shift
@@ -225,7 +240,7 @@ while [[ "$#" -gt 0 ]]; do
             themes+=("${THEME_VARIANTS[0]}")
             shift
             ;;
-          purple)
+          yaru)
             themes+=("${THEME_VARIANTS[1]}")
             shift
             ;;
@@ -285,11 +300,11 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
-if [[ "${#themes[@]}" -eq 0 ]] ; then
+if [[ "${#themes[@]}" -eq 0 ]]; then
   themes=("${THEME_VARIANTS[0]}")
 fi
 
-if [[ "${#colors[@]}" -eq 0 ]] ; then
+if [[ "${#colors[@]}" -eq 0 ]]; then
   colors=("${COLOR_VARIANTS[@]}")
 fi
 
@@ -315,4 +330,4 @@ else
   install_theme
 fi
 
-gsettings set org.gnome.desktop.interface icon-theme 'Hatter'
+#exit 0
