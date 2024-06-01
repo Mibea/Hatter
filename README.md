@@ -19,8 +19,8 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 |-r,--remove,-u,--uninstall | Uninstall (remove) icon themes|
 |-h, --help           | Show this help|
 
-<img src="https://github.com/Mibea/Hatter/blob/main/Folders.png" align="center" />
-<img src="https://github.com/Mibea/Hatter/blob/main/devices.png" align="center" />
+<img src="https://github.com/Mibea/Hatter/blob/main/screenshot1.png" align="center" />
+<img src="https://github.com/Mibea/Hatter/blob/main/screenshot2.png" align="center" />
 
 
 
