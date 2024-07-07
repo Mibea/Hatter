@@ -14,25 +14,9 @@
  
 /* Non standard adjustments everything before this point is the default gnome-shell look */ 
       
-/* Dock color */
-  .workspace-thumbnails .workspace-thumbnail, .app-well-app.app-folder .overview-icon, .app-folder.grid-search-result .overview-icon, .dash-background, .dash-separator, .search-section-content, .search-entry {
-  background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 0px 2px 1px rgba(255, 255, 255, 0.2); }  
-     
 /* App Grid Icon */
   .show-apps .show-apps-icon {
   color: transparent !important;
   background-image: url("view-app-grid.svg");
   background-size: contain;
 }
-/* Top Bar */
-#panelBox {
-  background: transparent; }
-
-#panel {
-  background: rgba(0, 0, 0, 0.4);
-  text-shadow: none;
-  box-shadow: none; }
-  
-#panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
-  background-color: transparent; }
