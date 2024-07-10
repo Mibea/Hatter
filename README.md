@@ -1,6 +1,6 @@
 Hatter rounded gnome icons
 ======
-<img src="https://github.com/Mibea/Hatter/blob/main/Hatter-overview.png" align="center" />
+<img src="https://github.com/Mibea/Hatter/blob/main/Hatter-overview.jpg" align="center" />
 
 Rounded square icon theme for linux desktops, Mainly Gnome on Fedora Workstation.
 The goal of this theme is to create a rouded square theme that is faithfull to the application's identity, name and branding and not mimicking another program or operating system.
