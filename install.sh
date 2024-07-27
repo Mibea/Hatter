@@ -28,13 +28,8 @@ cat << EOF
   OPTIONS:
     -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
     -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-    -t, --theme VARIANT     Specify theme color variant(s) [default|yaru|all] (Default: blue)
-    -a, --alternative       Install alternative icons for software center and file-manager
-    -b, --bold              Install bolder panel icons version (1.5px size)
-
-    -r, --remove,
-    -u, --uninstall         Uninstall (remove) icon themes
-
+    -t yaru, --theme yaru   Gives you folders in yaru colors
+    -r, --remove, -u, --uninstall         Uninstall (remove) icon themes
     -h, --help              Show help
 EOF
 }
@@ -73,10 +68,6 @@ install() {
 
     if [[ $DESKTOP_SESSION == '/usr/share/xsessions/budgie-desktop' ]]; then
       cp -r "${SRC_DIR}"/src/status/symbolic-budgie/*.svg                                    "${THEME_DIR}"/status/symbolic
-    fi
-
-    if [[ ${alternative:-} == 'true' ]]; then
-      cp -r "${SRC_DIR}"/alternative/*                                                       "${THEME_DIR}"
     fi
 
     if [[ ${theme} != '' ]]; then
@@ -132,11 +123,6 @@ install() {
       cp -r "${SRC_DIR}"/bold/apps/symbolic/*.svg                                            "${THEME_DIR}"/apps/symbolic
       cp -r "${SRC_DIR}"/bold/devices/symbolic/*.svg                                         "${THEME_DIR}"/devices/symbolic
       cp -r "${SRC_DIR}"/bold/status/symbolic/*.svg                                          "${THEME_DIR}"/status/symbolic
-    fi
-
-    if [[ ${alternative:-} == 'true' ]]; then
-      cp -r "${SRC_DIR}"/alternative/apps/symbolic/*.svg                                     "${THEME_DIR}"/apps/symbolic
-      cp -r "${SRC_DIR}"/alternative/places/scalable/*.svg                                   "${THEME_DIR}"/places/scalable
     fi
 
     if [[ $DESKTOP_SESSION == '/usr/share/xsessions/budgie-desktop' ]]; then
@@ -218,16 +204,6 @@ while [[ "$#" -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
-    -a|--alternative)
-      alternative='true'
-      echo "Installing 'alternative' version..."
-      shift
-      ;;
-    -b|--bold)
-      bold='true'
-      echo "Installing 'bold' version..."
-      shift
-      ;;
     -r|--remove|-u|--uninstall)
       remove='true'
       shift
@@ -242,38 +218,6 @@ while [[ "$#" -gt 0 ]]; do
             ;;
           yaru)
             themes+=("${THEME_VARIANTS[1]}")
-            shift
-            ;;
-          pink)
-            themes+=("${THEME_VARIANTS[2]}")
-            shift
-            ;;
-          red)
-            themes+=("${THEME_VARIANTS[3]}")
-            shift
-            ;;
-          orange)
-            themes+=("${THEME_VARIANTS[4]}")
-            shift
-            ;;
-          yellow)
-            themes+=("${THEME_VARIANTS[5]}")
-            shift
-            ;;
-          green)
-            themes+=("${THEME_VARIANTS[6]}")
-            shift
-            ;;
-          grey)
-            themes+=("${THEME_VARIANTS[7]}")
-            shift
-            ;;
-          nord)
-            themes+=("${THEME_VARIANTS[8]}")
-            shift
-            ;;
-          all)
-            themes+=("${THEME_VARIANTS[@]}")
             shift
             ;;
           -*|--*)
