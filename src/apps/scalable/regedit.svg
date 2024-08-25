@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <radialGradient id="r" cx="19.75" cy="5.569" r="18" gradientTransform="matrix(-.0253 1.7569 -1.5208 -.0219 36.719 -15.639)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <radialGradient id="r" cx="19.75" cy="5.569" r="18" gradientTransform="matrix(-.0253 1.7569 -1.5208 -.0219 36.719 -15.639)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#99d3dd" offset="0"/>
+   <stop stop-color="#72c0cf" offset="1"/>
+  </radialGradient>
   <radialGradient id="t" cx="16" cy="20.185" r="13.125" gradientTransform="matrix(-.02824 1.9809 -2.4283 -.03462 73.153 -2.02)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#146675" offset="0"/>
    <stop stop-color="#4e8b97" offset="1"/>
@@ -9,8 +13,7 @@
    <stop stop-color="#72c0cf" offset="0"/>
    <stop stop-color="#077e94" offset="1"/>
   </radialGradient>
-  <radialGradient id="v" cx="3.5" cy="9.295" r="18.5" gradientTransform="matrix(.03593 1.7696 -2.6671 .05415 36.165 16.803)" gradientUnits="userSpaceOnUse" xlink:href="#d"/>
-  <radialGradient id="d" cx="3.5" cy="9.295" r="18.5" gradientTransform="matrix(.03593 1.7696 -2.6671 .05415 36.165 16.803)" gradientUnits="userSpaceOnUse">
+  <radialGradient id="v" cx="3.5" cy="9.295" r="18.5" gradientTransform="matrix(.03593 1.7696 -2.6671 .05415 36.165 16.803)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#3493a4" offset="0"/>
    <stop stop-color="#214146" offset="1"/>
   </radialGradient>
@@ -38,10 +41,6 @@
    <stop stop-color="#FFF" offset="0"/>
    <stop stop-color="#FFF" stop-opacity="0" offset="1"/>
   </radialGradient>
-  <linearGradient id="a">
-   <stop stop-color="#99d3dd" offset="0"/>
-   <stop stop-color="#72c0cf" offset="1"/>
-  </linearGradient>
   <linearGradient id="C" x1="27.681" x2="21.44" y1="14.243" y2="9.277" gradientTransform="matrix(1.2745 0 0 1.0289 18.209 38.182)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#373737" offset="0"/>
    <stop stop-color="#373737" stop-opacity="0" offset="1"/>
