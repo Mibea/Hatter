@@ -1,0 +1,52 @@
+/* This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU Lesser General Public License,
+ * version 2.1, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+ 
+/* Non standard adjustments everything before this point is the default gnome-shell look */ 
+      
+/* Dock color */
+  .workspace-thumbnails .workspace-thumbnail, .app-well-app.app-folder .overview-icon, .app-folder.grid-search-result .overview-icon, .dash-background, .dash-separator, .search-section-content, .search-entry {
+  background-color: transparent;
+  box-shadow: transparent; }
+
+/* App Grid Icon */
+  .show-apps .show-apps-icon {
+  color: transparent !important;
+  background-image: url("view-app-grid.svg");
+  background-size: contain;
+}
+/* Top Bar */
+#panelBox { 
+  background: transparent; }
+
+#panel {
+  background: transparent;
+  text-shadow: none;
+  box-shadow: none; }
+
+#panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
+  background-color: transparent; }
+
+   
+   
+
+
+
+
+
+  
+  
+ 
+
+  
+ 
