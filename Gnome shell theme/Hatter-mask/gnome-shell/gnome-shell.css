@@ -16,37 +16,26 @@
       
 /* Dock color */
   .workspace-thumbnails .workspace-thumbnail, .app-well-app.app-folder .overview-icon, .app-folder.grid-search-result .overview-icon, .dash-background, .dash-separator, .search-section-content, .search-entry {
-  background-color: transparent;
-  box-shadow: transparent; }
+  background-color: black; }
 
-
-  #dash StIcon {
-    icon-shadow: 0 1px 8px rgba(0, 0, 0, 0.6); }
-  #dash .dash-item-container .show-apps .overview-icon,
-  #dash .dash-item-container .overview-tile .overview-icon,
-  #dash .dash-item-container .grid-search-result .overview-icon {
-    background: transparent; }
-    
 /* App Grid Icon */
   .show-apps .show-apps-icon {
   color: transparent !important;
   background-image: url("view-app-grid.svg");
   background-size: contain;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
-  border-radius: 16px;
 }
 
 /* Top Bar */
 #panelBox { 
-  background: transparent; }
+  background: black; }
 
 #panel {
-  background: transparent;
+  background: black;
   text-shadow: none;
   box-shadow: none; }
 
 #panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
-  background-color: transparent; }
+  background-color: black; }
 
    
    

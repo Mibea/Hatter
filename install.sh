@@ -115,7 +115,8 @@ install() {
     cp -r "${SRC_DIR}"/src/emblems/symbolic                                                  "${THEME_DIR}"/emblems
     cp -r "${SRC_DIR}"/src/mimes/symbolic                                                    "${THEME_DIR}"/mimes
     cp -r "${SRC_DIR}"/src/devices/{16,22,24,32,symbolic}                                    "${THEME_DIR}"/devices
-    cp -r "${SRC_DIR}"/src/places/{16,22,24,scalable,symbolic}                               "${THEME_DIR}"/places
+    cp -r "${SRC_DIR}"/src/places/{16,22,24,symbolic}                              	     "${THEME_DIR}"/places
+    cp -r "${SRC_DIR}"/colors/color-yaru                                                     "${THEME_DIR}"/places/scalable
     cp -r "${SRC_DIR}"/src/status/symbolic                                                   "${THEME_DIR}"/status
 
     if [[ ${bold:-} == 'true' ]]; then
