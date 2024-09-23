@@ -79,7 +79,10 @@ install() {
     cp -r "${SRC_DIR}"/links/{actions,apps,categories,devices,emblems,mimes,places,status,preferences} "${THEME_DIR}"
     ln -s "${THEME_DIR}"/preferences/32 "${THEME_DIR}"/preferences/22
   fi
-
+ #if [[ ${theme} != '' ]]; then
+ #     cp -r "${SRC_DIR}"/colors/color${theme}/folder.svg                                          "${THEME_DIR}"/mimes/scalable/inode-directory.svg
+ #   fi
+    
   if [[ ${color} == '-light' ]]; then
     mkdir -p                                                                                 "${THEME_DIR}"/status
     cp -r "${SRC_DIR}"/src/status/{16,22,24}                                                 "${THEME_DIR}"/status
@@ -87,6 +90,8 @@ install() {
     if [[ ${bold:-} == 'true' ]]; then
       cp -r "${SRC_DIR}"/bold/status/{16,22,24}                                              "${THEME_DIR}"/status
     fi
+
+ 
 
     # Change icon color for light theme
     sed -i "s/#ffffff/#363636/g" "${THEME_DIR}"/status/{16,22,24}/*
@@ -103,9 +108,11 @@ install() {
     ln -s ../${name}${theme}/places ${name}${theme}-light/places
     ln -s ../${name}${theme}/preferences ${name}${theme}-light/preferences
     ln -s ../../${name}${theme}/status/32 ${name}${theme}-light/status/32
-    ln -s ../../${name}${theme}/status/symbolic ${name}${theme}-light/status/symbolic
+    ln -s ../../${name}${theme}/status/symbolic ${name}${theme}-light/status/symbolic  
   fi
+ 
 
+    
   if [[ ${color} == '-dark' ]]; then
     mkdir -p                                                                                 "${THEME_DIR}"/{apps,categories,emblems,devices,mimes,places,status}
 
@@ -118,7 +125,7 @@ install() {
     cp -r "${SRC_DIR}"/src/places/{16,22,24,scalable,symbolic}                               "${THEME_DIR}"/places
     cp -r "${SRC_DIR}"/src/status/symbolic                                                   "${THEME_DIR}"/status
 
-  if [[ ${theme} != '' ]]; then
+    if [[ ${theme} != '' ]]; then
       cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/scalable
     fi
 
@@ -168,6 +175,10 @@ install() {
     ln -s ../../${name}${theme}/status/32 ${name}${theme}-dark/status/32
   fi
 
+ if [[ ${theme} != '' ]]; then
+      cp -r "${SRC_DIR}"/colors/color${theme}/folder.svg                                          "${THEME_DIR}"/mimes/scalable/inode-directory.svg
+    fi
+
   (
     cd "${THEME_DIR}"
     ln -sf actions actions@2x
@@ -181,7 +192,6 @@ install() {
     ln -sf preferences preferences@2x
     ln -sf status status@2x
   )
-
   gtk-update-icon-cache "${THEME_DIR}"
 }
 
@@ -256,7 +266,6 @@ fi
 if [[ "${#colors[@]}" -eq 0 ]]; then
   colors=("${COLOR_VARIANTS[@]}")
 fi
-
 install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
