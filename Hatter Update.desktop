@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Hatter Update
+Comment=Automatic updating tool for the Hatter theme
+Exec="git clone https://github.com/Mibea/Hatter.git /.Hatter && cd Hatter && ./install.sh && cd && rm -rf Hatter
+" %U
+Icon=hatter-update
+Terminal=false
+Type=Application
+Categories=Theme;
+MimeType=application/x-vrmonitor
+	
