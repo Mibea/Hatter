@@ -224,8 +224,8 @@ while [[ "$#" -gt 0 ]]; do
       shift 2
       ;;
     -u|--updatetool)
-      	cp -r "${SRC_DIR}"/update-tool/Hatter-update.sh "$HOME/.local/share/icons"
-	cp -r "${SRC_DIR}"/update-tool/Hatter.desktop "$HOME/.local/share/applications"
+      update='true'
+      shift
       ;;
     -r|--remove|-u|--uninstall)
       remove='true'
@@ -290,10 +290,18 @@ uninstall_theme() {
   done
 }
 
+
+
+
 if [[ "${remove}" == 'true' ]]; then
   uninstall_theme
 else
   install_theme
 fi
 
+if [[ "${update}" == 'true' ]]; then
+  cp -r "${SRC_DIR}"/update-tool/Hatter-update.sh "$HOME/.local/share/icons"
+  cp -r "${SRC_DIR}"/update-tool/Hatter.desktop "$HOME/.local/share/applications"
+fi
+      	
 #exit 0
