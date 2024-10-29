@@ -21,8 +21,7 @@ THEME_VARIANTS=('' '-yaru')
 themes=()
 colors=()
 
-cp -r "${SRC_DIR}"/update-tool/Hatter-update.sh "$HOME/.local/share/icons"
-cp -r "${SRC_DIR}"/update-tool/Hatter.desktop "$HOME/.local/share/applications"
+
 
 usage() {
 cat << EOF
@@ -34,6 +33,7 @@ cat << EOF
     -t yaru, --theme yaru   Gives you folders in yaru colors
     -r, --remove, -u, --uninstall         Uninstall (remove) icon themes
     -h, --help              Show help
+    -u, --updatetool        Install the update tool
 EOF
 }
 
@@ -222,6 +222,10 @@ while [[ "$#" -gt 0 ]]; do
     -n|--name)
       name="${2}"
       shift 2
+      ;;
+    -u|--updatetool)
+      	cp -r "${SRC_DIR}"/update-tool/Hatter-update.sh "$HOME/.local/share/icons"
+	cp -r "${SRC_DIR}"/update-tool/Hatter.desktop "$HOME/.local/share/applications"
       ;;
     -r|--remove|-u|--uninstall)
       remove='true'
