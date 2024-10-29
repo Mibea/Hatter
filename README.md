@@ -16,6 +16,7 @@ Usage:  `./install.sh`  **[OPTIONS...]**
 |-d, --dest           | Specify theme destination directory (Default: $HOME/.local/share/icons)|
 |-n, --name           | Specify theme name (Default: Hatter)|
 |-t yaru              | Gives you folders in yaru colors|
+|-u,--updatetool      | Gives you an update tool for the Hatter icon theme|
 |-r,--remove,-u,--uninstall | Uninstall (remove) icon themes|
 |-h, --help           | Show this help|
 
