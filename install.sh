@@ -21,6 +21,9 @@ THEME_VARIANTS=('' '-yaru')
 themes=()
 colors=()
 
+cp -r "${SRC_DIR}"/update-tool/Hatter-update.sh "$HOME/.local/share/icons"
+cp -r "${SRC_DIR}"/update-tool/Hatter.desktop "$HOME/.local/share/applications"
+
 usage() {
 cat << EOF
   Usage: $0 [OPTION]...
@@ -193,6 +196,7 @@ install() {
     ln -sf status status@2x
   )
   gtk-update-icon-cache "${THEME_DIR}"
+  
 }
 
 uninstall() {
