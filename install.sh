@@ -16,7 +16,7 @@ SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 THEME_NAME=Hatter
 COLOR_VARIANTS=('' '-light' '-dark')
-THEME_VARIANTS=('' '-yaru')
+THEME_VARIANTS=('' '-yaru' '-yellow' '-green' '-orange' '-pink' '-purple' '-red' '-slate' '-teal')
 
 themes=()
 colors=()
@@ -30,7 +30,7 @@ cat << EOF
   OPTIONS:
     -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
     -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-    -t yaru, --theme yaru   Gives you folders in yaru colors
+    -t , --theme COLOR   Gives you folders in colors
     -r, --remove, -u, --uninstall         Uninstall (remove) icon themes
     -h, --help              Show help
     -u, --updatetool        Install the update tool
@@ -55,7 +55,6 @@ install() {
 
   #cd "${THEME_DIR}"
   sed -i "s/${name}/${name}${theme}${color}/g" "${THEME_DIR}"/index.theme
-
   if [[ ${color} == '' ]]; then
     mkdir -p                                                                                 "${THEME_DIR}"/status
     cp -r "${SRC_DIR}"/src/{actions,animations,apps,categories,devices,emblems,mimes,places,preferences} "${THEME_DIR}"
@@ -241,6 +240,38 @@ while [[ "$#" -gt 0 ]]; do
             ;;
           yaru)
             themes+=("${THEME_VARIANTS[1]}")
+            shift
+            ;;
+          yellow)
+            themes+=("${THEME_VARIANTS[2]}")
+            shift
+            ;;
+            green)
+            themes+=("${THEME_VARIANTS[3]}")
+            shift
+            ;;
+            orange)
+            themes+=("${THEME_VARIANTS[4]}")
+            shift
+            ;;
+            pink)
+            themes+=("${THEME_VARIANTS[5]}")
+            shift
+            ;;
+            purple)
+            themes+=("${THEME_VARIANTS[6]}")
+            shift
+            ;;
+            red)
+            themes+=("${THEME_VARIANTS[7]}")
+            shift
+            ;;
+            slate)
+            themes+=("${THEME_VARIANTS[8]}")
+            shift
+            ;;
+            teal)
+            themes+=("${THEME_VARIANTS[9]}")
             shift
             ;;
           -*|--*)
