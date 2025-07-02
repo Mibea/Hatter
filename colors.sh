@@ -55,7 +55,10 @@ if [[ ${theme} != '' ]]; then
     mkdir -p                                                                            "${THEME_DIR}"/places
 	cp -r "${SRC_DIR}"/src/places/{16,22,24,scalable,symbolic}                               "${THEME_DIR}"/places   
        	cd ${dest}
-	cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/scalable
+	cp -r "${SRC_DIR}"/colors/color${theme}/*.svg  					"${THEME_DIR}"/places/scalable
+	cp -r "${SRC_DIR}"/colors/color${theme}/*.svg  					"${THEME_DIR}"/places/24
+	cp -r "${SRC_DIR}"/colors/color${theme}/*.svg  					"${THEME_DIR}"/places/22
+	cp -r "${SRC_DIR}"/colors/color${theme}/*.svg  					"${THEME_DIR}"/places/16
    fi
   (
     cd "${THEME_DIR}"

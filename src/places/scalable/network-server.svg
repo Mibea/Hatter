@@ -5,7 +5,7 @@
    height="64"
    version="1.1"
    sodipodi:docname="network-server.svg"
-   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,16 +21,28 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="12.46875"
-     inkscape:cx="32"
+     inkscape:cx="31.9599"
      inkscape:cy="32"
-     inkscape:window-width="1920"
-     inkscape:window-height="1011"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg8" />
   <defs
      id="defs6">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#1a5fb4;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#99c1f1;stop-opacity:1"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
     <linearGradient
        id="linearGradient29"
        x1="4"
@@ -159,6 +171,15 @@
        y2="17.000999"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(0,30)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient3"
+       x1="32"
+       y1="45"
+       x2="32"
+       y2="49"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <image
      id="image6"
@@ -211,7 +232,7 @@
      ry="2"
      fill="url(#f-6)"
      stroke-width="1.87083"
-     style="fill:url(#f-6)"
+     style="fill:url(#linearGradient3)"
      rx="2" />
   <g
      id="g2"

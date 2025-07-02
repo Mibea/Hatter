@@ -74,6 +74,9 @@ install() {
 
     if [[ ${theme} != '' ]]; then
       cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/scalable
+      cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/24
+      cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/22
+      cp -r "${SRC_DIR}"/colors/color${theme}/*.svg                                          "${THEME_DIR}"/places/16
     fi
 
     rm -rf "${THEME_DIR}"/places/scalable/user-trash{'','-full'}-dark.svg
