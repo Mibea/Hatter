@@ -17,21 +17,7 @@ cd Hatter
 # =================================================================
 echo "75"
 echo "# Compiling the Hatter icon theme" ; sleep 1
-(ZEN=$(zenity --question --title "Hatter update" --text "What theme do you want to update?" --switch --extra-button "Hatter" --extra-button "Hatter-yaru" --extra-button "Both")
-for z in "${ZEN}"
-do
-   if [[ "${z}" == "Hatter" ]]
-   then
-   ./install.sh 
-   elif [[ "${z}" == "Hatter-yaru" ]]
-   then
-   ./install.sh -t yaru
-   elif [[ "${z}" == "Both" ]]
-   then
-   ( ./install.sh 
-   ./install.sh -t yaru)
-   fi
-done)
+ ./install.sh 
 # =================================================================
 echo "80"
 echo "# Cleaning up" ; sleep 1
