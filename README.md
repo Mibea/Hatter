@@ -3,7 +3,7 @@ Hatter rounded gnome icons
 
 Hatter is a rounded square icon theme for linux desktops. The goal is to integrate well with the default Gnome desktop asthetics with rounded windows and buttons. The design philosophy is to create a rouded square theme that is faithfull to the application's identity, name and branding.
 
-Version 2.0 is radical different from the prevous versions of Hatter.
+## Version 2.0 is radical different from the prevous versions of Hatter.
 
 -Foremost, this is not a fork from Whitesur anymore.
 -The directory structure is now based on the directory structure of Adwaita, the default Gnome icon theme, instead of Whitesur.
