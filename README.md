@@ -29,8 +29,6 @@ Test how it behaves when you upgrade from hatter 1.x
 
 ## Install tips
 
-Installs both icons and Gnome-shell theme!
-
 Usage:  `./install.sh`  **[OPTIONS...]**
 
 
