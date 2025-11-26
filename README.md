@@ -28,11 +28,9 @@ Test how it behaves when you upgrade from hatter 1.x
 
 
 ## Install tips
+## Important notice, when you update or the first time since version 2.0 delete all Hatter icon themes in your /home/*USER*/.local/share/icons folder 
 
 Usage:  `./install.sh`
-Important notice, when you update or the first time since version 2.0 deleta all Hatter icon themes in your /home/*USER*/.local/share/icons folder 
-
-
 
 
 
