@@ -1,5 +1,5 @@
 [Icon Theme]
-Name=Hatter
+Name=Hatter-png
 Comment=Not The Only One
 Example=folder
 Inherits=Adwaita,hicolor
@@ -23,6 +23,7 @@ PanelSizes=16,22,32,48,64,72,96,128
 
 # Directory list
 Directories=16x16/actions,16x16/apps,16x16/categories,16x16/devices,16x16/emblems,16x16/emotes,16x16/legacy,16x16/mimetypes,16x16/places,16x16/status,16x16/ui,scalable/devices,scalable/mimetypes,scalable/places,scalable/status,scalable/actions,scalable/apps,scalable/categories,scalable/emblems,scalable/emotes,scalable/legacy,scalable/ui,symbolic/actions,symbolic/apps,symbolic/categories,symbolic/devices,symbolic/emblems,symbolic/emotes,symbolic/mimetypes,symbolic/places,symbolic/status,symbolic/legacy,symbolic/ui,
+
 
 [16x16/actions]
 Context=Actions
@@ -82,79 +83,58 @@ Type=Fixed
 [scalable/devices]
 Context=Devices
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/mimetypes]
 Context=MimeTypes
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/places]
 Context=Places
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/status]
 Context=Status
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/actions]
 Context=Actions
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+
+Type=Fixed
 
 [scalable/apps]
 Context=Applications
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/categories]
 Context=Categories
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/emblems]
 Context=Emblems
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/emotes]
 Context=Emotes
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/legacy]
 Context=Legacy
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [scalable/ui]
 Context=UI
 Size=128
-MinSize=8
-MaxSize=512
-Type=Scalable
+Type=Fixed
 
 [symbolic/actions]
 Context=Actions

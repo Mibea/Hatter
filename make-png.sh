@@ -22,8 +22,13 @@ rm Hatter-png/scalable/devices/*.svg
 rm Hatter-png/scalable/mimetypes/*.svg
 rm Hatter-png/scalable/places/*.svg
 rm Hatter-png/scalable/status/*.svg
+cp -r PNG/index.theme Hatter-png
 
-  
-
-  
-
+rm Hatter-kde/apps/scalable/*.*
+rm Hatter-kde/devices/scalable/*.*
+rm Hatter-kde/mimes/scalable/*.*
+rm Hatter-kde/places/scalable/*.*
+cp Hatter-png/scalable/apps/*.png Hatter-kde/apps/scalable
+cp Hatter-png/scalable/devices/*.png Hatter-kde/devices/scalable
+cp Hatter-png/scalable/mimetypes/*.png Hatter-kde/mimes/scalable
+cp Hatter-png/scalable/places/*.png Hatter-kde/places/scalable
