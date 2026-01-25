@@ -1,9 +1,13 @@
 Hatter rounded gnome icons
 ======
 
-Hatter is a rounded square icon theme for linux desktops. The goal is to integrate well with the default Gnome desktop asthetics with rounded windows and buttons. The design philosophy is to create a rouded square theme that is faithfull to the application's identity, name and branding.
+Hatter is a rounded square icon theme for linux desktops. The main goal is to integrate well with the default Gnome desktop asthetics with rounded windows and buttons. The design philosophy is to create a rouded square theme that is faithfull to the application's identity, name and branding.
+
+The second goal is to create a finished experience. I once heared the critisism that icon themes are a failed concept because you are constantly playing a game of whack-a-mole. And in a way that is true, especially with a theme like this one, any non square icon sticks out like a sore thumb. My idea to mitigate that is to create a lot of icons, this theme has at the time of writing 2675 unique app icons and 7000 linked app icons.
 
 <img src="https://github.com/Mibea/Hatter/blob/2.0-Beta/Artwork/Hatter-overview.png" align="center" />
+
+
 ## Version 2.0 is radical different from the prevous versions of Hatter.
 
 -Foremost, this is not a fork from Whitesur anymore.
@@ -19,11 +23,16 @@ Hatter is a rounded square icon theme for linux desktops. The goal is to integra
 -A full redesign of the folders
 <img src="https://github.com/Mibea/Hatter/blob/2.0-Beta/Artwork/colors.png" align="center" />
 
+There is also a KDE flavour with; 
+  
+  1) Bitmap app icons instead of SVG icons, 
+  2) A file structure like Breeze,
+  3) A light and dark theme.
+
 Work to be done,
 
-Test how it behaves in KDE and XFCE.
-Test it on Ubuntu.
-Test how it behaves when you upgrade from hatter 1.x
+Making a Lightweight version for old systems.
+
 
 
 
