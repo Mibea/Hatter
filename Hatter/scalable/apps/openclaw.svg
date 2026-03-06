@@ -21,7 +21,7 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="6.2534756"
-     inkscape:cx="62.605185"
+     inkscape:cx="62.52523"
      inkscape:cy="27.184883"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
@@ -44,9 +44,15 @@
          offset="0"
          id="stop1" />
       <stop
+         stop-color="#f1efeb"
+         offset="0.68208879"
+         id="stop3"
+         style="stop-color:#efa5a2;stop-opacity:1;" />
+      <stop
          stop-color="#fdfcfc"
          offset="1"
-         id="stop2" />
+         id="stop2"
+         style="stop-color:#f16f6f;stop-opacity:1;" />
     </linearGradient>
     <linearGradient
        id="lobster-gradient"
@@ -106,6 +112,17 @@
          stdDeviation="1.1568264"
          id="feGaussianBlur1" />
     </filter>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient862-3"
+       id="radialGradient1"
+       cx="29.7686"
+       cy="29.421871"
+       fx="29.7686"
+       fy="29.421871"
+       r="28"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.75300879,0.76739163,-0.713764,0.70038628,30.744167,-14.968893)" />
   </defs>
   <image
      x="1.5593"
@@ -125,7 +142,7 @@
      fill="url(#linearGradient862-3)"
      stroke-width="3.7796"
      id="rect2"
-     style="fill:url(#linearGradient862-3)" />
+     style="fill:url(#radialGradient1)" />
   <ellipse
      style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.22604;stroke-linecap:round;paint-order:markers fill stroke;filter:url(#filter1)"
      id="path1"
