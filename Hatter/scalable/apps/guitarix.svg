@@ -5,16 +5,6 @@
    <stop stop-color="#4a5055" offset="0"/>
    <stop stop-color="#17191b" offset="1"/>
   </linearGradient>
-  <linearGradient id="c">
-   <stop stop-color="#fff" offset="0"/>
-   <stop stop-color="#fff" stop-opacity=".44015" offset=".884"/>
-   <stop stop-color="#fff" stop-opacity=".16863" offset=".944"/>
-   <stop stop-color="#fff" stop-opacity=".054902" offset=".97"/>
-   <stop stop-color="#fff" stop-opacity=".027451" offset=".977"/>
-   <stop stop-color="#fff" stop-opacity=".0078431" offset=".984"/>
-   <stop stop-color="#fff" stop-opacity="0" offset=".993"/>
-   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
-  </linearGradient>
   <linearGradient id="i" x1="-20.445" x2="-24.487" y1="-21.247" y2="-18.081" gradientUnits="userSpaceOnUse" xlink:href="#b"/>
   <linearGradient id="b">
    <stop stop-color="#252525" offset="0"/>
@@ -42,7 +32,21 @@
    <stop stop-opacity="0" offset=".992"/>
    <stop stop-opacity="0" offset="1"/>
   </linearGradient>
-  <linearGradient id="f">
+  <radialGradient id="h" cx="-22.537" cy="-19.381" r="3.152" gradientTransform="translate(.438 .785) scale(1.0179)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" stop-opacity=".44015" offset=".884"/>
+   <stop stop-color="#fff" stop-opacity=".16863" offset=".944"/>
+   <stop stop-color="#fff" stop-opacity=".054902" offset=".97"/>
+   <stop stop-color="#fff" stop-opacity=".027451" offset=".977"/>
+   <stop stop-color="#fff" stop-opacity=".0078431" offset=".984"/>
+   <stop stop-color="#fff" stop-opacity="0" offset=".993"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="p" cx="10.856" cy="17.245" r="1.756" gradientTransform="translate(12.283 1.55)" gradientUnits="userSpaceOnUse" xlink:href="#d"/>
+  <radialGradient id="q" cx="10.856" cy="17.245" r="1.756" gradientTransform="translate(-.38 1.318)" gradientUnits="userSpaceOnUse" xlink:href="#d"/>
+  <radialGradient id="r" cx="24.249" cy="24.25" r="9.633" gradientTransform="translate(18.97 -5.156) scale(2.9131)" gradientUnits="userSpaceOnUse" xlink:href="#e"/>
+  <radialGradient id="s" cx="24.249" cy="24.25" r="9.633" gradientTransform="translate(-7.699 -1.075) scale(.77075)" gradientUnits="userSpaceOnUse" xlink:href="#e"/>
+  <radialGradient id="t" cx="100.05" cy="-16.228" r="29.308" gradientTransform="scale(3.7795)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#2e2e2e" offset="0"/>
    <stop stop-color="#2e2e2e" stop-opacity=".85882" offset=".135"/>
    <stop stop-color="#2e2e2e" stop-opacity=".81176" offset=".179"/>
@@ -66,13 +70,7 @@
    <stop stop-color="#2e2e2e" stop-opacity=".094118" offset=".905"/>
    <stop stop-color="#2e2e2e" stop-opacity=".054902" offset=".941"/>
    <stop stop-color="#2e2e2e" stop-opacity="0" offset="1"/>
-  </linearGradient>
-  <radialGradient id="h" cx="-22.537" cy="-19.381" r="3.152" gradientTransform="translate(.438 .785) scale(1.0179)" gradientUnits="userSpaceOnUse" xlink:href="#c"/>
-  <radialGradient id="p" cx="10.856" cy="17.245" r="1.756" gradientTransform="translate(12.283 1.55)" gradientUnits="userSpaceOnUse" xlink:href="#d"/>
-  <radialGradient id="q" cx="10.856" cy="17.245" r="1.756" gradientTransform="translate(-.38 1.318)" gradientUnits="userSpaceOnUse" xlink:href="#d"/>
-  <radialGradient id="r" cx="24.249" cy="24.25" r="9.633" gradientTransform="translate(18.97 -5.156) scale(2.9131)" gradientUnits="userSpaceOnUse" xlink:href="#e"/>
-  <radialGradient id="s" cx="24.249" cy="24.25" r="9.633" gradientTransform="translate(-7.699 -1.075) scale(.77075)" gradientUnits="userSpaceOnUse" xlink:href="#e"/>
-  <radialGradient id="t" cx="100.05" cy="-16.228" r="29.308" gradientTransform="scale(3.7795)" gradientUnits="userSpaceOnUse" xlink:href="#f"/>
+  </radialGradient>
  </defs>
  <g transform="translate(-65.774 -37.197) scale(.97573)" fill="none" opacity=".29676" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".02">
   <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".1"/>

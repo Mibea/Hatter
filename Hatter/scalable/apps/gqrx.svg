@@ -5,58 +5,6 @@
    <stop stop-color="#494b4d" offset="0"/>
    <stop stop-color="#1b1c1c" offset="1"/>
   </linearGradient>
-  <linearGradient id="f">
-   <stop offset="0"/>
-   <stop stop-opacity=".78764" offset=".607"/>
-   <stop stop-opacity=".67451" offset=".746"/>
-   <stop stop-opacity=".61961" offset=".763"/>
-   <stop stop-opacity=".5451" offset=".786"/>
-   <stop stop-opacity=".48627" offset=".807"/>
-   <stop stop-opacity=".29804" offset=".862"/>
-   <stop stop-opacity=".18824" offset=".89"/>
-   <stop stop-opacity=".082353" offset=".924"/>
-   <stop stop-opacity=".043137" offset=".943"/>
-   <stop stop-opacity=".031373" offset=".956"/>
-   <stop stop-opacity=".027451" offset=".961"/>
-   <stop stop-opacity="0" offset=".992"/>
-   <stop stop-opacity="0" offset="1"/>
-  </linearGradient>
-  <linearGradient id="g">
-   <stop offset="0"/>
-   <stop stop-opacity=".87843" offset=".592"/>
-   <stop stop-opacity=".56471" offset=".648"/>
-   <stop stop-opacity=".52549" offset=".682"/>
-   <stop stop-opacity=".44314" offset=".727"/>
-   <stop stop-opacity=".28627" offset=".795"/>
-   <stop stop-opacity=".18431" offset=".843"/>
-   <stop stop-opacity=".078431" offset=".903"/>
-   <stop stop-opacity=".062745" offset=".92"/>
-   <stop stop-opacity=".054902" offset=".931"/>
-   <stop stop-opacity=".031373" offset=".956"/>
-   <stop stop-opacity=".027451" offset=".961"/>
-   <stop stop-opacity="0" offset=".992"/>
-   <stop stop-opacity="0" offset="1"/>
-  </linearGradient>
-  <linearGradient id="h">
-   <stop offset="0"/>
-   <stop stop-opacity=".78764" offset=".716"/>
-   <stop stop-opacity=".67451" offset=".746"/>
-   <stop stop-opacity=".61961" offset=".763"/>
-   <stop stop-opacity=".5451" offset=".786"/>
-   <stop stop-opacity=".48627" offset=".807"/>
-   <stop stop-opacity=".29804" offset=".862"/>
-   <stop stop-opacity=".18824" offset=".89"/>
-   <stop stop-opacity=".082353" offset=".924"/>
-   <stop stop-opacity=".043137" offset=".943"/>
-   <stop stop-opacity=".031373" offset=".956"/>
-   <stop stop-opacity=".027451" offset=".961"/>
-   <stop stop-opacity="0" offset=".992"/>
-   <stop stop-opacity="0" offset="1"/>
-  </linearGradient>
-  <linearGradient id="i">
-   <stop stop-color="#5b5b5b" offset="0"/>
-   <stop stop-color="#6d6d6d" stop-opacity="0" offset="1"/>
-  </linearGradient>
   <linearGradient id="e">
    <stop stop-color="#fff" offset="0"/>
    <stop stop-color="#fff" stop-opacity=".97255" offset=".063"/>
@@ -65,15 +13,6 @@
    <stop stop-color="#fff" stop-opacity=".2" offset=".761"/>
    <stop stop-color="#fff" stop-opacity=".023529" offset=".955"/>
    <stop stop-color="#fff" stop-opacity="0" offset="1"/>
-  </linearGradient>
-  <linearGradient id="j">
-   <stop stop-color="#fff" offset="0"/>
-   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
-  </linearGradient>
-  <linearGradient id="k">
-   <stop stop-color="#fff" stop-opacity="0" offset="0"/>
-   <stop stop-color="#fff" stop-opacity="0" offset=".962"/>
-   <stop stop-color="#fff" stop-opacity=".39216" offset="1"/>
   </linearGradient>
   <linearGradient id="I" x1="816.49" x2="816.49" y1="155.14" y2="276.63" gradientTransform="matrix(.08368 0 0 .07135 -53.452 -7.05)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#707070" offset="0"/>
@@ -148,12 +87,67 @@
   <linearGradient id="aQ" x1="7.104" x2="6.634" y1="23.876" y2="23.338" gradientTransform="translate(7.701 6.114)" gradientUnits="userSpaceOnUse" xlink:href="#d"/>
   <linearGradient id="q" x1="254.88" x2="252.4" y1="251.44" y2="258.82" gradientTransform="translate(342.78 -75.932)" gradientUnits="userSpaceOnUse" xlink:href="#e"/>
   <linearGradient id="r" x1="254.88" x2="249.47" y1="251.44" y2="271.62" gradientTransform="translate(342.78 -75.932)" gradientUnits="userSpaceOnUse" xlink:href="#e"/>
-  <radialGradient id="m" cx="24.249" cy="24.25" r="9.633" gradientTransform="matrix(7.2515 .05166 -.05147 7.2255 536.82 -97.516)" gradientUnits="userSpaceOnUse" xlink:href="#f"/>
-  <radialGradient id="n" cx="24.249" cy="24.25" r="9.633" gradientTransform="matrix(6.5173 0 0 6.4414 553.32 -94.144)" gradientUnits="userSpaceOnUse" xlink:href="#g"/>
-  <radialGradient id="o" cx="24.249" cy="24.25" r="9.633" gradientTransform="matrix(7.2517 0 0 7.1672 535.56 -116.71)" gradientUnits="userSpaceOnUse" xlink:href="#h"/>
-  <radialGradient id="p" cx="711.55" cy="56.356" r="56.185" gradientUnits="userSpaceOnUse" xlink:href="#i"/>
-  <radialGradient id="G" cx="711.55" cy="56.355" r="51.77" gradientTransform="matrix(.29623 0 0 .31104 500.77 38.827)" gradientUnits="userSpaceOnUse" xlink:href="#j"/>
-  <radialGradient id="H" cx="711.55" cy="56.356" r="56.185" gradientUnits="userSpaceOnUse" xlink:href="#k"/>
+  <radialGradient id="m" cx="24.249" cy="24.25" r="9.633" gradientTransform="matrix(7.2515 .05166 -.05147 7.2255 536.82 -97.516)" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity=".78764" offset=".607"/>
+   <stop stop-opacity=".67451" offset=".746"/>
+   <stop stop-opacity=".61961" offset=".763"/>
+   <stop stop-opacity=".5451" offset=".786"/>
+   <stop stop-opacity=".48627" offset=".807"/>
+   <stop stop-opacity=".29804" offset=".862"/>
+   <stop stop-opacity=".18824" offset=".89"/>
+   <stop stop-opacity=".082353" offset=".924"/>
+   <stop stop-opacity=".043137" offset=".943"/>
+   <stop stop-opacity=".031373" offset=".956"/>
+   <stop stop-opacity=".027451" offset=".961"/>
+   <stop stop-opacity="0" offset=".992"/>
+   <stop stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="n" cx="24.249" cy="24.25" r="9.633" gradientTransform="matrix(6.5173 0 0 6.4414 553.32 -94.144)" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity=".87843" offset=".592"/>
+   <stop stop-opacity=".56471" offset=".648"/>
+   <stop stop-opacity=".52549" offset=".682"/>
+   <stop stop-opacity=".44314" offset=".727"/>
+   <stop stop-opacity=".28627" offset=".795"/>
+   <stop stop-opacity=".18431" offset=".843"/>
+   <stop stop-opacity=".078431" offset=".903"/>
+   <stop stop-opacity=".062745" offset=".92"/>
+   <stop stop-opacity=".054902" offset=".931"/>
+   <stop stop-opacity=".031373" offset=".956"/>
+   <stop stop-opacity=".027451" offset=".961"/>
+   <stop stop-opacity="0" offset=".992"/>
+   <stop stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="o" cx="24.249" cy="24.25" r="9.633" gradientTransform="matrix(7.2517 0 0 7.1672 535.56 -116.71)" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity=".78764" offset=".716"/>
+   <stop stop-opacity=".67451" offset=".746"/>
+   <stop stop-opacity=".61961" offset=".763"/>
+   <stop stop-opacity=".5451" offset=".786"/>
+   <stop stop-opacity=".48627" offset=".807"/>
+   <stop stop-opacity=".29804" offset=".862"/>
+   <stop stop-opacity=".18824" offset=".89"/>
+   <stop stop-opacity=".082353" offset=".924"/>
+   <stop stop-opacity=".043137" offset=".943"/>
+   <stop stop-opacity=".031373" offset=".956"/>
+   <stop stop-opacity=".027451" offset=".961"/>
+   <stop stop-opacity="0" offset=".992"/>
+   <stop stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="p" cx="711.55" cy="56.356" r="56.185" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#5b5b5b" offset="0"/>
+   <stop stop-color="#6d6d6d" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="G" cx="711.55" cy="56.355" r="51.77" gradientTransform="matrix(.29623 0 0 .31104 500.77 38.827)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="H" cx="711.55" cy="56.356" r="56.185" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" stop-opacity="0" offset="0"/>
+   <stop stop-color="#fff" stop-opacity="0" offset=".962"/>
+   <stop stop-color="#fff" stop-opacity=".39216" offset="1"/>
+  </radialGradient>
  </defs>
  <g transform="translate(-65.678 -37.252) scale(.97573)" fill="none" opacity=".29676" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".02">
   <rect x="69.84" y="40.71" width="29.811" height="29.811" rx="6.61" ry="6.61" stroke-width=".1"/>

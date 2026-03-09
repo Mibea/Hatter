@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <radialGradient id="c" cx="139.83" cy="462.64" r="9.181" gradientTransform="matrix(-1.4129 -.6322 .69731 -1.2767 14.802 1141.7)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <radialGradient id="c" cx="139.83" cy="462.64" r="9.181" gradientTransform="matrix(-1.4129 -.6322 .69731 -1.2767 14.802 1141.7)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#ffc7c7" offset="0"/>
+   <stop stop-color="#ff3f3f" stop-opacity=".498" offset="1"/>
+  </radialGradient>
   <linearGradient id="b" x1="7.937" x2="7.937" y1="15.081" y2="1.852" gradientTransform="scale(3.7796)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#f1efeb" offset="0"/>
    <stop stop-color="#fdfcfc" offset="1"/>
-  </linearGradient>
-  <linearGradient id="a">
-   <stop stop-color="#ffc7c7" offset="0"/>
-   <stop stop-color="#ff3f3f" stop-opacity=".498" offset="1"/>
   </linearGradient>
   <filter id="d" x="-.696" y="-.792" width="2.391" height="2.584" color-interpolation-filters="sRGB">
    <feGaussianBlur stdDeviation="8.402"/>

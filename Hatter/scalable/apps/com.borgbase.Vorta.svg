@@ -9,10 +9,6 @@
   </rdf:RDF>
  </metadata>
  <defs id="defs2">
-  <linearGradient id="linearGradient1010">
-   <stop id="stop1006" stop-color="#646464" offset="0"/>
-   <stop id="stop1008" stop-color="#c9c9c9" stop-opacity=".92941" offset="1"/>
-  </linearGradient>
   <linearGradient id="linearGradient951" x1="2.4065" x2="31.494" y1="17.062" y2="17.062" gradientUnits="userSpaceOnUse">
    <stop id="stop945" stop-color="#bac0c3" offset="0"/>
    <stop id="stop959" stop-color="#eaeced" offset=".13492"/>
@@ -30,7 +26,10 @@
    <stop id="stop994" stop-color="#4ebc87" stop-opacity=".98431" offset=".87273"/>
    <stop id="stop988" stop-color="#328b5f" stop-opacity=".9837" offset="1"/>
   </radialGradient>
-  <linearGradient id="linearGradient1012" x1="27.756" x2="27.756" y1="23.969" y2="22.332" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1010"/>
+  <linearGradient id="linearGradient1012" x1="27.756" x2="27.756" y1="23.969" y2="22.332" gradientUnits="userSpaceOnUse">
+   <stop id="stop1006" stop-color="#646464" offset="0"/>
+   <stop id="stop1008" stop-color="#c9c9c9" stop-opacity=".92941" offset="1"/>
+  </linearGradient>
  </defs>
  <g id="layer1">
   <g id="g1702" transform="matrix(.97573 0 0 .97573 -65.748 -37.203)" fill="none" opacity=".29677" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".02">
