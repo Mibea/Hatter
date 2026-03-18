@@ -25,7 +25,7 @@ rm -rf "${DEST_DIR}"/Hatter-Slate
 rm -rf "${DEST_DIR}"/Hatter-Teal
 rm -rf "${DEST_DIR}"/Hatter-Yellow
 rm -rf "${DEST_DIR}"/Hatter-Yaru
-rm -rf "${DEST_DIR}"/Hatter-png
+
 rm -rf "${DEST_DIR}"/Hatter-kde
 rm -rf "${DEST_DIR}"/Hatter-kde-dark
 rm -rf "${DEST_DIR}"/Hatter-kde-light
@@ -41,7 +41,7 @@ rm -rf "${DEST_DIR}"/Hatter-kde-light
     cp -r "${SRC_DIR}"/Hatter-Teal                                              "${DEST_DIR}"
     cp -r "${SRC_DIR}"/Hatter-Yellow                                            "${DEST_DIR}"
     cp -r "${SRC_DIR}"/Hatter-Yaru                                              "${DEST_DIR}"
-    cp -r "${SRC_DIR}"/Hatter-png                                              "${DEST_DIR}"
+
     cp -r "${SRC_DIR}"/Hatter-kde                                              "${DEST_DIR}"
     cp -r "${SRC_DIR}"/Hatter-kde-dark                                              "${DEST_DIR}"
     cp -r "${SRC_DIR}"/Hatter-kde-light                                              "${DEST_DIR}"
@@ -58,7 +58,7 @@ rm -rf "${DEST_DIR}"/Hatter-kde-light
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-Teal
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-Yellow
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-Yaru
-	gtk-update-icon-cache "${DEST_DIR}"/Hatter-png
+
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-kde
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-kde-dark
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-kde-light
