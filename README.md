@@ -25,13 +25,10 @@ The second goal is to create a finished experience. I once heared the critisism 
 
 There is also a KDE flavour with; 
   
-  1) Bitmap app icons instead of SVG icons, 
-  2) A file structure like Breeze,
-  3) A light and dark theme.
+  1) A file structure like Breeze,
+  2) A light and dark theme.
+  3) More fitting symbolic icons.
 
-Work to be done,
-
-Making a Lightweight version for old systems.
 
 
 
