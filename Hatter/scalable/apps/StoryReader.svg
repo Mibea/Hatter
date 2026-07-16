@@ -62,6 +62,27 @@
          id="feGaussianBlur2"
          stdDeviation="2.24" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="64"
+       y1="120"
+       x2="64"
+       y2="8"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.2;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.2;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
   </defs>
   <rect
      id="rect12-7"
@@ -96,5 +117,19 @@
        image-rendering="optimizeQuality"
        preserveAspectRatio="none"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAA3NCSVQICAjb4U/gAAABklBMVEUA AAD////////////+/v7////////////////////+/v7////////+/v7////+/v7///////////// ///////////////////+/v7+/v7+/v7////+/v7////////+/v7////+/v7///////////////// ///////////////////////////////+/v7////+/v7///////////////////////////////// ///+/v7+/v7////////////////+/v4AAAABAQEDAwMFBQUHBwcJCQkPDw8RERETExMVFRUjIyMl JSUvLy8xMTEzMzM+Pj4/Pz9BQUFDQ0NFRUVNTU1PT09RUVFTU1NdXV1fX19hYWFjY2NtbW1vb29x cXF9fX1/f3+BgYGDg4ONjY2Pj4+RkZGbm5udnZ2fn5+hoaGrq6uvr6+xsbG5ubm7u7u9vb2/v7/A wMDBwcHFxcXJycnLy8vNzc3Z2dnb29vf39/n5+fp6enr6+vt7e319fX39/f5+fn7+/v9/f3+/v7/ //907zprAAAAQXRSTlMAAAEDBQUHCRETFRUjJTEzMzU+P0FDTU9TXV9fYWNtb3F9fX+BjY+Rm52f q6+xu72/wMnLzdnb5+nr7fX3+fv9/t5FFeMAAAaoSURBVHja7Vv7VxpHFAZUEgImGlETtMGImoga NAIF5bGAWl/VYqtNibWuEVNjrGBbE1qoAjv/d5jl4S67O7MLO+PJOf1+c5yz9+PemXu/eRkMXyM6 7j3uc7pc07MQnjHXqL3P2knJtsk6OObxhxjQhHBgdsJh6yBs3Tww4Q0DZUT8bscDIznr7gADsAjN EOFg6plUY73OYaBLX/NdTz1RoAWMb8Sio/khHwM0I+iy3KV53SgY7fMtmocIDLU7L63uCGgHjOdR OzPC9CQA2kXY1fqEsExFQftg5h+2GP1eP9AHC8OmVuqNMwz0QnTyvvbJ95IBOmLeqjX8r3W1X5mQ PdrszwO9EdTCwKq//QqDXtUZwfotIIFw/935X1MUiNlXyaDrNSCHoA2ff14yBAmAeVyBNjqJ2gdg ClOfe8Nk7QPGiZyMFj8gjXAvqv5PAfLwIwrTkygFAuCFYhCsARr2QUQpIxrdgA58CiLNHqFEgHku nwLnAS0syCbEIYYaAeCWGYddPnr2Qbj7bh0g5wKqDpBzwVOqDgBgsjkJe+jaB8GmutwTpUwAjIgJ TNK2D3wiYWAOUCcQFenDAYY6ATAuJIArQ+V8Ns2y7FHmU7HpP6UbCUoqdUGH2ghwuePtpVgV8fW9 cxGHd8sSbOywV2VtMUBG4L/DuvUaNi+42/+yMTnEdzKclhhMILoVtiWfTxyUMAQqfVhsJLyNbQuT F2t/6YeDyhhg99bj/J8HnIjAkiAADQppnA/CjT0Dq7IWL7/hDRzmal8rZnhCiQsRgT9uR+D1ZfZ4 m2e59BnngsE6gUHlPhn4rbW/BT+muM+Pg6KQQLaJ9fsEbH2LIzBRJzCm3CcFR9SZeOLxTjlHEABc Grau32AIzNVrsnIhKq5XPrTdNKf+hXFOoQiA4gZsvsQQWDTX1qPKy6Ec9OVh8+/brTRulVEEeM/F Mjh9XpOG90KKXbLwO2xzKzS6fIMkwDcf4QaBvUrgMaORQDaZTP5UxBM4xREYrRLoU+5xCb+zg8qr KAJZHAFXlYBTucf1CpwF7znNBPZgIsjjCExXCbgQdWiXTzu/FjQSKKzJzB4pZrEEqomokopS59ec egKlt9L0gSAwjRIC+/XUvpI8logBeQJcHtqP7eNLcqB62jqL6lPaj98W2fW901xJhkA620DmiN3l C9K+Cl0SMuMJgPLZpqjMbhyIFIlCOV47UaOLVBGo5NXz1EZCpEhOcXpg9S8O6EcABiKXrksBHj8W MB5YYku6EuAdccUmVxpOyAsJfJ8UYKuq4DSMAfWrMu76PLVW80FJaRaU87/zfU7w36uVwzFNcr6Q Xo0JEr1sHrhaVSMHGoLApXFFkeNVWS3PyWdCVqhZsIloVHkKQpUnHc+51dtML0/gU1yuikrgqe2O KXb4s6Jyv7uRF2o1q/IEbpZlhIwUY7hyDOVAIidtT+MIlKAk28EScOFUOe/Jj9L2UxwBkFRFoKbL OwNITfqLdBAc3noGQQAbgmj9UFk5E+3JLjCKsDpslHAEWJV5CLU0/MBPuGY5cgJbfwM4AgeqF4cO 5fTLV8JtkbbizlYFfkEQSGI3C+srI5vyLvUFXwbX2Hx9IJQ/p/gmlsMS2MBVA0fjpEx5ZcJVl3mx 5crq+LQiNlJbCVEpQInSeEbdugS9Q1NnIMabAkYVH8HmrYLaPRoHqgJebKLkjgKBK148/KxuCBgM D0JIIfBhd1mgyTaPhT8sC/ct/pEqmHewHbk0YgYEhzUzGB2Q/8imoNhIsRJV2jICZsE2nYP+NqEw ArgYEIEwAvgYEIAoAnexVzt+pwcmMkcmI5QJzDQfGlmCdDfr7ZJTMxdVAh7p7TKqLpBxAF0XeOSu 11noHdtE7Ia7PTx2y19h6KB1dhhUutv3KEzFPvNM8RKRi0oQXilfJaJyh2EBdZ3r4QL5FDCMvEk1 TPwMeRJ9w9ZE+hDZi7tfe5/sMAjiLzkTvc0UUXOrs4dcVYp8o+peKzEGKu0Tu1SIuUoozIj9JHwQ cWp47EAgCqr9T4iBRvsGg03ffBDs1/zSwzKlY2n0tvLIQr8XDq28b9DzjUdrLzyqheFF+5csmVc2 Q+sw9vvaHAnBZ20+dep63o5GibithrZhc7c6GKMeuy4PD43dLVGomDcZdIKxe1JrZgzP6Ge+mpdG fOrlIhMY79b/1WdHz7g/qsq6e8BM6rlxz7gXPRwifnLWG8+OJ+YW5fJTNOR1k394XB2TZpt9FD67 DoQgFufg4+vBh2aTgTY6zTyMhv/xVeMLkMC89HUiZ0gAAAAASUVORK5CYII= " />
+  </g>
+  <g
+     id="g1-5">
+    <rect
+       id="rect12-3"
+       x="8"
+       y="8"
+       width="112"
+       height="112"
+       rx="26"
+       ry="26"
+       fill="url(#e)"
+       stroke-width="1.9999"
+       style="mix-blend-mode:normal;fill:url(#linearGradient2)" />
   </g>
 </svg>
