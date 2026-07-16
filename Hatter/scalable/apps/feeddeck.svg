@@ -7,7 +7,7 @@
    height="128"
    version="1.1"
    viewBox="0 0 128 128"
-   sodipodi:docname="app.feeddeck.feeddeck.svg"
+   sodipodi:docname="feeddeck.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,7 +24,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="9.046875"
-     inkscape:cx="64"
+     inkscape:cx="63.944732"
      inkscape:cy="64"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
@@ -62,6 +62,27 @@
          id="feGaussianBlur2"
          stdDeviation="2.24" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="64"
+       y1="120"
+       x2="64"
+       y2="8"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.2;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.2;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
   </defs>
   <rect
      id="rect12-7"
@@ -96,5 +117,19 @@
        image-rendering="optimizeQuality"
        preserveAspectRatio="none"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAA3NCSVQICAjb4U/gAAACW1BMVEUA AABNzLNN2bNL0rRH0rRJ0rRK07MfIikfIyofJSwgJCogJCsgJiwgJy0gKC4hKC4hKS4hKi8hKzAh LDEhLDIiLTEiLjIiLzMiMDUiMTUjMDQjMjUjMzYjNDcjNjgkNDgkODskOTslOzwlPD0lPD4lPT8l Pj8mPz8mP0AmQEAmQkInQEEnQUInREQnSEYoRUUoRkYoSUcoSUgpSkkpS0opTEkpTEopTkspTkwq T00qUE0qUU4qU08qVFArUk8rVFArVFErVlIsWFMsWFQsWVMsWlUtXFctXVYtXVctXlgtX1ktYFou YVouYlsuZF0uZF4vY1wvZV0vZl4vZ18vaWEwaGEwaWAwa2IxbWQxcGYxcGcyb2Uycmgyc2gyc2ky dWszdGkzdmszd2szeGwzeG00eW40em80e240fG80fXA1fnI1f3I1gXM2gnQ2gnU2hHY2hng3hXc3 h3g3iHk4iXo4i3w4jH04jXw4jX05j385kIA5koE6kYA6k4I6lIM6lYI6l4U7lYM7loQ7l4U7mIY7 mYY8moc8nIk8nIo8nYo8noo9oIw9oYw9oY09o44+oY0+oo4+pI8+pZA+ppA/p5E/p5I/qJI/qZM/ qZQ/q5RArJVArJZArphAr5dAsJhBrZdBsZlBsZpBtJtCsptCs5tCtZ1Ctp1Ctp5CuaBDuJ5DuZ9D u6FDvKFEvKJEvaJEvaNEwKREwaVFv6VFwKZFwaZFw6hFxalGxKhGxahGxqpGx6tHyatHyaxHyq1H y65HzK9Hza9Iza9IzrBIz7FI0bJI0bNJ0LFJ0rNJ07R3FavBAAAAB3RSTlMAChQiRGZobPmfngAA BHNJREFUeNrt2+db00AYAHD3dbCpqDhwKzhxCyoVB6K4i4oDwY0KCqiIe+JWQEUsilWUoQwHYiOl Ai1wf5YpbWjSpG0gyZ3P472fyN09uV9K7nKXtx00iAQJEiRcMXgY0hjCAwyDSGMEARAAARAAARAA AQwY0G4V1aznp/wA871T21YvilDP1O805JS1edR+WlzGOmqMG1stL6AlZ44GsEM1eUPe175q6nAI MLov/1woAGNrZARYDgYBgdBEpxzJL7hxKSshGABdN9P6y7LeWt1Nty/zlySAcQLwH7tcjbvyQpmi lM/OksvjwBcpgKIAEf2r65yNa5ewPyL9ueJHWdMAmCflX/BUTP8g3XmxZ4IFa7MlAH6NEdN/rM3R tm6hcO2kDgmAZDH9zzDTLe3ZQcK1qocSRsFblYj+4yi6ZXWst+r9UoZhioj+99jpyz8V6K16cbcE QEeI3+6nFtPtPsz3Wh9DSZmIXgMQmFpusTYY751MjlbzTz/+dCfd7Erf5Sd5imeZJc2Ed1XJ9e4j W9W1jBXj3ScPiissLqXLj7uLShvXs+ds1W6rtKm4skLgqVR2I/9oyvb0Mw9yFqjBYXqmYt2otKfG wIxcrf6lguuBHwbHnGuA0BoBOAB6Pqq6n+o4eKfggsSWHeboIpC+wwqAJ4COO46DD8oBmuY4+1tL /70WA6A00tUffQfAGPSA233jMYc+ikIOeKIFWAH1YQAvYDnAC3gGMAMSMAMoLWbAXYAZcAw3YDtu wAacADtVX78ZG+D9nhgtb0XGA4RFOCNUbsDvdYIrTh6AEzICzJMBXkA8wAsoAZgBSZgBPWMwA74B zIAq3IDy//4TaA/EPQxXO084elNaxgLfgL0FzkiVF/Cqd/+b7ngTlesb8Fyhp2Ga421A75swP4CX CgG60jRAZxcBKFNsPfDx0LpWEYByxZdkfgCvEQNyPQFGxICrnoAKxACjJ+AdWkCIzRPwBi1gK/QE VCIFaEw8gAkpYCfkAd6jBEyk+ICPCAEjXeePEnoCIwDomCHPAXxCBpjA3G5cQDUqgL4FCgJqFAds 690Dn++BwoA6pQHtOnr472hmF3EAtUoDbmnn76viFnEADQoAul/kHUnNzHvY6qWeDQjulB1g2hjO JGBijzX6A2yBMgMa1nASl5qVRXZfgIBamQF3dLzNxvTrXdw2baxdywkoL+CQ4H5nZiEnFVfhrlnh /nh+ltBhlQg44W3LFXnSIqScaxH9xlsU4LqPfO3Io0xClgrvS2G3QVkB1GifKeOwjCYIzdbuRCZH esAO5QUY/GWtNavOxh9nktYTn/Yr7SYCYPGfN2fNP5lWKDfAlQ8NF9F9wK7v/c37igDEA9XSi6YO +KcyNzHIV/eR+7/2O+8sBjBqtjv13HpZr/Z2H9zuhFAJwPf1Nu6YuBDHe1cerM9vggML/wCKP6ha CrdEM98p0kxJynr8Bw44Brwe6Gk2VZQYa5o7oLQg36gkAAIgAAIgAAL4BwFDhiONoeQHliRIkGDi L9o3c4kgmt05AAAAAElFTkSuQmCC " />
+  </g>
+  <g
+     id="g1-5">
+    <rect
+       id="rect12-3"
+       x="8"
+       y="8"
+       width="112"
+       height="112"
+       rx="26"
+       ry="26"
+       fill="url(#e)"
+       stroke-width="1.9999"
+       style="mix-blend-mode:normal;fill:url(#linearGradient2)" />
   </g>
 </svg>
