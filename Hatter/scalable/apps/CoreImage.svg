@@ -35,6 +35,18 @@
   <defs
      id="defs1">
     <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#d6d6d6;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#969696;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
        id="e"
        x1="7.937"
        x2="7.937"
@@ -62,6 +74,15 @@
          id="feGaussianBlur2"
          stdDeviation="2.24" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="64"
+       y1="8"
+       x2="64"
+       y2="120"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <rect
      id="rect12-7"
@@ -84,7 +105,7 @@
      ry="26"
      fill="url(#e)"
      stroke-width="1.9999"
-     style="fill:#ffffff;fill-opacity:1" />
+     style="fill:url(#linearGradient2);fill-opacity:1" />
   <g
      id="g1"
      transform="matrix(1.3707542,0,0,1.3707542,-17.728267,-23.728267)">
