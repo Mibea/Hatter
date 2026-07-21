@@ -3,7 +3,7 @@ Hatter rounded gnome icons
 
 Hatter is a rounded square icon theme for linux desktops. The main goal is to integrate well with the default Gnome desktop asthetics with rounded windows and buttons. The design philosophy is to create a rouded square theme that is faithfull to the application's identity, name and branding.
 
-The second goal is to create a finished experience. I once heared the critisism that icon themes are a failed concept because you are constantly playing a game of whack-a-mole. And in a way that is true, especially with a theme like this one, any non square icon sticks out like a sore thumb. My idea to mitigate that is to create a lot of icons, this theme has at the time of writing 2675 unique app icons and 7000 linked app icons.
+The second goal is to create a finished experience. I once heared the critisism that icon themes are a failed concept because you are constantly playing a game of whack-a-mole. And in a way that is true, especially with a theme like this one, any non square icon sticks out like a sore thumb. My idea to mitigate that is to create a lot of icons, this theme has at the time of writing around 4800 unique app icons and 12.400 linked app icons.
 
 <img src="https://github.com/Mibea/Hatter/blob/2.0-Beta/Artwork/Hatter-overview.png" align="center" />
 
@@ -23,17 +23,19 @@ The second goal is to create a finished experience. I once heared the critisism 
 -A full redesign of the folders
 <img src="https://github.com/Mibea/Hatter/blob/2.0-Beta/Artwork/colors.png" align="center" />
 
+## Version 3.0 brings consistency on a whole new level.
+
+The first draft of a design guideline is a fact and every app icon gets a revisit to improve the consistency of the theme.
+There is now an icon for every program in the whole Flathub library! 
+This was a huge project, only possible thanks to the magic of shell scripts and the open nature of flathub. The result is 2000 extra unique app icons and around 5000 extra links.
+<img width="1216" height="910" alt="afbeelding" src="https://github.com/user-attachments/assets/27af9e0d-4fdb-4c3a-93a1-0491d6e049d1" />
+
+
 There is also a KDE flavour with; 
   
   1) A file structure like Breeze,
   2) A light and dark theme.
   3) More fitting symbolic icons.
-
-
-
-
-
-## Important notice, when you update for the first time since version 2.0 delete all Hatter icon themes in your /home/*USER*/.local/share/icons folder 
 
 Usage:  `./install.sh`
 
