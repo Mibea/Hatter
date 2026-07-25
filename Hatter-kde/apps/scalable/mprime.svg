@@ -7,7 +7,7 @@
    height="128"
    version="1.1"
    viewBox="0 0 128 128"
-   sodipodi:docname="org.mersenne.mprime.svg"
+   sodipodi:docname="mprime.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -87,6 +87,27 @@
        y1="15.081"
        x2="7.937"
        y2="1.852" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1-7"
+       id="linearGradient2"
+       x1="64"
+       y1="120"
+       x2="64"
+       y2="8"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient1-7"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.2;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.2;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
   </defs>
   <rect
      id="rect12-7"
@@ -112,5 +133,19 @@
        image-rendering="optimizeQuality"
        preserveAspectRatio="none"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAA3NCSVQICAjb4U/gAAACDVBMVEUA AP8AAf4AAv0ABPsABfoABvkAB/gACPcACfYAC/QADPMADfIADvEAD/AAEO8AEe4AFOsAFeoAFukA F+gAGOcAGeYAGuUAG+QAHOMAHeIAHuEAH+AAIN8AId4AIt0AI9wAJNsAJdoAL9AAMc4AM8wANcoA NskAOcYAO8QAPMMAPcIAP8AAQL8AQb4AQr0ASLcASbYASrUATrEAT7AAUK8AUa4AUq0AU6wAVKsA VaoAVqkAV6gAWKcAWaYAWqUAW6QAXKMAXaIAXqEAX6AAYJ8AYZ4AYp0AY5wAZZoAZpkAZ5gAaJcA a5QAbJMAbZIAcY4Aco0Ac4wAdIsAdYoAeIcAeYYAeoUAg3wAhnkAh3gAiXYAinUAi3QAjHMAkW4A km0Ak2wAlGsAlWoAlmkAl2gAmGcAmWYAmmUAm2QAnGMAnWIAnmEAn2AAoF8AoV4Aol0Ao1wApFsA pVoAplkAp1gAqFcAqVYAqlUArFMArVIArlEAr1AAsE8AtUoAtkkAt0gAvUIAvkEAv0AAwD8AwT4A wj0AwzwAxDsAxToAxjkAyTYAyjUAzjEA0C8A2iUA2yQA3CMA3SIA3iEA3yAA4B8A4R4A4h0A4xwA 5BsA5RoA5xgA6BcA6RYA6hUA6xQA7hEA7xAA8A8A8Q4A8g0A8wwA9AsA9wgA+AcA+QYA+gUA+wQA /AMA/QIA/gEA/wDhJQgVAAAGNUlEQVR42u2a+1vbZBTH01JgUKZrmWNNoClDLiroBpTbYNJy2xTU wlQQ6jbHoOXS4hQcZVNhjg5RmkKDSEGFMhms4W80F9smbRLyxqXd45PzW/Kkp58n3/OeWwudZNgg FUAFUAFUABVABVABVAAVQAUAeZhgGd+1wgBHkXAICwQwDAsE8d1nR0cHOyFsjbwRIK93IkdKAxD7 a0uz7vGJac/UlHdhJRTZX38y5xq953K53B6fPxhRHCD8+HZvS0PL+7a2Vnv/xGp4e2W0r7m2vqm5 scnmGPPvEEoD4Av9NaVFJnOJqchSc/PRxsb3n75behFGUfK62jEfiioNsPlwoKb4bK5OA0Ha4pZb Pz6Z/ujtUrgYhV/XZcN1w0uh/cNjZSVYvtt75dKFPIg0Q9X1wS+HPulobmpueq/sjXxjRZdzfhU/ UBQgsv50dqij4hwFkGd687Lt489vuTze8cHOcoP+fJnV4V7ZJZQ8hseHexuLw3UmUgIoK/e14rc+ HFvGwuEAeQ/WQblwdb9PRhyAZcIXAY/NTAPknC2uGVigvjAa8vVXw2egbKReThyAARBBLwOQd+HS ld67y2Hq5u6K22EtO683lsuJA5kA5yo6hmafrtPJ5wBfnXd2lRvlxYEMACoITXXDixt7zOs+PtwP LcXjYAFPC4DZ5gm8SIoN8rbGYvcG0wTA+SKh+yqACvC/BsjwMcxoIsp4Kn4lilHGy3GmGpKEBJlo ydgAmWhKOccQbk5/W84BQHtm1zZ++CytgwkXoHsW214dT+toxgXovI/t/bbynQLDKZFkAgD2Gez5 8V+49PFcaI8AJe8AdvBgAMOCpNF7AK7j1KoncUHB+OUDTQKIBP0+7+SUx0uaZ2rSm/RqZZdd2q/b 7U2VigtA7PjHHPbWNhttba32pOCSC0D7tTU28gQrFyAamndUW4pMJWbSSlKPV6zuJ/cDorpTn6P8 ogYDWu3w4YIAdF0fsSJaKG5axDoSTzCx4ZRORPUji2uboWAoLBx8sXha39wKLDkbEGqvkNqwsADo ut5TadAkADSGyp54imWP54bK7sHxSZd79vFahBDTnYqnb771OG9UGSl/qdIlAAiqrjeUw/kQy/Lh 8gaqyFAPsBcUeUj55cZGa0vv7Z/ChIjuVDzZO7ts1iqz/jQAuq4jBTlZbICsnAKEKrPUh1grGk12 QSGCIqbSGuEWjMB9TDyhqMUMG/U6UQC2/jq9ETZb4h+i4wD/++QIJwGoJRVlKOkVhS+KApAnBtVC HBMGiOlPPaU3V1ltPT2x1wZRceD7ZTuy7f+qj17T2e229mutLU31tc1iEsRKtxQAjv7GqhtO74MH 3n8Dh4mDydWd/ZB/jlpUMklqwu26N+oSCUIwAHwhrr8WaXAuYbu7GHV0tLE4GHiIPz/6E6dWtUya JhN1YA0TOYZAEpAP21ENK+ii3KCkz2+Up1SJ1ACgIIy/LvaxY8miAR+5wI5hotdjJR5WYMoBAEpE tF7U+eamXupo1sPyhs7kVGwV8AMl9GKKBaf4RDGP3KmXW4wCgn4g0XL5H8ZuSWN9IhEJNAzpAxBo mWIS8Mz9xCkGCMDXNIrN/ezeMdkk9ZJS2nKxuZ/dOyYbWC8pDECIzP3c3jHZgHpJYQCxuT+eZs08 xvSSnN4PHICrf8rcz1do2KZFJW/RIHD9BUqtWNUDBiBO2fsoDsDonwvpBOZ+ZSU4RX/lg1DC3k/R Y0hI2fspmYhO01/ZVCxBf6WKkWT9lSnHIPorCSBJf8UAGP3rkWzoDFIzALr3fwkAMf0Liiqu3pz+ +Y90A8T1L6z84M6jX39/dpJmgIT+tV/QP8cQnLMm63t52nJmt5Twl7Qf0MT2P1ubYolF9mACW51L gS18PeGPZz9Q+E7fnbn5ua+9Ho9QapU7mtGj//T9mZmEP579QEFp9dWe690dIsVF7nBKLz/a2691 JPyl7gcgnb4QQS0WVKS8SgLgGc/p9U8JzPbH2g8ANBhSI1/IJ8sfJKvFAvp5R9zfKwRAvy4NYy9f Ak3c+CUA7PGAglDcHySrxwM6huL+IFk9HlgiEvUHyerxgFKxuD9IVo8HVIzE/an/K1YBVAAVQAVQ AVQAFUAFUAEyDvAPOaNKmtRGNIgAAAAASUVORK5CYII= " />
+  </g>
+  <g
+     id="g1-3">
+    <rect
+       id="rect12"
+       x="8"
+       y="8"
+       width="112"
+       height="112"
+       rx="26"
+       ry="26"
+       fill="url(#e)"
+       stroke-width="1.9999"
+       style="mix-blend-mode:normal;fill:url(#linearGradient2)" />
   </g>
 </svg>

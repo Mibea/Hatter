@@ -7,7 +7,7 @@
    height="128"
    version="1.1"
    viewBox="0 0 128 128"
-   sodipodi:docname="net.blockattack.game.svg"
+   sodipodi:docname="game.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -62,6 +62,27 @@
          id="feGaussianBlur2"
          stdDeviation="2.24" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="64"
+       y1="120"
+       x2="64"
+       y2="8"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.2;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.2;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
   </defs>
   <rect
      id="rect12-7"
@@ -97,5 +118,19 @@
        image-rendering="optimizeQuality"
        preserveAspectRatio="none"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAA3NCSVQICAjb4U/gAAAAjVBMVEUA AABkRgBlRQBlRgBlRwBzUgB0UwB2VQB3VQCHZACJZgCLaACMZwCmfwCngACogQDBlwDCmADDmADE mQDPowDesQDfsQDgsQDquwDsvADsvQDxwQDzwgD4/gD4/wD59gD5+wD6yQD67gD68wD75gD76AD7 7QD83wD84wD85gD92gD93wD+0wD+1QD/zQB4M/MZAAAAAXRSTlMAQObYZgAAAxFJREFUeNrt29uW mjAUBmAFK3Vap7a1djo2hAkyDWGH93+8ehg0qGhCDnvaxX+lXphvxZBscO3R6JA4eEZqYpRgj38S xDGuII5xBad3yeNy9eQ9q+Vj0hI0L6eLOli+JidA8+phXQfM+vNR0Iz/UgfNy0MbkKzrwFlPW4Dv dfAsVEBSIyRRAF8wAHMFsMQALBXATwzASgH8wgA8KYBnDMDzABgAA2AAOAFIiQsQhAhMgCTbSEQA 3QEoHqAg+xRYAEHeIpAAtAFQHEC5HzzdhWMAgJwAKSAAchXAwgOaFXgApCI4gLYBNDSAkzYg3YQF ADkHZBAUwC4A5uvQBnDcAxWA8Tq0AdBrABoOUJJrANP9sD9AkuuAVAYC0C4ADQIQOekCpLnwDJCc kbOk7WSMS08AcTn4FcAekW8EOAVAVVDSkfPRj0VKwcEJACqWkRvpAuySvVaWAOCU3MktwC5550Tc BwAj93MPsP2EQU9ASZwA0rTsCZCuAH1nQGsKNAC8/yKkLgDU5irI7AEZ2OwDwh4g7DYibgvgtjth YQco7Ldi1h9wu1LVPYyA9gdQcHEaQv/DCNwcx9AXIF3VA6IfoHJXEfE+gMplSbYxB5Rua0JmCmC1 W0DnudQB0LhFMAR0XYzXARk4B9SVCUDnBsX4xiTTB2Re7oyoPoDW/+UMkH8IQHwAwAQAHgASGyBM ALJG3ogqDwCuB9B/YGYK2JgANh4AzARQYAOYB0Cuvwj1nhiaAjJsgFlFFAhAuZQ8DwO4PApS9rbf yeISAN4BmXqpwx/qHdA+i/Lq8hl2CyB9AjJ29esPv4Q3ABzrvRK6H+tSj2vgAHi9U3AL5u0ypNup 1znkoGJ6RaFxSWbwj5D0URE5zwAYAANgAAyAATAA3hUAp8Ehiia4LR5RNMZtcolOP8EcAzBXAB8x AGqjU/wt/PitVq94Gr7Z7cN+4EnT7jcL3e43i9r9hvEs6Bz8/hRF5y2XIVs+F9N4Mj7vOY3jZL78 EaLpdZ50td2GSDP1aI3H0Xg8QW29Vmfg/TS/hydMjsP/BfEmAKCUPbyHAAAAAElFTkSuQmCC " />
+  </g>
+  <g
+     id="g1-5">
+    <rect
+       id="rect12-3"
+       x="8"
+       y="8"
+       width="112"
+       height="112"
+       rx="26"
+       ry="26"
+       fill="url(#e)"
+       stroke-width="1.9999"
+       style="mix-blend-mode:normal;fill:url(#linearGradient2)" />
   </g>
 </svg>
