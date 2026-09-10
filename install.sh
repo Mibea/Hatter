@@ -14,6 +14,9 @@ fi
 
 SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+cp -r "${SRC_DIR}"/Hatter/scalable/apps/*.svg  "${SRC_DIR}"/Hatter-kde/apps/scalable
+
+
 rm -rf "${DEST_DIR}"/Hatter
 rm -rf "${DEST_DIR}"/Hatter-Blue
 rm -rf "${DEST_DIR}"/Hatter-Green
