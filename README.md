@@ -1,43 +1,39 @@
-Hatter rounded gnome icons
-======
+Hatter Rounded GNOME Icons
 
-Hatter is a rounded square icon theme for linux desktops. The main goal is to integrate well with the default Gnome desktop asthetics with rounded windows and buttons. The design philosophy is to create a rouded square theme that is faithfull to the application's identity, name and branding.
+Hatter is a rounded-square icon theme designed primarily for Adwaita, the default GNOME desktop theme. Its aesthetic complements GNOME’s rounded windows, buttons, and other interface elements.
 
-The second goal is to create a finished experience. I once heared the critisism that icon themes are a failed concept because you are constantly playing a game of whack-a-mole. And in a way that is true, especially with a theme like this one, any non square icon sticks out like a sore thumb. My idea to mitigate that is to create a lot of icons, this theme has at the time of writing around 4800 unique app icons and 12.400 linked app icons.
+The theme’s design philosophy is to create rounded-square icons that remain faithful to each application’s identity, name, color palette, and branding. Rather than replacing icons with generic alternatives or imitating another operating system, Hatter preserves the character of the original applications wherever possible.
 
-<img src="https://github.com/Mibea/Hatter/blob/2.0-Beta/Artwork/Hatter-overview.png" align="center" />
+A major goal is to provide a polished and complete desktop experience. Icon themes can easily become inconsistent when unsupported applications fall back to mismatched or non-square icons. Hatter addresses this by offering extensive application coverage. At the time of writing, the theme includes approximately 4,800 unique application icons and 12,400 linked application icons.
 
+Hatter currently covers:
 
-## Version 2.0 is radical different from the prevous versions of Hatter.
+    99% of Flatpak applications
+    The 100 highest-rated native Linux games on Steam
+    Many of the most popular non-native Steam games
+    Folders, MIME types, devices, maps, and other desktop elements
 
--Foremost, this is not a fork from Whitesur anymore.
--The directory structure is now based on the directory structure of Adwaita, the default Gnome icon theme, instead of Whitesur.
--Hatter-yaru is now a color variant instead of a full icon theme.
--the symbolic icons are now inherited from Adwaita instead of Whitesur, This choice was made for different reasons.
-  
-  1) It is much easier to maintain, so i can focus more time on the creation of App icons.
-  2) The chance of Gnome updates breaking things is reduced significant.
-  3) It stays consistent when missing icons are inherited from Adwaita.
-  4) The old symbolic icons, tend to be less readable for some users.
+Particular attention is given to:
 
--A full redesign of the folders
-<img src="https://github.com/Mibea/Hatter/blob/2.0-Beta/Artwork/colors.png" align="center" />
+    Core GNOME applications
+    GNOME Circle applications
+    Popular applications such as GIMP, Inkscape, LibreOffice, and Steam
 
-## Version 3.0 brings consistency on a whole new level.
+Compatibility
 
-The first draft of a design guideline is a fact and every app icon gets a revisit to improve the consistency of the theme.
-There is now an icon for every program in the whole Flathub library! 
-This was a huge project, only possible thanks to the magic of shell scripts and the open nature of flathub. The result is 2000 extra unique app icons and around 5000 extra links.
-<img width="1216" height="910" alt="afbeelding" src="https://github.com/user-attachments/assets/27af9e0d-4fdb-4c3a-93a1-0491d6e049d1" />
+Hatter is designed primarily for GNOME, so most development and testing focuses on providing the best possible experience on that desktop environment. A separate edition is available for KDE, although it receives less frequent attention.
 
+Hatter is used daily on Fedora Workstation and tested on other distributions several times a year.
+GNOME on Fedora
 
-There is also a KDE flavour with; 
-  
-  1) A file structure like Breeze,
-  2) A light and dark theme.
-  3) More fitting symbolic icons.
+This is where Hatter works best and feels most at home.
 
-Usage:  `./install.sh`
+KDE on Fedora KDE
 
+The standard Hatter edition is not fully compatible with KDE. Hatter-kde works well overall, but it is not completely flawless. Some icons in the system settings remain symbolic, and you may occasionally encounter icons that are not rendered correctly.
+
+Cinnamon on Linux Mint
+
+Hatter works very well with Cinnamon on Linux Mint.
 
 
