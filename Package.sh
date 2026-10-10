@@ -66,6 +66,7 @@ rm -rf "${DEST_DIR}"/Hatter-kde-light
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-kde-dark
 	gtk-update-icon-cache "${DEST_DIR}"/Hatter-kde-light
 
-zip -r -y $HOME/Downloads/Hatter.zip "${DEST_DIR}"/Hatter "${DEST_DIR}"/Hatter-Blue "${DEST_DIR}"/Hatter-Green "${DEST_DIR}"/Hatter-Orange "${DEST_DIR}"/Hatter-Pink "${DEST_DIR}"/Hatter-Purple "${DEST_DIR}"/Hatter-Red "${DEST_DIR}"/Hatter-Slate "${DEST_DIR}"/Hatter-Teal "${DEST_DIR}"/Hatter-Yaru "${DEST_DIR}"/Hatter-Yellow
-zip -r -y $HOME/Downloads/Hatter-kde.zip "${DEST_DIR}"/Hatter-kde "${DEST_DIR}"/Hatter-kde-dark "${DEST_DIR}"/Hatter-kde-light
+cd "${DEST_DIR}"
+zip -r -y Hatter.zip "${DEST_DIR}"/Hatter "${DEST_DIR}"/Hatter-Blue "${DEST_DIR}"/Hatter-Green "${DEST_DIR}"/Hatter-Orange "${DEST_DIR}"/Hatter-Pink "${DEST_DIR}"/Hatter-Purple "${DEST_DIR}"/Hatter-Red "${DEST_DIR}"/Hatter-Slate "${DEST_DIR}"/Hatter-Teal "${DEST_DIR}"/Hatter-Yaru "${DEST_DIR}"/Hatter-Yellow
+zip -r -y Hatter-kde.zip "${DEST_DIR}"/Hatter-kde "${DEST_DIR}"/Hatter-kde-dark "${DEST_DIR}"/Hatter-kde-light
 
