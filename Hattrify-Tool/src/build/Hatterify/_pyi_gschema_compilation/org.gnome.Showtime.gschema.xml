@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schemalist gettext-domain="showtime">
+	<schema id="org.gnome.Showtime" path="/org/gnome/Showtime/">
+	</schema>
+	<enum id="org.gnome.Showtime.end-timestamp-types">
+		<value nick="Duration" value="0" />
+		<value nick="Remaining" value="1" />
+	</enum>
+	<schema id="org.gnome.Showtime.State" path="/org/gnome/Showtime/State/">
+		<key name="end-timestamp-type" enum="org.gnome.Showtime.end-timestamp-types">
+			<default>"Duration"</default>
+			<summary>What to show in the end timestamp position</summary>
+			<description>E.g. total duration of the video or the amount of time remaining</description>
+		</key>
+		<key name="is-maximized" type="b">
+			<default>false</default>
+		</key>
+		<key name="looping" type="b">
+			<default>false</default>
+		</key>
+	</schema>
+</schemalist>

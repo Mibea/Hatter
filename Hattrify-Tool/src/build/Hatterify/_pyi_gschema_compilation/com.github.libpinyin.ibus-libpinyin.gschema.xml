@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schemalist>
+  <schema path="/com/github/libpinyin/ibus-libpinyin/libpinyin/" id="com.github.libpinyin.ibus-libpinyin.libpinyin">
+    <key name="auto-commit" type="b">
+      <default>false</default>
+      <summary>Auto commit</summary>
+    </key>
+    <key name="comma-period-page" type="b">
+      <default>false</default>
+      <summary>Use comma and period to flip page</summary>
+    </key>
+    <key name="square-bracket-page" type="b">
+      <default>false</default>
+      <summary>Use square brackets to flip page</summary>
+    </key>
+    <key name="correct-pinyin" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin</summary>
+    </key>
+    <key name="correct-pinyin-gn-ng" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for gn and ng</summary>
+    </key>
+    <key name="correct-pinyin-iou-iu" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for iou and iu</summary>
+    </key>
+    <key name="correct-pinyin-mg-ng" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for mg and ng</summary>
+    </key>
+    <key name="correct-pinyin-on-ong" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for on and ong</summary>
+    </key>
+    <key name="correct-pinyin-v-u" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for v and u</summary>
+    </key>
+    <key name="correct-pinyin-uei-ui" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for uei and ui</summary>
+    </key>
+    <key name="correct-pinyin-uen-un" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for uen and un</summary>
+    </key>
+    <key name="correct-pinyin-ue-ve" type="b">
+      <default>true</default>
+      <summary>Enable correct pinyin for ue and ve</summary>
+    </key>
+    <key name="dictionaries" type="s">
+      <default>''</default>
+      <summary>enable dictionaries</summary>
+    </key>
+    <key name="double-pinyin" type="b">
+      <default>false</default>
+      <summary>Double pinyin</summary>
+    </key>
+    <key name="double-pinyin-schema" type="i">
+      <default>0</default>
+      <summary>Double pinyin schema</summary>
+    </key>
+    <key name="double-pinyin-show-raw" type="b">
+      <default>false</default>
+      <summary>Show raw input in the double pinyin auxiliary text</summary>
+    </key>
+    <key name="dynamic-adjust" type="b">
+      <default>true</default>
+      <summary>Dynamic adjust the candidates order</summary>
+    </key>
+    <key name="fuzzy-pinyin" type="b">
+      <default>false</default>
+      <summary>Fuzzy Pinyin</summary>
+    </key>
+    <key name="fuzzy-pinyin-an-ang" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for an and ang</summary>
+    </key>
+    <key name="fuzzy-pinyin-en-eng" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for en and eng</summary>
+    </key>
+    <key name="fuzzy-pinyin-in-ing" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for in and ing</summary>
+    </key>
+    <key name="fuzzy-pinyin-f-h" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for f and h</summary>
+    </key>
+    <key name="fuzzy-pinyin-g-k" type="b">
+      <default>false</default>
+      <summary>Fuzzy Pinyin for g and k</summary>
+    </key>
+    <key name="fuzzy-pinyin-l-n" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for l and n</summary>
+    </key>
+    <key name="fuzzy-pinyin-l-r" type="b">
+      <default>false</default>
+      <summary>Fuzzy Pinyin for l and r</summary>
+    </key>
+    <key name="fuzzy-pinyin-c-ch" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for c and ch</summary>
+    </key>
+    <key name="fuzzy-pinyin-s-sh" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for s and sh</summary>
+    </key>
+    <key name="fuzzy-pinyin-z-zh" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for z and zh</summary>
+    </key>
+    <key name="incomplete-pinyin" type="b">
+      <default>true</default>
+      <summary>Incomplete pinyin</summary>
+    </key>
+    <key name="init-chinese" type="b">
+      <default>true</default>
+      <summary>Init chinese</summary>
+    </key>
+    <key name="init-full" type="b">
+      <default>false</default>
+      <summary>Init full letter</summary>
+    </key>
+    <key name="init-full-punct" type="b">
+      <default>true</default>
+      <summary>Init full punctuation</summary>
+    </key>
+    <key name="init-simplified-chinese" type="b">
+      <default>true</default>
+      <summary>Init Simplified Chinese</summary>
+    </key>
+    <key name="main-switch" type="s">
+      <default>'&lt;Shift&gt;'</default>
+      <summary>Shortcut for Chinese/English Mode</summary>
+    </key>
+    <key name="letter-switch" type="s">
+      <default>''</default>
+      <summary>Shortcut for Full/Half Letter</summary>
+    </key>
+    <key name="punct-switch" type="s">
+      <default>'&lt;Control&gt;period'</default>
+      <summary>Shortcut for Full/Half Punctuation</summary>
+    </key>
+    <key name="both-switch" type="s">
+      <default>''</default>
+      <summary>Shortcut for Full/Half Both Switch</summary>
+    </key>
+    <key name="trad-switch" type="s">
+      <default>'&lt;Control&gt;&lt;Shift&gt;f'</default>
+      <summary>Shortcut for Simplified/Traditional Chinese Mode</summary>
+    </key>
+    <key name="lookup-table-orientation" type="i">
+      <default>0</default>
+      <summary>Lookup table orientation</summary>
+    </key>
+    <key name="lookup-table-page-size" type="i">
+      <default>5</default>
+      <summary>Lookup table page size</summary>
+    </key>
+    <key name="display-style" type="i">
+      <default>0</default>
+      <summary>UI display style</summary>
+    </key>
+    <key name="minus-equal-page" type="b">
+      <default>true</default>
+      <summary>Use minus and equal to flip page</summary>
+    </key>
+    <key name="remember-every-input" type="b">
+      <default>false</default>
+      <summary>Remember every input as a phrase</summary>
+    </key>
+    <key name="shift-select-candidate" type="b">
+      <default>false</default>
+      <summary>Use shift key to select candidate</summary>
+    </key>
+    <key name="sort-candidate-option" type="i">
+      <default>1</default>
+      <summary>Sort candidate option</summary>
+    </key>
+    <key name="import-dictionary" type="s">
+      <default>''</default>
+      <summary>Import Dictionary</summary>
+    </key>
+    <key name="export-dictionary" type="s">
+      <default>''</default>
+      <summary>Export Dictionary</summary>
+    </key>
+    <key name="clear-user-data" type="s">
+      <default>''</default>
+      <summary>Clean User Data</summary>
+    </key>
+    <key name="lua-converter" type="s">
+      <default>''</default>
+      <summary>Use Lua Converter</summary>
+    </key>
+    <key name="opencc-config" type="s">
+      <default>'s2tw.json'</default>
+      <summary>The config file which should be used by OpenCC for traditional input. Please consult the OpenCC documentation for more information</summary>
+    </key>
+    <key name="emoji-candidate" type="b">
+      <default>true</default>
+      <summary>Show Emoji Candidates</summary>
+    </key>
+    <key name="english-candidate" type="b">
+      <default>true</default>
+      <summary>Show English Candidates</summary>
+    </key>
+    <key name="suggestion-candidate" type="b">
+      <default>false</default>
+      <summary>Suggestion Candidate</summary>
+    </key>
+    <key name="network-dictionary-start-timestamp" type="x">
+      <default>0</default>
+      <summary>Start Timestamp for Network Dictionary</summary>
+    </key>
+    <key name="network-dictionary-end-timestamp" type="x">
+      <default>0</default>
+      <summary>End Timestamp for Network Dictionary</summary>
+    </key>
+    <key name="lua-extension" type="b">
+      <default>true</default>
+      <summary>Enable Lua Extension</summary>
+    </key>
+    <key name="english-input-mode" type="b">
+      <default>true</default>
+      <summary>Enable English Input</summary>
+    </key>
+    <key name="table-input-mode" type="b">
+      <default>true</default>
+      <summary>Enable Table Input</summary>
+    </key>
+    <key name="use-custom-table" type="b">
+      <default>false</default>
+      <summary>Use Custom Table</summary>
+    </key>
+    <key name="import-custom-table" type="s">
+      <default>''</default>
+      <summary>Import Custom Table</summary>
+    </key>
+    <key name="export-custom-table" type="s">
+      <default>''</default>
+      <summary>Export Custom Table</summary>
+    </key>
+    <key name="clear-custom-table" type="s">
+      <default>''</default>
+      <summary>Clean Custom Table</summary>
+    </key>
+    <key name="enable-cloud-input" type="b">
+      <default>false</default>
+      <summary>Enable Cloud Input</summary>
+    </key>
+    <key name="cloud-input-source" type="i">
+      <default>0</default>
+      <summary>Cloud Input Source</summary>
+    </key>
+    <key name="cloud-candidates-number" type="i">
+      <default>1</default>
+      <summary>Cloud Candidates Number</summary>
+    </key>
+    <key name="cloud-request-delay-time" type="i">
+      <range min="200" max="2000"/>
+      <default>600</default>
+      <summary>Sending Cloud request with delay</summary>
+    </key>
+    <key name="export-user-phrase" type="b">
+      <default>true</default>
+      <summary>Export user phrases</summary>
+    </key>
+    <key name="export-bigram-phrase" type="b">
+      <default>true</default>
+      <summary>Export bigram phrases</summary>
+    </key>
+    <key name="keyboard-layout" type="s">
+      <default>'default'</default>
+      <summary>The keyboard layout used with ibus-libpinyin</summary>
+    </key>
+  </schema>
+  <schema path="/com/github/libpinyin/ibus-libpinyin/libbopomofo/" id="com.github.libpinyin.ibus-libpinyin.libbopomofo">
+    <key name="auxiliary-select-key-f" type="i">
+      <default>1</default>
+      <summary>Enable Auxiliary Select Keys F1 .. F10</summary>
+    </key>
+    <key name="auxiliary-select-key-kp" type="i">
+      <default>1</default>
+      <summary>Enable Auxiliary Select Keys Numbers on Keypad</summary>
+    </key>
+    <key name="bopomofo-keyboard-mapping" type="i">
+      <default>0</default>
+      <summary>Bopomofo Keyboard Mapping</summary>
+    </key>
+    <key name="dictionaries" type="s">
+      <default>''</default>
+      <summary>enable dictionaries</summary>
+    </key>
+    <key name="dynamic-adjust" type="b">
+      <default>true</default>
+      <summary>Dynamic adjust the candidates order</summary>
+    </key>
+    <key name="enter-key" type="b">
+      <default>true</default>
+      <summary>Enter key behavior</summary>
+    </key>
+    <key name="fuzzy-pinyin" type="b">
+      <default>false</default>
+      <summary>Fuzzy Pinyin</summary>
+    </key>
+    <key name="fuzzy-pinyin-an-ang" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for an and ang</summary>
+    </key>
+    <key name="fuzzy-pinyin-en-eng" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for en and eng</summary>
+    </key>
+    <key name="fuzzy-pinyin-in-ing" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for in and ing</summary>
+    </key>
+    <key name="fuzzy-pinyin-f-h" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for f and h</summary>
+    </key>
+    <key name="fuzzy-pinyin-g-k" type="b">
+      <default>false</default>
+      <summary>Fuzzy Pinyin for g and k</summary>
+    </key>
+    <key name="fuzzy-pinyin-l-n" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for l and n</summary>
+    </key>
+    <key name="fuzzy-pinyin-l-r" type="b">
+      <default>false</default>
+      <summary>Fuzzy Pinyin for l and r</summary>
+    </key>
+    <key name="fuzzy-pinyin-c-ch" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for c and ch</summary>
+    </key>
+    <key name="fuzzy-pinyin-s-sh" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for s and sh</summary>
+    </key>
+    <key name="fuzzy-pinyin-z-zh" type="b">
+      <default>true</default>
+      <summary>Fuzzy Pinyin for z and zh</summary>
+    </key>
+    <key name="guide-key" type="i">
+      <default>1</default>
+      <summary>Enable Guidekey for Candidates Selection</summary>
+    </key>
+    <key name="incomplete-pinyin" type="b">
+      <default>false</default>
+      <summary>Incomplete pinyin</summary>
+    </key>
+    <key name="init-chinese" type="b">
+      <default>true</default>
+      <summary>Init chinese</summary>
+    </key>
+    <key name="init-full" type="b">
+      <default>false</default>
+      <summary>Init full letter</summary>
+    </key>
+    <key name="init-full-punct" type="b">
+      <default>true</default>
+      <summary>Init full punctuation</summary>
+    </key>
+    <key name="init-simplified-chinese" type="b">
+      <default>true</default>
+      <summary>Init Simplified Chinese</summary>
+    </key>
+    <key name="main-switch" type="s">
+      <default>'&lt;Shift&gt;'</default>
+      <summary>Shortcut for Chinese/English Mode</summary>
+    </key>
+    <key name="letter-switch" type="s">
+      <default>''</default>
+      <summary>Shortcut for Full/Half Letter</summary>
+    </key>
+    <key name="punct-switch" type="s">
+      <default>'&lt;Control&gt;period'</default>
+      <summary>Shortcut for Full/Half Punctuation</summary>
+    </key>
+    <key name="both-switch" type="s">
+      <default>''</default>
+      <summary>Shortcut for Full/Half Both Switch</summary>
+    </key>
+    <key name="trad-switch" type="s">
+      <default>'&lt;Control&gt;&lt;Shift&gt;f'</default>
+      <summary>Shortcut for Simplified/Traditional Chinese Mode</summary>
+    </key>
+    <key name="lookup-table-orientation" type="i">
+      <default>0</default>
+      <summary>Lookup table orientation</summary>
+    </key>
+    <key name="lookup-table-page-size" type="i">
+      <default>5</default>
+      <summary>Lookup table page size</summary>
+    </key>
+    <key name="display-style" type="i">
+      <default>0</default>
+      <summary>UI display style</summary>
+    </key>
+    <key name="remember-every-input" type="b">
+      <default>false</default>
+      <summary>Remember every input as a phrase</summary>
+    </key>
+    <key name="select-keys" type="i">
+      <default>0</default>
+      <summary>Selection Keys</summary>
+    </key>
+    <key name="sort-candidate-option" type="i">
+      <default>1</default>
+      <summary>Sort candidate option</summary>
+    </key>
+    <key name="opencc-config" type="s">
+      <default>'s2tw.json'</default>
+      <summary>The config file which should be used by OpenCC for traditional input. Please consult the OpenCC documentation for more information</summary>
+    </key>
+    <key name="emoji-candidate" type="b">
+      <default>true</default>
+      <summary>Show Emoji Candidates</summary>
+    </key>
+    <key name="english-candidate" type="b">
+      <default>true</default>
+      <summary>Show English Candidates</summary>
+    </key>
+    <key name="suggestion-candidate" type="b">
+      <default>false</default>
+      <summary>Suggestion Candidate</summary>
+    </key>
+    <key name="network-dictionary-start-timestamp" type="x">
+      <default>0</default>
+      <summary>Start Timestamp for Network Dictionary</summary>
+    </key>
+    <key name="network-dictionary-end-timestamp" type="x">
+      <default>0</default>
+      <summary>End Timestamp for Network Dictionary</summary>
+    </key>
+    <key name="enable-cloud-input" type="b">
+      <default>false</default>
+      <summary>Enable Cloud Input</summary>
+    </key>
+    <key name="cloud-input-source" type="i">
+      <default>0</default>
+      <summary>Cloud Input Source</summary>
+    </key>
+    <key name="cloud-candidates-number" type="i">
+      <default>1</default>
+      <summary>Cloud Candidates Number</summary>
+    </key>
+    <key name="cloud-request-delay-time" type="i">
+      <range min="200" max="2000"/>
+      <default>600</default>
+      <summary>Sending Cloud request with delay</summary>
+    </key>
+    <key name="keyboard-layout" type="s">
+      <default>'default'</default>
+      <summary>The keyboard layout used with ibus-libpinyin</summary>
+    </key>
+  </schema>
+</schemalist>

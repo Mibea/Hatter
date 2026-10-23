@@ -1,0 +1,14 @@
+<schemalist gettext-domain="gnome-session-3.0">
+  <schema id="org.gnome.SessionManager" path="/org/gnome/gnome-session/">
+    <key name="logout-prompt" type="b">
+      <default>true</default>
+      <summary>Logout prompt</summary>
+      <description>If enabled, gnome-session will prompt the user before ending a session.</description>
+    </key>
+    <key name="show-fallback-warning" type="b">
+      <default>true</default>
+      <summary>Show the fallback warning</summary>
+      <description>If enabled, gnome-session will display a warning dialog after login if the session was automatically fallen back.</description>
+    </key>
+  </schema>
+</schemalist>

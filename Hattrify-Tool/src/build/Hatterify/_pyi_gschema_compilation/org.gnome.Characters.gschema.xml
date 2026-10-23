@@ -1,0 +1,11 @@
+<schemalist gettext-domain="org.gnome.Characters">
+  <schema id="org.gnome.Characters" path="/org/gnome/Characters/">
+    <key name="recent-characters" type="as">
+      <default>[]</default>
+    </key>
+    <key name="max-recent-characters" type="u">
+      <default>100</default>
+      <summary>Maximum recent characters</summary>
+    </key>
+  </schema>
+</schemalist>

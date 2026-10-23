@@ -1,0 +1,10 @@
+<schemalist>
+  <schema id="org.gnome.portal" path="/org/gnome/portal/" gettext-domain="xdg-desktop-portal-gnome">
+    <child name="filechooser" schema="org.gnome.portal.filechooser"/>
+  </schema>
+  <schema id="org.gnome.portal.filechooser" gettext-domain="xdg-desktop-portal-gnome">
+    <key name="last-folder-path" type="s">
+      <default>""</default>
+    </key>
+  </schema>
+</schemalist>

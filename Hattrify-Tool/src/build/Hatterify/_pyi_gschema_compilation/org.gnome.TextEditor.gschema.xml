@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-text-editor">
+  <flags id="org.gnome.TextEditor.DrawSpaces">
+    <value nick="space" value="1"/>
+    <value nick="tab" value="2"/>
+    <value nick="newline" value="4"/>
+    <value nick="nbsp" value="8"/>
+    <value nick="leading" value="16"/>
+    <value nick="text" value="32"/>
+    <value nick="trailing" value="64"/>
+  </flags>
+  <schema id="org.gnome.TextEditor" path="/org/gnome/TextEditor/">
+    <key name="auto-save-delay" type="u">
+      <range min="1" max="300"/>
+      <default>3</default>
+      <summary>Auto Save Delay</summary>
+      <description>The delay in seconds to wait before auto-saving a draft.</description>
+    </key>
+    <key name="style-variant" type="s">
+      <choices>
+        <choice value="follow"/>
+        <choice value="light"/>
+        <choice value="dark"/>
+      </choices>
+      <default>'follow'</default>
+      <summary>Style Variant</summary>
+      <description>Use the light or dark variant of the GTK theme and/or GtkSourceView style scheme.</description>
+    </key>
+    <key name="indent-style" type="s">
+      <choices>
+        <choice value="tab"/>
+        <choice value="space"/>
+      </choices>
+      <default>'tab'</default>
+      <summary>Indentation Style</summary>
+      <description>Whether the editor should insert multiple spaces characters instead of tabs.</description>
+    </key>
+    <key name="auto-indent" type="b">
+      <default>true</default>
+      <summary>Auto Indent</summary>
+      <description>Automatically indent new lines copying the previous line's indentation.</description>
+    </key>
+    <key name="tab-width" type="u">
+      <range min="1" max="32"/>
+      <default>8</default>
+      <summary>Tab Width</summary>
+      <description>The number of spaces represented by a tab.</description>
+    </key>
+    <key name="indent-width" type="i">
+      <range min="-1" max="32"/>
+      <default>-1</default>
+      <summary>Indent Width</summary>
+      <description>The number of spaces to indent or -1 to use tab-width.</description>
+    </key>
+    <key name="show-line-numbers" type="b">
+      <default>false</default>
+      <summary>Show Line Numbers</summary>
+      <description>Whether line numbers should be displayed next to each line.</description>
+    </key>
+    <key name="show-right-margin" type="b">
+      <default>false</default>
+      <summary>Show Right Margin</summary>
+      <description>Whether a margin line should be displayed on the right of the editor.</description>
+    </key>
+    <key name="right-margin-position" type="u">
+      <range min="1" max="1000"/>
+      <default>80</default>
+      <summary>Right Margin Position</summary>
+      <description>The position in characters at which the right margin should be displayed.</description>
+    </key>
+    <key name="show-map" type="b">
+      <default>false</default>
+      <summary>Show Overview Map</summary>
+      <description>If enabled, an overview map of the file will be displayed to the side of the editor.</description>
+    </key>
+    <key name="show-grid" type="b">
+      <default>false</default>
+      <summary>Show Background Grid</summary>
+      <description>If enabled, a blueprint style grid is printed on the editor background.</description>
+    </key>
+    <key name="highlight-current-line" type="b">
+      <default>false</default>
+      <summary>Highlight current line</summary>
+      <description>If enabled, the current line will be highlighted.</description>
+    </key>
+    <key name="wrap-text" type="b">
+      <default>true</default>
+      <summary>Text Wrapping</summary>
+      <description>Whether text should be wrapped.</description>
+    </key>
+    <key name="use-system-font" type="b">
+      <default>true</default>
+      <summary>Use System Font</summary>
+      <description>Whether the default system monospace font should be used.</description>
+    </key>
+    <key name="custom-font" type="s">
+      <default>'Monospace 11'</default>
+      <summary>Custom Font</summary>
+      <description>A custom font to use in the editor.</description>
+    </key>
+    <key name="style-scheme" type="s">
+      <default>'Adwaita'</default>
+      <summary>Style Scheme</summary>
+      <description>The style scheme to use by the editor. It may translate this into a dark format when available.</description>
+    </key>
+    <key name="discover-settings" type="b">
+      <default>true</default>
+      <summary>Discover File Settings</summary>
+      <description>If enabled, then Text Editor will try to discover file settings from modelines, editorconfig, or per-language defaults.</description>
+    </key>
+    <key name="spellcheck" type="b">
+      <default>true</default>
+      <summary>Automatically check spelling</summary>
+      <description>If enabled, then Text Editor will check spelling as you type.</description>
+    </key>
+    <key name="restore-session" type="b">
+      <default>true</default>
+      <summary>Restore session</summary>
+      <description>When Text Editor is running, restore the previous session.</description>
+    </key>
+    <key name="recolor-window" type="b">
+      <default>true</default>
+      <summary>Recolor Window</summary>
+      <description>Use the style-scheme to recolor the application window.</description>
+    </key>
+    <key name="keybindings" type="s">
+      <choices>
+        <choice value="default"/>
+        <choice value="vim"/>
+      </choices>
+      <default>'default'</default>
+      <summary>Keybindings</summary>
+      <description>The keybindings to use within Text Editor.</description>
+    </key>
+    <key name="last-save-directory" type="s">
+      <default>''</default>
+      <summary>Last Save Directory</summary>
+      <description>The directory last used in a save or save-as dialog.</description>
+    </key>
+    <key name="draw-spaces" flags="org.gnome.TextEditor.DrawSpaces">
+      <default>[]</default>
+      <summary>Draw Spaces</summary>
+      <description>The various types of spaces to draw in the editor.</description>
+    </key>
+    <key name="enable-snippets" type="b">
+      <default>false</default>
+      <summary>Enable Snippets</summary>
+      <description>Enable the use of snippets registered with GtkSourceView from within the editor.</description>
+    </key>
+    <key name="line-height" type="d">
+      <default>1.2</default>
+      <range min="0.5" max="10"/>
+      <summary>Line Height</summary>
+      <description>The line height to use for the selected font.</description>
+    </key>
+    <key name="highlight-matching-brackets" type="b">
+      <default>true</default>
+      <summary>Highlight Matching Brackets</summary>
+      <description>Highlight matching brackets and braces.</description>
+    </key>
+  </schema>
+</schemalist>

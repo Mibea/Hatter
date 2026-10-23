@@ -1,0 +1,26 @@
+app-id: be.mibea.Hatterify
+
+runtime: org.gnome.Platform
+runtime-version: "50"
+
+sdk: org.gnome.Sdk
+
+command: hatterify
+
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+
+modules:
+  - name: hatterify
+
+    buildsystem: simple
+
+    build-commands:
+      - install -Dm755 src/main.py /app/bin/hatterify
+
+    sources:
+      - type: dir
+        path: .

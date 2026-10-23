@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema gettext-domain="gnome-settings-daemon" id="org.gnome.settings-daemon.global-shortcuts" path="/org/gnome/settings-daemon/global-shortcuts/">
+    <key name="applications" type="as">
+      <default>[]</default>
+      <summary>Applications</summary>
+      <description>Applications that have defined global shortcuts</description>
+    </key>
+  </schema>
+  <schema gettext-domain="gnome-settings-daemon" id="org.gnome.settings-daemon.global-shortcuts.application">
+    <key name="shortcuts" type="a(sa{sv})">
+      <default>[]</default>
+      <summary>Shortcuts</summary>
+      <description>Keyboard shortcut definitions</description>
+    </key>
+  </schema>
+</schemalist>

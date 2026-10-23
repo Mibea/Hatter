@@ -1,0 +1,94 @@
+<schemalist gettext-domain="gnome-maps">
+  <enum id="org.gnome.maps.TransportationType">
+    <value value="0" nick="car"/>
+    <value value="1" nick="bike"/>
+    <value value="2" nick="pedestrian"/>
+    <value value="3" nick="transit"/>
+  </enum>
+  <enum id="org.gnome.maps.MeasurementSystem">
+    <value value="0" nick="system"/>
+    <value value="1" nick="metric"/>
+    <value value="2" nick="imperial"/>
+  </enum>
+  <schema id="org.gnome.Maps" path="/org/gnome/maps/">
+    <key type="ad" name="last-viewed-location">
+      <default>[0.0,0.0]</default>
+      <summary>last viewed location</summary>
+      <description>Coordinates of last viewed location.</description>
+    </key>
+    <key type="i" name="zoom-level">
+      <default>0</default>
+      <summary>zoom</summary>
+      <description>Zoom level</description>
+    </key>
+    <key type="d" name="rotation">
+      <default>0.0</default>
+      <summary>rotation</summary>
+      <description>Map rotation in radians</description>
+    </key>
+    <key name="map-type" type="s">
+      <default>"MapsVectorSource"</default>
+      <summary>Map type</summary>
+      <description>The type of map to display (street, aerial, etc.)</description>
+    </key>
+    <key name="window-size" type="ai">
+      <default>[]</default>
+      <summary>Window size</summary>
+      <description>Window size (width and height).</description>
+    </key>
+    <key name="window-position" type="ai">
+      <default>[]</default>
+      <summary>Window position</summary>
+      <description>Window position (X and Y).</description>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>true</default>
+      <summary>Window maximized</summary>
+      <description>Window maximization state</description>
+    </key>
+    <key name="max-search-results" type="i">
+      <default>20</default>
+      <summary>Maximum number of search results</summary>
+      <description>Maximum number of search results from geocode search.</description>
+    </key>
+    <key name="recent-places-limit" type="i">
+      <default>50</default>
+      <summary>Number of recent places to store</summary>
+      <description>Number of recently visited places to store.</description>
+    </key>
+    <key name="recent-routes-limit" type="i">
+      <default>5</default>
+      <summary>Number of recent routes to store</summary>
+      <description>Number of recently visited routes to store.</description>
+    </key>
+    <key name="osm-username-oauth2" type="s">
+      <default>""</default>
+      <summary>OpenStreetMap username or email address</summary>
+      <description>Indicates if the user has signed in to edit OpenStreetMap data.</description>
+    </key>
+    <key name="transportation-type" enum="org.gnome.maps.TransportationType">
+      <default>'pedestrian'</default>
+      <summary>Last used transportation type for routing</summary>
+    </key>
+    <key name="show-scale" type="b">
+      <default>true</default>
+      <summary>Show scale</summary>
+      <description>Whether to show the scale.</description>
+    </key>
+    <key name="vector-tile-source-url-pattern" type="s">
+      <default>'https://tileserver.gnome.org/data/v3/{z}/{x}/{y}.pbf'</default>
+      <summary>Map tile URL pattern</summary>
+      <description>The URL pattern for the vector tile source to use. Note that the map style relies on certain extensions compared to upstream Planetiler OpenMapTiles Profile</description>
+    </key>
+    <key name="measurement-system" enum="org.gnome.maps.MeasurementSystem">
+      <default>'system'</default>
+      <summary>Units to show measurements in</summary>
+      <description>How to show measurements. ('system' uses default for system locale, 'metric' always show metric units, 'imperial' always show imperial units).</description>
+    </key>
+    <key name="show-location-marker" type="b">
+      <default>true</default>
+      <summary>Show location marker</summary>
+      <description>Whether to show the user location marker (when location is known).</description>
+    </key>
+  </schema>
+</schemalist>

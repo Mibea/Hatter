@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+
+  <enum id="org.gnome.Papers.SizingMode">
+    <value nick="fit-page" value="0"/>
+    <value nick="fit-width" value="1"/>
+    <value nick="free" value="2"/>
+    <value nick="automatic" value="3"/>
+  </enum>
+
+  <schema id="org.gnome.Papers" path="/org/gnome/papers/" gettext-domain="papers">
+    <key name="override-restrictions" type="b">
+      <default>true</default>
+      <summary>Override document restrictions</summary>
+      <description>Override document restrictions, like restriction to copy or to print.</description>
+    </key>
+    <key name="document-directory" type="ms">
+      <default>nothing</default>
+      <summary>The URI of the directory last used to open or save a document</summary>
+    </key>
+    <key name="pictures-directory" type="ms">
+      <default>nothing</default>
+      <summary>The URI of the directory last used to save a picture</summary>
+    </key>
+    <key name="page-cache-size" type="u">
+      <default>200</default>
+      <summary>Page cache size in MiB</summary>
+      <description>The maximum size that will be used to cache rendered pages, limits maximum zoom level.</description>
+    </key>
+    <key type="b" name="allow-links-change-zoom">
+      <default>true</default>
+      <summary>Allow links to change the zoom level.</summary>
+    </key>
+    <key name="night-mode" type="b">
+      <default>false</default>
+    </key>
+    <child name="default" schema="org.gnome.Papers.Default"/>
+  </schema>
+
+  <schema id="org.gnome.Papers.Default" path="/org/gnome/papers/default/" gettext-domain="papers">
+    <key name="enable-spellchecking" type="b">
+      <default>true</default>
+      <summary>Check spelling when writing annotation notes or filling text forms.</summary>
+    </key>
+    <key name="show-sidebar" type="b">
+      <default>true</default>
+      <summary>Show a side bar next to the document to help navigate the document.</summary>
+    </key>
+    <key name="window-width" type="i">
+      <default>1280</default>
+    </key>
+    <key name="window-height" type="i">
+      <default>1280</default>
+    </key>
+    <key name="sizing-mode" enum="org.gnome.Papers.SizingMode">
+      <default>'automatic'</default>
+    </key>
+    <key name="zoom" type="d">
+      <default>1.</default>
+      <summary>Set the default zoom level to display a document.</summary>
+    </key>
+    <key name="continuous" type="b">
+      <default>true</default>
+      <summary>Display the document as a continuous stream of pages instead of page at a time.</summary>
+    </key>
+    <key name="dual-page" type="b">
+      <default>false</default>
+      <summary>Show two pages side by side.</summary>
+    </key>
+    <key name="dual-page-odd-left" type="b">
+      <default>false</default>
+      <summary>Show the first page (odd page) on the left (when displaying two pages side by side)</summary>
+    </key>
+    <key name="fullscreen" type="b">
+      <default>false</default>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+    </key>
+    <key name="sidebar-page" type="s">
+      <default>'links'</default>
+    </key>
+    <key name="annot-color" type="s">
+      <default>'yellow'</default>
+    </key>
+  </schema>
+
+</schemalist>

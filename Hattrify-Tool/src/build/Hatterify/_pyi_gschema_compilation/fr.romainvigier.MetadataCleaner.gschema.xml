@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-FileCopyrightText: Metadata Cleaner contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+<schemalist gettext-domain="fr.romainvigier.MetadataCleaner">
+    <schema id="fr.romainvigier.MetadataCleaner" path="/fr/romainvigier/MetadataCleaner/">
+        <key name="cleaning-without-warning" type="b">
+            <default>false</default>
+            <summary>Clean without warning</summary>
+        </key>
+        <key name="lightweight-cleaning" type="b">
+            <default>false</default>
+            <summary>Lightweight cleaning</summary>
+        </key>
+        <key name="window-width" type="u">
+            <default>400</default>
+            <summary>Window width</summary>
+        </key>
+        <key name="window-height" type="u">
+            <default>600</default>
+            <summary>Window height</summary>
+        </key>
+        <key name="window-maximized" type="b">
+            <default>false</default>
+            <summary>Maximized window</summary>
+        </key>
+    </schema>
+</schemalist>

@@ -1,0 +1,78 @@
+<schemalist>
+  <schema id="org.gnome.builder" path="/org/gnome/builder/" gettext-domain="gnome-builder">
+    <key name="window-size" type="(ii)">
+      <default>(-1, -1)</default>
+      <summary>Window size</summary>
+      <description>Window size (width and height).</description>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>true</default>
+      <summary>Window maximized</summary>
+      <description>Window maximized state</description>
+    </key>
+    <key name="style-variant" type="s">
+      <choices>
+        <choice value="default"/>
+        <choice value="light"/>
+        <choice value="dark"/>
+      </choices>
+      <default>'default'</default>
+      <summary>Style Variant</summary>
+      <description>Use the light or dark variant of the GTK theme and/or GtkSourceView style scheme.</description>
+    </key>
+    <key name="projects-directory" type="s">
+      <!-- Translators: This is the default directory name for user’s
+           projects. Do NOT change the ASCII double quotes ("") to your
+           language’s convention, e.g. do not use “” or »«.-->
+      <default l10n="messages">"Projects"</default>
+      <summary>Projects directory</summary>
+      <description>Directory for all Builder projects.</description>
+    </key>
+    <key name="restore-previous-files" type="b">
+      <default>true</default>
+      <summary>Restore Session</summary>
+      <description>Restores the projects previous session when loading.</description>
+    </key>
+    <key name="clear-cache-at-startup" type="b">
+      <default>true</default>
+      <summary>Clear build caches at startup</summary>
+      <description>If enabled, Builder will clear build caches upon startup.</description>
+    </key>
+    <key name="format-on-save" type="b">
+      <default>false</default>
+    </key>
+    <key name="interface-style" type="s">
+      <default>'tab-bar'</default>
+      <choices>
+        <choice value="tab-bar"/>
+        <choice value="drop-down"/>
+      </choices>
+      <summary>The interface style to change pages</summary>
+    </key>
+    <key name="default-license" type="s">
+      <choices>
+        <choice value="AGPL-3.0-or-later"/>
+        <choice value="Apache-2.0"/>
+        <choice value="GPL-2.0-or-later"/>
+        <choice value="GPL-3.0-or-later"/>
+        <choice value="LGPL-2.1-or-later"/>
+        <choice value="LGPL-3.0-or-later"/>
+        <choice value="MIT"/>
+        <choice value="No License"/>
+      </choices>
+      <default>'GPL-3.0-or-later'</default>
+      <summary>Default License</summary>
+      <description>The default license to use for new projects</description>
+    </key>
+    <key name="lsp-inherit-stderr" type="b">
+      <default>false</default>
+      <summary>Inherit Language Server stderr</summary>
+      <description>If enabled, stderr of language servers will be redirected to the console.</description>
+    </key>
+    <key name="preview-search-results" type="b">
+      <default>true</default>
+      <summary>Preview Search Results</summary>
+      <description>If previews for search results should be automatically displayed</description>
+    </key>
+  </schema>
+</schemalist>

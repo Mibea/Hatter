@@ -1,0 +1,64 @@
+<schemalist gettext-domain="gnome-boxes">
+
+  <enum id="org.gnome.boxes.view-type">
+    <value nick="icon-view" value="1"/>
+    <value nick="list-view" value="2"/>
+  </enum>
+
+  <schema id="org.gnome.boxes" path="/org/gnome/boxes/" gettext-domain="gnome-boxes">
+
+    <key name="screenshot-interval" type="i">
+      <summary>Screenshot interval</summary>
+      <description>
+        The interval in seconds between screenshot updates
+      </description>
+      <default>5</default>
+    </key>
+
+    <key name='view' enum='org.gnome.boxes.view-type'>
+      <default>'icon-view'</default>
+    </key>
+
+    <key name="window-size" type="ai">
+      <default>[768, 600]</default>
+      <summary>Window size</summary>
+      <description>
+        Window size (width and height)
+      </description>
+    </key>
+    <key name="window-position" type="ai">
+      <default>[]</default>
+      <summary>Window position</summary>
+      <description>
+        Window position (x and y)
+      </description>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>true</default>
+      <summary>Window maximized</summary>
+      <description>
+        Window maximized state
+      </description>
+    </key>
+    <key name="first-run" type="b">
+      <default>true</default>
+      <summary>First run</summary>
+      <description>
+        Whether Boxes is running for the first time
+      </description>
+    </key>
+
+    <key name="shared-folders" type="s">
+      <default>""</default>
+      <summary>Shared folders</summary>
+      <description>Variant array of shared folders’ names and path mapping</description>
+    </key>
+
+    <key name="recommended-downloads-url" type="s">
+      <default>'https://gnome.pages.gitlab.gnome.org/gnome-boxes-logos/recommended-downloads.xml'</default>
+      <summary>Recommended Downloads Source URL</summary>
+      <description>An URL pointing at a recommended-downloads.xml file</description>
+    </key>
+
+  </schema>
+</schemalist>

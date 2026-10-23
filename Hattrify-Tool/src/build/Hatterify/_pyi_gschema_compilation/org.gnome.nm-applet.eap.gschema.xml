@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.nm-applet.eap" gettext-domain="libnma">
+    <key name="ignore-ca-cert" type="b">
+      <default>false</default>
+      <summary>Ignore CA certificate</summary>
+      <description>Set this to true to disable warnings about CA certificates in EAP authentication.</description>
+    </key>
+    <key name="ignore-phase2-ca-cert" type="b">
+      <default>false</default>
+      <summary>Ignore CA certificate</summary>
+      <description>Set this to true to disable warnings about CA certificates in phase 2 of EAP authentication.</description>
+    </key>
+  </schema>
+</schemalist>

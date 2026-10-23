@@ -1,0 +1,10 @@
+<schemalist>
+<schema gettext-domain="gnome-user-share" id="org.gnome.desktop.file-sharing" path="/org/gnome/desktop/file-sharing/">
+	<key name="require-password" type="s">
+		<default>'never'</default>
+		<summary>When to require passwords</summary>
+		<description>When to ask for passwords. Possible values are "never", "on_write", and "always".</description>
+	</key>
+</schema>
+</schemalist>
+

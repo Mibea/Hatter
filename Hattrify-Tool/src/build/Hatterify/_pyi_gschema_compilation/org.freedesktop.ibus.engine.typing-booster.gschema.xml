@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.freedesktop.ibus.engine.typing-booster">
+    <key name="colorcomposepreview" type="b">
+      <default>true</default>
+      <summary>Use color for compose preview</summary>
+      <description>
+        Here you can choose whether a custom color is used for
+        the compose preview.
+      </description>
+    </key>
+    <key name="colorcomposepreviewstring" type="s">
+      <default>'rgb(127,127,127)'</default>
+      <summary>Choose color for compose preview</summary>
+      <description>
+        Here you can specify which color to use for
+        the compose preview.
+      </description>
+    </key>
+    <key name="colorm17npreedit" type="b">
+      <default>false</default>
+      <summary>Use color for m17n preedit</summary>
+      <description>
+        Here you can choose whether a custom color is used for
+        the m17n preedit.
+      </description>
+    </key>
+    <key name="colorm17npreeditstring" type="s">
+      <default>'rgb(127,127,127)'</default>
+      <summary>Choose color for m17n preedit</summary>
+      <description>
+        Here you can specify which color to use for
+        the m17n preedit.
+      </description>
+    </key>
+    <key name="colorpreeditspellcheck" type="b">
+      <default>false</default>
+      <summary>Preedit spellchecking</summary>
+      <description>
+        Here you can choose whether spellchecking is done
+        on the contents of the preedit and a custom color
+        is used to indicate when the preedit might contain
+        a spelling error.
+      </description>
+    </key>
+    <key name="colorpreeditspellcheckstring" type="s">
+      <default>'rgb(164,0,0)'</default>
+      <summary>Choose color for preedit spellchecking</summary>
+      <description>
+        Here you can specify which color to use for
+        the preedit when the preedit might contain a
+        spelling error. This setting only has an
+        effect if the preedit spellchecking is enabled.
+      </description>
+    </key>
+    <key name="colorinlinecompletion" type="b">
+      <default>true</default>
+      <summary>Use color for inline completion</summary>
+      <description>
+        Here you can choose whether a custom color is used for
+        a suggestion shown inline.
+      </description>
+    </key>
+    <key name="colorinlinecompletionstring" type="s">
+      <default>'rgb(127,127,127)'</default>
+      <summary>Choose color for inline completion</summary>
+      <description>
+        Here you can specify which color to use for inline completion.
+        This setting only has an effect if the use of color for inline
+        completion is enabled and inline completion is enabled.
+      </description>
+    </key>
+    <key name="coloruserdb" type="b">
+      <default>false</default>
+      <summary>Use color for user database suggestions</summary>
+      <description>
+        Here you can choose whether a custom color is used for
+        candidates in the lookup table which come from the user
+        database.
+      </description>
+    </key>
+    <key name="coloruserdbstring" type="s">
+      <default>'rgb(0, 0, 0)'</default>
+      <summary>Choose color for user database suggestions</summary>
+      <description>
+        Here you can specify which color to use for candidates in the
+        lookup table which come from the user database. This setting
+        only has an effect if the use of color for candidates from the
+        user database is enabled.
+      </description>
+    </key>
+    <key name="colorspellcheck" type="b">
+      <default>false</default>
+      <summary>Use color for spellchecking suggestions</summary>
+      <description>
+        Here you can choose whether a custom color is used for
+        candidates in the lookup table which come from spellchecking.
+      </description>
+    </key>
+    <key name="colorspellcheckstring" type="s">
+      <default>'rgb(164,0,0)'</default>
+      <summary>Choose color for spellchecking suggestions</summary>
+      <description>
+        Here you can specify which color to use for candidates in the
+        lookup table which come from spellchecking. This setting only
+        has an effect if the use of color for candidates from
+        spellchecking is enabled.
+      </description>
+    </key>
+    <key name="colordictionary" type="b">
+      <default>false</default>
+      <summary>Use color for dictionary suggestions</summary>
+      <description>
+        Here you can choose whether a custom color is used for candidates in
+        the lookup table which come from a dictionary.
+      </description>
+    </key>
+    <key name="colordictionarystring" type="s">
+      <default>'rgb(127,127,127)'</default>
+      <summary>Choose color for dictionary suggestions</summary>
+      <description>
+        Here you can specify which color to use for candidates in the
+        lookup table which come from a dictionary. This setting only
+        has an effect if the use of color for candidates from
+        a dictionary is enabled.
+      </description>
+    </key>
+    <key name="labeluserdb" type="b">
+      <default>false</default>
+      <summary>Use label for user database suggestions</summary>
+      <description>
+        Here you can choose whether a label is used for candidates in
+        the lookup table which come from the user database.
+      </description>
+    </key>
+    <key name="labeluserdbstring" type="s">
+      <default>'⭐'</default>
+      <summary>Choose label for userdatabase suggestions</summary>
+      <description>
+        Here you can specify which label to use for candidates in the
+        lookup table which come from the user database. This setting
+        only has an effect if the use of a label for candidates from
+        the user database is enabled.
+      </description>
+    </key>
+    <key name="labelspellcheck" type="b">
+      <default>false</default>
+      <summary>Use label for spellchecking suggestions</summary>
+      <description>
+        Here you can choose whether a label is used for candidates in
+        the lookup table which come from spellchecking.
+      </description>
+    </key>
+    <key name="labelspellcheckstring" type="s">
+      <default>'✓'</default>
+      <summary>Choose label for spellchecking suggestions</summary>
+      <description>
+        Here you can specify which label to use for candidates in the
+        lookup table which come from spellchecking. This setting only
+        has an effect if the use of a label for candidates from
+        spellchecking is enabled.
+      </description>
+    </key>
+    <key name="labeldictionary" type="b">
+      <default>false</default>
+      <summary>Use label for dictionary suggestions</summary>
+      <description>
+        Here you can choose whether a label is used for candidates in
+        the lookup table which come from a dictionary.
+      </description>
+    </key>
+    <key name="labeldictionarystring" type="s">
+      <default>'📖'</default>
+      <summary>Choose label for dictionary suggestions</summary>
+      <description>
+        Here you can specify which label to use for candidates in the
+        lookup table which come from a dictionary. This setting only
+        has an effect if the use of a label for candidates from
+        a dictionary is enabled.
+      </description>
+    </key>
+    <key name="flagdictionary" type="b">
+      <default>false</default>
+      <summary>Use flags for dictionary suggestions</summary>
+      <description>
+        Here you can choose whether flags are used for candidates in
+        the lookup table which come from a dictionary.
+      </description>
+    </key>
+    <key name="labelbusy" type="b">
+      <default>true</default>
+      <summary>Use label to indicate busy state</summary>
+      <description>
+        Here you can choose whether a label is used to indicate when
+        ibus-typing-booster is busy.
+      </description>
+    </key>
+    <key name="labelbusystring" type="s">
+      <default>'⏳'</default>
+      <summary>Choose label to indicate busy state</summary>
+      <description>
+        Here you can specify which label is used to indicate when
+        ibus-typing-booster is busy.
+      </description>
+    </key>
+    <key name="inputmodetruesymbol" type="s">
+      <default>'🚀'</default>
+      <summary>Symbol for "enabled" mode</summary>
+      <description>
+        The symbol displayed when Typing Booster is active
+        (transliterating input, suggesting completions, spellchecking, etc.).
+      </description>
+    </key>
+    <key name="inputmodefalsesymbol" type="s">
+      <default>'🐌'</default>
+      <summary>Symbol for "disabled" (Direct Input) mode</summary>
+      <description>
+        The symbol displayed when Typing Booster is disabled
+        (input is passed through directly without processing).
+      </description>
+    </key>
+    <key name="avoidforwardkeyevent" type="b">
+      <default>false</default>
+      <summary>Avoid using the forward_key_event() function</summary>
+      <description>
+        Use a workaround if the forward_key_event() function is broken.
+        Enable this option only if absolutely necessary, 
+        it can also cause problems, especially when XIM is used.
+      </description>
+    </key>
+    <key name="prefercommit" type="b">
+      <default>true</default>
+      <summary>Prefer commits over passing key events through</summary>
+      <description>
+        Instead of passing a key event through, it is often possible
+        to do a commit.  And this is usually the best way to do it. It
+        avoids several problems like wrong order of events or wrong
+        keycodes. But there are some cases where this may cause
+        problems, especially in games which expect real key events.
+      </description>
+    </key>
+    <key name="arrowkeysreopenpreedit" type="b">
+      <default>false</default>
+      <summary>Enable reopening preedits</summary>
+      <description>
+        Whether it is allowed to put a word back into a preedit when
+        the cursor moves to the end or the beginning of a word.
+        Enabling this option is useful to correct already
+        committed words.
+      </description>
+    </key>
+    <key name="wordpredictions" type="b">
+      <default>true</default>
+      <summary>Word predictions</summary>
+      <description>
+        Whether ibus-typing-booster should show word predictions.
+      </description>
+    </key>
+    <key name="emojipredictions" type="b">
+      <default>false</default>
+      <summary>Unicode symbols and emoji predictions</summary>
+      <description>
+        Whether Unicode symbols and emoji should be included in the
+        predictions. Emoji are pictographs like ☺♨⛵…. Unicode symbols
+        are other symbols like mathematical symbols (∀∑∯…), arrows
+        (←↑↔…), currency symbols (€₹₺…), braille patterns (⠥⠩…), and
+        many other symbols. These are technically not emoji but
+        nevertheless useful symbols.
+      </description>
+    </key>
+    <key name="unicodedataall" type="b">
+      <default>false</default>
+      <summary>Load all Unicode characters</summary>
+      <description>
+        Whether to load all Unicode characters from UnicodeData.txt
+        for the Unicode symbols and emoji predictions. If false, many
+        characters which are typically typed directly rather than
+        searched for are ommitted to improve performance.
+      </description>
+    </key>
+    <key name="offtherecord" type="b">
+      <default>false</default>
+      <summary>Off the record mode</summary>
+      <description>
+        While “Off the record” mode is on, learning from user input is
+        disabled. If learned user input is available, predictions are
+        usually much better than predictions using only
+        dictionaries. Therefore, one should use this option
+        sparingly. Only if one wants to avoid saving secret user input
+        to disk it might make sense to use this option temporarily.
+      </description>
+    </key>
+    <key name="recordmode" type="i">
+      <default>0</default>
+      <summary>Record mode</summary>
+      <description>
+        Selects which kind of input should be recorded in the user
+        database: “Everything”: Every typed word is added to the user
+        database or its frequency updated if it is already there.
+        “Correctly spelled or previously recorded”: A typed word is only
+        added to the user database if it is likely to be correctly
+        spelled. If a word is already in the user database its
+        frequency is updated no matter how it is spelled.  “Correctly
+        spelled”: A typed word is only added to the database or its
+        frequency updated in the database if it is likely to be
+        correctly spelled.  “Nothing”: Do not record any input at all
+        in the user database.
+      </description>
+    </key>
+    <key name="emojistyle" type="s">
+      <default>'emoji'</default>
+      <summary>Emoji style</summary>
+      <description>
+        To select between colorful emoji (emoji style), monochrome
+        emoji (text style), or no style preference.
+      </description>
+    </key>
+    <key name="emojitriggercharacters" type="s">
+      <default>'_'</default>
+      <summary>Emoji trigger characters</summary>
+      <description>
+        The characters in this list trigger an emoji and Unicode
+        symbol lookup even if the option “Unicode symbols and emoji
+        predictions” is off.
+      </description>
+    </key>
+    <key name="autocommitcharacters" type="s">
+      <default>''</default>
+      <summary>Auto commit characters</summary>
+      <description>
+        The characters in this list cause the preedit to be committed
+        automatically, followed by a space.  For example, if “.” is an
+        auto commit character, this saves you typing a space manually
+        after the end of a sentence. You can freely edit this list, a
+        reasonable value might be “.,;:?!)”. You should not add
+        characters to that list which are needed by your input method,
+        for example if you use Latin-Pre (t-latn-pre) it would be a
+        bad idea to add “.” to that list because it would prevent you
+        from typing “.s” to get “ṡ”. You can also disable this feature
+        completely by making the list empty (which is the default).
+      </description>
+    </key>
+    <key name="tabenable" type="b">
+      <default>false</default>
+      <summary>Enable suggestions by Tab key</summary>
+      <description>
+        If this option is on, suggestions are not shown by
+        default. Typing Tab is then necessary to show the list of
+        suggestions. After a commit the suggestions are hidden again
+        until the next Tab key is typed.
+      </description>
+    </key>
+    <key name="rememberlastusedpreeditime" type="b">
+      <default>false</default>
+      <summary>Remember last used preedit input method</summary>
+      <description>
+        If more than one input method is used at the same time, one of
+        them is used for the preedit.  Which input method is used for
+        the preedit can be changed via the menu or via shortcut
+        keys. If this option is enabled, such a change is remembered
+        even if the session is restarted.
+      </description>
+    </key>
+    <key name="inputmode" type="b">
+      <default>true</default>
+      <summary>Input mode</summary>
+      <description>
+        Whether ibus-typing-booster is on or off.
+      </description>
+    </key>
+    <key name="rememberinputmode" type="b">
+      <default>false</default>
+      <summary>Remember input mode</summary>
+      <description>
+        If this option is enabled, the last used input mode (on/off)
+        is remembered even if the session is restarted.
+      </description>
+    </key>
+    <key name="disableinterminals" type="b">
+      <default>false</default>
+      <summary>Disable in terminals</summary>
+      <description>
+        Whether ibus-typing-booster should be disabled in terminals.
+      </description>
+    </key>
+    <key name="asciidigits" type="b">
+      <default>false</default>
+      <summary>Convert language specific digits to ASCII digits</summary>
+      <description>
+        Some input methods produce language specific digits by
+        default. If one never wants to use such language specific
+        digits but prefers western (ASCII) digits always, one can set
+        this option to convert language specific digits produced
+        by input methods always to ASCII digits.
+      </description>
+    </key>
+    <key name="showfinalform" type="b">
+      <default>false</default>
+      <summary>Show final form while typing</summary>
+      <description>
+        Show the text as it would appear if you ended the composition
+        now by pressing Space.
+      </description>
+    </key>
+    <key name="addspaceoncommit" type="b">
+      <default>true</default>
+      <summary>Add a space when committing by label or mouse</summary>
+      <description>
+        Add a space if a candidate from the candidate list is
+        committed using a key for the label in front of the candidate
+        (I.e. the using the 1-9 or F1-F9) or by clicking on a
+        candidate with the mouse.
+      </description>
+    </key>
+    <key name="inlinecompletion" type="i">
+      <default>0</default>
+      <summary>Use inline completion</summary>
+      <description>
+        Whether the best completion is first shown inline in the
+        preëdit instead of showing a full candidate list. The inline
+        candidate can be selected by typing Tab and then committed as
+        usual, for example by typing Space or Control+Space. Typing
+        Tab again moves to the next candidate and opens the full
+        candidate list.
+      </description>
+    </key>
+    <key name="autocapitalize" type="b">
+      <default>false</default>
+      <summary>Auto capitalize</summary>
+      <description>
+        Automatically capitalize after punctuation.
+      </description>
+    </key>
+    <key name="pagesize" type="i">
+      <default>6</default>
+      <summary>Candidate window page size</summary>
+      <description>
+        How many suggestion candidates to show in one page of the
+        candidate list.
+      </description>
+    </key>
+    <key name="lookuptableorientation" type="i">
+      <default>1</default>
+      <summary>Candidate window orientation</summary>
+      <description>
+        Whether the candidate window should be drawn horizontally or
+        vertically.
+      </description>
+    </key>
+    <key name="preeditunderline" type="i">
+      <default>1</default>
+      <summary>Preedit underline</summary>
+      <description>
+        Which style of underlining to use for the preedit.
+      </description>
+    </key>
+    <key name="preeditstyleonlywhenlookup" type="b">
+      <default>false</default>
+      <summary>Use preedit style only if lookup is enabled</summary>
+      <description>
+        If this option is on, a preedit style like underlining will
+        only be used if lookup is enabled.  The lookup can be disabled
+        because one uses the option to enable lookup only when a key
+        is pressed or because one uses the option to require a minimum
+        number of characters before a lookup is done.
+      </description>
+    </key>
+    <key name="mincharcomplete" type="i">
+      <default>1</default>
+      <summary>Minimum number of chars for completion</summary>
+      <description>
+        Show no suggestions when less than this number of characters
+        have been typed.
+      </description>
+    </key>
+    <key name="useibuskeymap" type="b">
+      <default>false</default>
+      <summary>Use IBus keymap</summary>
+      <description>
+        Whether the use of an IBus keymap is forced while Typing
+        Booster is active. For most users not using an IBus keymap is
+        recommended. In that case, the keyboard layout which was
+        active before switching to typing booster is used.
+      </description>
+    </key>
+    <key name="ibuskeymap" type="s">
+      <default>'in'</default>
+      <summary>The ibus keymap to use</summary>
+      <description>
+        The ibus keymap to use when forcing an IBus keymap while
+        Typing Booster is active.
+      </description>
+    </key>
+    <key name="errorsound" type="b">
+      <default>false</default>
+    </key>
+    <key name="errorsoundfile" type="s">
+      <default>'/usr/share/ibus-typing-booster/data/coin9.wav'</default>
+    </key>
+    <key name="soundbackend" type="s">
+      <default>'automatic'</default>
+    </key>
+    <key name="debuglevel" type="i">
+      <default>0</default>
+      <summary>Debug level</summary>
+      <description>
+        When greater than 0, debug information may be printed to the
+        log file and debug information may also be shown graphically.
+      </description>
+    </key>
+    <key name="candidatesdelaymilliseconds" type="u">
+      <default>200</default>
+      <summary>Candidate window delay in milliseconds</summary>
+      <description>
+        How long to wait after the last key press before
+        candidates are displayed.
+      </description>
+    </key>
+    <key name="ibuseventsleepseconds" type="d">
+      <default>0.1</default>
+      <summary>Sleep time between some ibus events</summary>
+      <description>
+        Between some events sent to ibus like forward_key_event(),
+        delete_surrounding_text(), commit_text(), a sleep is necessary.
+        Without the sleep, these events may be processed out of order.
+      </description>
+    </key>
+    <key name="shownumberofcandidates" type="b">
+      <default>false</default>
+      <summary>Display total number of candidates</summary>
+      <description>
+        Display how many candidates there are and which one is
+        selected on top of the list of candidates.
+      </description>
+    </key>
+    <key name="showstatusinfoinaux" type="b">
+      <default>false</default>
+      <summary>Show status info in auxiliary text</summary>
+      <description>
+        Show in the auxiliary text whether “Emoji prediction” mode and
+        “Off the record” mode are on or off and show which input
+        method is currently used for the preëdit. The auxiliary text
+        is an optional line of text displayed above the candidate
+        list.
+      </description>
+    </key>
+    <key name="showrawinput" type="i">
+      <default>1</default>
+      <summary>Show raw input</summary>
+      <description>
+        Showing the raw input may be helpful for transliterating input methods.
+      </description>
+    </key>
+    <key name="autoselectcandidate" type="i">
+      <default>0</default>
+      <summary>Automatically select the best candidate</summary>
+      <description>
+        What you type will automatically be corrected to the best
+        candidate by selecting the best candidate automatically. If
+        this option is off you have to select a candidate manually by
+        using the key binding to select the next candidate. If this
+        option is on and you do not want to use the automatically
+        selected candidate, you can use the key binding for the
+        “cancel” command which will deselect all candidates.
+      </description>
+    </key>
+    <key name="aichatenable" type="b">
+      <default>true</default>
+      <summary>Enable AI chat</summary>
+      <description>
+        Enable or disable AI chat globally.
+        When disabled, all AI chat related features and keybindings are turned off.
+      </description>
+    </key>
+    <key name="aisystemmessage" type="s">
+      <default>'You are a large language model living in an input method and a helpful assistant. Respond concisely.'</default>
+      <summary>AI system message</summary>
+      <description>
+        The message to start AI chats with.
+      </description>
+    </key>
+    <key name="ollamamodel" type="s">
+      <default>''</default>
+      <summary>Ollama model</summary>
+      <description>
+        The model to use for ollama.
+      </description>
+    </key>
+    <key name="ollamamaxcontext" type="u">
+      <default>99</default>
+      <summary>Ollama maximum context</summary>
+      <description>
+        The maximum number of ollama messages to keep as context when
+        continuing a chat.
+      </description>
+    </key>
+    <key name="inputmethod" type="s">
+      <default>''</default>
+      <summary>A list of inputmethods to use</summary>
+      <description>
+        Comma separated list of m17n input methods to use.
+      </description>
+    </key>
+    <key name="inputmethodchangetimestamp" type="s">
+      <default>''</default>
+      <summary>Time when an input method last was changed</summary>
+      <description>
+        If that time stamp changes, reload all input methods.
+      </description>
+    </key>
+    <key name="dictionary" type="s">
+      <default>''</default>
+      <summary>A list of dictionaries to use</summary>
+      <description>
+        Comma separated list of dictionaries to use.
+      </description>
+    </key>
+    <key name="dictionaryinstalltimestamp" type="s">
+      <default>''</default>
+      <summary>Time when a dictionary last was installed</summary>
+      <description>
+        If that time stamp changes, reload all dictionaries.
+      </description>
+    </key>
+    <key name="googleapplicationcredentials" type="s">
+      <default>''</default>
+      <summary>“Google application credentials” .json file</summary>
+      <description>
+        Full path of the “Google application credentials” .json file for
+        the speech-to-text API.
+      </description>
+    </key>
+    <key name="keybindings" type="a{sv}">
+      <default>
+        {
+        'cancel': &lt;['Escape']&gt;,
+        'change_line_direction_left_to_right': &lt;@as []&gt;,
+        'change_line_direction_right_to_left': &lt;@as []&gt;,
+        'change_line_direction_toggle': &lt;@as []&gt;,
+        'commit': &lt;@as []&gt;,
+        'commit_and_forward_key': &lt;@as []&gt;,
+        'commit_raw_input': &lt;@as []&gt;,
+        'commit_raw_input_and_forward_key': &lt;@as []&gt;,
+        'commit_candidate_1': &lt;@as []&gt;,
+        'commit_candidate_1_plus_space': &lt;['1', 'KP_1', 'F1']&gt;,
+        'commit_candidate_2': &lt;@as []&gt;,
+        'commit_candidate_2_plus_space': &lt;['2', 'KP_2', 'F2']&gt;,
+        'commit_candidate_3': &lt;@as []&gt;,
+        'commit_candidate_3_plus_space': &lt;['3', 'KP_3', 'F3']&gt;,
+        'commit_candidate_4': &lt;@as []&gt;,
+        'commit_candidate_4_plus_space': &lt;['4', 'KP_4', 'F4']&gt;,
+        'commit_candidate_5': &lt;@as []&gt;,
+        'commit_candidate_5_plus_space': &lt;['5', 'KP_5', 'F5']&gt;,
+        'commit_candidate_6': &lt;@as []&gt;,
+        'commit_candidate_6_plus_space': &lt;['6', 'KP_6', 'F6']&gt;,
+        'commit_candidate_7': &lt;@as []&gt;,
+        'commit_candidate_7_plus_space': &lt;['7', 'KP_7', 'F7']&gt;,
+        'commit_candidate_8': &lt;@as []&gt;,
+        'commit_candidate_8_plus_space': &lt;['8', 'KP_8', 'F8']&gt;,
+        'commit_candidate_9': &lt;@as []&gt;,
+        'commit_candidate_9_plus_space': &lt;['9', 'KP_9', 'F9']&gt;,
+        'enable_lookup': &lt;['Tab', 'ISO_Left_Tab']&gt;,
+        'lookup_related': &lt;['Mod5+F12']&gt;,
+        'lookup_table_page_up': &lt;['Page_Up', 'KP_Page_Up', 'KP_Prior']&gt;,
+        'lookup_table_page_down': &lt;['Page_Down', 'KP_Page_Down', 'KP_Next']&gt;,
+        'next_case_mode': &lt;['Shift_L']&gt;,
+        'next_dictionary': &lt;['Mod1+Down', 'Mod1+KP_Down']&gt;,
+        'next_input_method': &lt;['Control+Down', 'Control+KP_Down']&gt;,
+        'previous_case_mode': &lt;['Shift_R']&gt;,
+        'previous_input_method': &lt;['Control+Up', 'Control+KP_Up']&gt;,
+        'previous_dictionary': &lt;['Mod1+Up', 'Mod1+KP_Up']&gt;,
+        'remove_candidate_1': &lt;['Control+1', 'Control+KP_1', 'Control+F1']&gt;,
+        'remove_candidate_2': &lt;['Control+2', 'Control+KP_2', 'Control+F2']&gt;,
+        'remove_candidate_3': &lt;['Control+3', 'Control+KP_3', 'Control+F3']&gt;,
+        'remove_candidate_4': &lt;['Control+4', 'Control+KP_4', 'Control+F4']&gt;,
+        'remove_candidate_5': &lt;['Control+5', 'Control+KP_5', 'Control+F5']&gt;,
+        'remove_candidate_6': &lt;['Control+6', 'Control+KP_6', 'Control+F6']&gt;,
+        'remove_candidate_7': &lt;['Control+7', 'Control+KP_7', 'Control+F7']&gt;,
+        'remove_candidate_8': &lt;['Control+8', 'Control+KP_8', 'Control+F8']&gt;,
+        'remove_candidate_9': &lt;['Control+9', 'Control+KP_9', 'Control+F9']&gt;,
+        'select_next_candidate': &lt;['Tab', 'ISO_Left_Tab', 'Down', 'KP_Down']&gt;,
+        'select_previous_candidate': &lt;['Shift+Tab', 'Shift+ISO_Left_Tab', 'Up', 'KP_Up']&gt;,
+        'setup': &lt;['Mod5+F10']&gt;,
+        'selection_to_preedit': &lt;@as []&gt;,
+        'show_selection_info': &lt;@as []&gt;,
+        'ai_chat_start_new': &lt;@as []&gt;,
+        'ai_chat_continue': &lt;@as []&gt;,
+        'speech_recognition': &lt;@as []&gt;,
+        'toggle_emoji_prediction': &lt;['Mod5+F6']&gt;,
+        'toggle_emoji_style': &lt;@as []&gt;,
+        'toggle_off_the_record': &lt;['Mod5+F9']&gt;,
+        'toggle_ascii_digits': &lt;@as []&gt;,
+        'toggle_hide_input': &lt;['Shift+Control+Escape']&gt;,
+        'toggle_input_mode_on_off': &lt;@as []&gt;,
+        'trigger_emoji_predictions': &lt;@as []&gt;,
+        'trigger_word_predictions': &lt;@as []&gt;
+        }
+      </default>
+      <summary>List of keybindings</summary>
+      <description>The list of configurable keybindings</description>
+    </key>
+    <key name="autosettings" type="aas">
+      <default>
+        [
+        ['prefercommit', 'false', '^[^:]*:(soffice|libreoffice.*):']
+        ]
+      </default>
+      <summary>List of automatic settings</summary>
+      <description>The list of settings automatically applied when regular expressions match windows</description>
+    </key>
+  </schema>
+</schemalist>

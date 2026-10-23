@@ -1,0 +1,29 @@
+<schemalist>
+  <schema id="org.gnome.builder.terminal" path="/org/gnome/builder/terminal/" gettext-domain="gnome-builder">
+    <key name="allow-bold" type="b">
+      <default>true</default>
+    </key>
+    <key name="allow-hyperlink" type="b">
+      <default>true</default>
+    </key>
+    <key name="font-name" type="s">
+      <default>"Monospace 10"</default>
+    </key>
+    <key name="use-custom-font" type="b">
+      <default>false</default>
+    </key>
+    <key name="limit-scrollback" type="b">
+      <default>true</default>
+    </key>
+    <key name="scrollback-lines" type="u">
+      <range min="0" max="999999999"/>
+      <default>10000</default>
+    </key>
+    <key name="scroll-on-output" type="b">
+      <default>false</default>
+    </key>
+    <key name="scroll-on-keystroke" type="b">
+      <default>true</default>
+    </key>
+  </schema>
+</schemalist>

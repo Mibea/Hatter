@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.gnome.Orca.BrailleIndicator">
+    <value nick="none" value="0"/>
+    <value nick="dot7" value="64"/>
+    <value nick="dot8" value="128"/>
+    <value nick="dots78" value="192"/>
+  </enum>
+  <enum id="org.gnome.Orca.CapitalizationStyle">
+    <value nick="none" value="0"/>
+    <value nick="spell" value="1"/>
+    <value nick="icon" value="2"/>
+  </enum>
+  <enum id="org.gnome.Orca.ChatMessageVerbosity">
+    <value nick="all" value="0"/>
+    <value nick="all-if-focused" value="1"/>
+    <value nick="focused-channel" value="2"/>
+    <value nick="active-channel" value="3"/>
+  </enum>
+  <enum id="org.gnome.Orca.FindResultsVerbosity">
+    <value nick="none" value="0"/>
+    <value nick="if-line-changed" value="1"/>
+    <value nick="all" value="2"/>
+  </enum>
+  <enum id="org.gnome.Orca.KeyboardLayout">
+    <value nick="desktop" value="1"/>
+    <value nick="laptop" value="2"/>
+  </enum>
+  <enum id="org.gnome.Orca.ProgressBarVerbosity">
+    <value nick="all" value="0"/>
+    <value nick="application" value="1"/>
+    <value nick="window" value="2"/>
+  </enum>
+  <enum id="org.gnome.Orca.PunctuationStyle">
+    <value nick="all" value="0"/>
+    <value nick="most" value="1"/>
+    <value nick="some" value="2"/>
+    <value nick="none" value="3"/>
+  </enum>
+  <enum id="org.gnome.Orca.SayAllStyle">
+    <value nick="line" value="0"/>
+    <value nick="sentence" value="1"/>
+  </enum>
+  <enum id="org.gnome.Orca.VerbosityLevel">
+    <value nick="brief" value="0"/>
+    <value nick="verbose" value="1"/>
+  </enum>
+  <schema id="org.gnome.Orca.Braille">
+    <key name="monitor-cell-count" type="i">
+      <default>32</default>
+      <summary>Braille monitor cell count</summary>
+    </key>
+    <key name="monitor-show-dots" type="b">
+      <default>false</default>
+      <summary>Show Unicode braille dots in braille monitor</summary>
+    </key>
+    <key name="monitor-foreground" type="s">
+      <default>'#000000'</default>
+      <summary>Braille monitor foreground color</summary>
+    </key>
+    <key name="monitor-background" type="s">
+      <default>'#ffffff'</default>
+      <summary>Braille monitor background color</summary>
+    </key>
+    <key name="enabled" type="b">
+      <default>true</default>
+      <summary>Enable braille output</summary>
+    </key>
+    <key name="verbosity-level" enum="org.gnome.Orca.VerbosityLevel">
+      <default>'verbose'</default>
+      <summary>Braille verbosity level (brief, verbose)</summary>
+    </key>
+    <key name="rolename-style" enum="org.gnome.Orca.VerbosityLevel">
+      <default>'verbose'</default>
+      <summary>Braille rolename style (brief, verbose)</summary>
+    </key>
+    <key name="present-mnemonics" type="b">
+      <default>true</default>
+      <summary>Present mnemonics on braille display</summary>
+    </key>
+    <key name="display-ancestors" type="b">
+      <default>true</default>
+      <summary>Display ancestors of current object</summary>
+    </key>
+    <key name="braille-progress-bar-updates" type="b">
+      <default>false</default>
+      <summary>Show progress bar updates in braille</summary>
+    </key>
+    <key name="progress-bar-braille-interval" type="i">
+      <default>10</default>
+      <summary>Progress bar braille update interval in seconds</summary>
+    </key>
+    <key name="progress-bar-braille-verbosity" enum="org.gnome.Orca.ProgressBarVerbosity">
+      <default>'application'</default>
+      <summary>Progress bar braille verbosity (all, application, window)</summary>
+    </key>
+    <key name="contracted-braille" type="b">
+      <default>false</default>
+      <summary>Enable contracted braille</summary>
+    </key>
+    <key name="computer-braille-at-cursor" type="b">
+      <default>true</default>
+      <summary>Use computer braille at cursor position</summary>
+    </key>
+    <key name="contraction-table" type="s">
+      <default>''</default>
+      <summary>Braille contraction table name</summary>
+    </key>
+    <key name="end-of-line-indicator" type="b">
+      <default>true</default>
+      <summary>Show end-of-line indicator</summary>
+    </key>
+    <key name="word-wrap" type="b">
+      <default>false</default>
+      <summary>Enable braille word wrap</summary>
+    </key>
+    <key name="flash-messages" type="b">
+      <default>true</default>
+      <summary>Enable braille flash messages</summary>
+    </key>
+    <key name="flash-message-duration" type="i">
+      <default>5000</default>
+      <summary>Flash message duration in milliseconds</summary>
+    </key>
+    <key name="flash-messages-persistent" type="b">
+      <default>false</default>
+      <summary>Make flash messages persistent</summary>
+    </key>
+    <key name="flash-messages-detailed" type="b">
+      <default>true</default>
+      <summary>Use detailed flash messages</summary>
+    </key>
+    <key name="selector-indicator" enum="org.gnome.Orca.BrailleIndicator">
+      <default>'dots78'</default>
+      <summary>Braille selector indicator style (none, dot7, dot8, dots78)</summary>
+    </key>
+    <key name="link-indicator" enum="org.gnome.Orca.BrailleIndicator">
+      <default>'dots78'</default>
+      <summary>Braille link indicator style (none, dot7, dot8, dots78)</summary>
+    </key>
+    <key name="text-attributes-indicator" enum="org.gnome.Orca.BrailleIndicator">
+      <default>'none'</default>
+      <summary>Braille text attributes indicator style (none, dot7, dot8, dots78)</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.CaretNavigation">
+    <key name="enabled" type="b">
+      <default>true</default>
+      <summary>Enable caret navigation</summary>
+    </key>
+    <key name="triggers-focus-mode" type="b">
+      <default>false</default>
+      <summary>Caret navigation triggers focus mode</summary>
+    </key>
+    <key name="layout-mode" type="b">
+      <default>true</default>
+      <summary>Use document layout mode</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Chat">
+    <key name="speak-room-name" type="b">
+      <default>false</default>
+      <summary>Speak chat room name</summary>
+    </key>
+    <key name="announce-buddy-typing" type="b">
+      <default>false</default>
+      <summary>Announce when buddies are typing</summary>
+    </key>
+    <key name="room-histories" type="b">
+      <default>false</default>
+      <summary>Provide chat room specific message histories</summary>
+    </key>
+    <key name="message-verbosity" enum="org.gnome.Orca.ChatMessageVerbosity">
+      <default>'all'</default>
+      <summary>Chat message verbosity (all, all-if-focused, focused-channel, active-channel)</summary>
+    </key>
+    <key name="speak-room-name-last" type="b">
+      <default>false</default>
+      <summary>Speak chat room name after message</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Document">
+    <key name="native-nav-triggers-focus-mode" type="b">
+      <default>true</default>
+      <summary>Native navigation triggers focus mode</summary>
+    </key>
+    <key name="auto-sticky-focus-mode" type="b">
+      <default>true</default>
+      <summary>Auto-detect sticky focus mode for web apps</summary>
+    </key>
+    <key name="say-all-on-load" type="b">
+      <default>true</default>
+      <summary>Perform say all when document loads</summary>
+    </key>
+    <key name="page-summary-on-load" type="b">
+      <default>true</default>
+      <summary>Present page summary when document loads</summary>
+    </key>
+    <key name="find-results-verbosity" enum="org.gnome.Orca.FindResultsVerbosity">
+      <default>'all'</default>
+      <summary>Find results verbosity (none, if-line-changed, all)</summary>
+    </key>
+    <key name="find-results-minimum-length" type="i">
+      <default>4</default>
+      <summary>Minimum length for find results to be spoken</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.FlatReview">
+    <key name="restricted" type="b">
+      <default>false</default>
+      <summary>Restrict flat review to current object</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Keybindings">
+    <key name="keyboard-layout" enum="org.gnome.Orca.KeyboardLayout">
+      <default>'desktop'</default>
+      <summary>Keyboard layout (desktop, laptop)</summary>
+    </key>
+    <key name="desktop-modifier-keys" type="as">
+      <default>['Insert', 'KP_Insert']</default>
+      <summary>Keys used as the Orca modifier for the desktop layout</summary>
+    </key>
+    <key name="laptop-modifier-keys" type="as">
+      <default>['Caps_Lock', 'Shift_Lock']</default>
+      <summary>Keys used as the Orca modifier for the laptop layout</summary>
+    </key>
+    <key name="entries" type="a{saas}">
+      <default>@a{saas} {}</default>
+      <summary>User keybinding overrides</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.LiveRegions">
+    <key name="enabled" type="b">
+      <default>true</default>
+      <summary>Enable live region support</summary>
+    </key>
+    <key name="present-from-inactive-tab" type="b">
+      <default>false</default>
+      <summary>Present live regions from inactive tabs</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.ProfileMetadata">
+    <key name="display-name" type="s">
+      <default>''</default>
+      <summary>Original display name (label) of the profile or app</summary>
+    </key>
+    <key name="internal-name" type="s">
+      <default>''</default>
+      <summary>Original internal name (JSON dict key) of the profile</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.MouseReview">
+    <key name="present-tooltips" type="b">
+      <default>false</default>
+      <summary>Present tooltips on mouse hover</summary>
+    </key>
+    <key name="enabled" type="b">
+      <default>false</default>
+      <summary>Enable mouse review</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Pronunciations">
+    <key name="entries" type="a{ss}">
+      <default>@a{ss} {}</default>
+      <summary>Pronunciation dictionary entries</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.SayAll">
+    <key name="announce-blockquote" type="b">
+      <default>true</default>
+      <summary>Announce blockquotes</summary>
+    </key>
+    <key name="announce-form" type="b">
+      <default>true</default>
+      <summary>Announce non-landmark forms</summary>
+    </key>
+    <key name="announce-grouping" type="b">
+      <default>true</default>
+      <summary>Announce groupings</summary>
+    </key>
+    <key name="announce-landmark" type="b">
+      <default>true</default>
+      <summary>Announce landmarks</summary>
+    </key>
+    <key name="announce-list" type="b">
+      <default>true</default>
+      <summary>Announce lists</summary>
+    </key>
+    <key name="announce-table" type="b">
+      <default>true</default>
+      <summary>Announce tables</summary>
+    </key>
+    <key name="only-speak-displayed-text" type="b">
+      <default>false</default>
+      <summary>Only speak displayed text</summary>
+    </key>
+    <key name="style" enum="org.gnome.Orca.SayAllStyle">
+      <default>'sentence'</default>
+      <summary>Say All style (line, sentence)</summary>
+    </key>
+    <key name="structural-navigation" type="b">
+      <default>false</default>
+      <summary>Enable structural navigation in Say All</summary>
+    </key>
+    <key name="rewind-and-fast-forward" type="b">
+      <default>false</default>
+      <summary>Enable rewind and fast forward in Say All</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Sound">
+    <key name="enabled" type="b">
+      <default>true</default>
+      <summary>Enable sound output</summary>
+    </key>
+    <key name="volume" type="d">
+      <default>0.5</default>
+      <summary>Sound volume (0.0-1.0)</summary>
+    </key>
+    <key name="beep-progress-bar-updates" type="b">
+      <default>false</default>
+      <summary>Beep progress bar updates</summary>
+    </key>
+    <key name="progress-bar-beep-interval" type="i">
+      <default>0</default>
+      <summary>Progress bar beep interval in seconds</summary>
+    </key>
+    <key name="progress-bar-beep-verbosity" enum="org.gnome.Orca.ProgressBarVerbosity">
+      <default>'application'</default>
+      <summary>Progress bar beep verbosity (all, application, window)</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Speech">
+    <key name="speech-server" type="s">
+      <default>''</default>
+      <summary>Speech server name</summary>
+    </key>
+    <key name="speech-server-factory" type="s">
+      <default>'speechdispatcherfactory'</default>
+      <summary>Speech server factory module</summary>
+    </key>
+    <key name="synthesizer" type="s">
+      <default>''</default>
+      <summary>Speech synthesizer</summary>
+    </key>
+    <key name="capitalization-style" enum="org.gnome.Orca.CapitalizationStyle">
+      <default>'none'</default>
+      <summary>Capitalization style (none, spell, icon)</summary>
+    </key>
+    <key name="punctuation-level" enum="org.gnome.Orca.PunctuationStyle">
+      <default>'most'</default>
+      <summary>Punctuation verbosity level (none, some, most, all)</summary>
+    </key>
+    <key name="enable" type="b">
+      <default>true</default>
+      <summary>Enable speech output</summary>
+    </key>
+    <key name="speak-numbers-as-digits" type="b">
+      <default>false</default>
+      <summary>Speak numbers as individual digits</summary>
+    </key>
+    <key name="use-color-names" type="b">
+      <default>true</default>
+      <summary>Use color names instead of values</summary>
+    </key>
+    <key name="insert-pauses-between-utterances" type="b">
+      <default>true</default>
+      <summary>Insert pauses between utterances</summary>
+    </key>
+    <key name="use-pronunciation-dictionary" type="b">
+      <default>true</default>
+      <summary>Apply user pronunciation dictionary</summary>
+    </key>
+    <key name="auto-language-switching" type="b">
+      <default>true</default>
+      <summary>Automatically switch voice based on text language</summary>
+    </key>
+    <key name="speak-misspelled-indicator" type="b">
+      <default>true</default>
+      <summary>Speak misspelled word indicator</summary>
+    </key>
+    <key name="speak-description" type="b">
+      <default>true</default>
+      <summary>Speak object descriptions</summary>
+    </key>
+    <key name="speak-position-in-set" type="b">
+      <default>false</default>
+      <summary>Speak position in set</summary>
+    </key>
+    <key name="speak-widget-mnemonic" type="b">
+      <default>true</default>
+      <summary>Speak widget mnemonics</summary>
+    </key>
+    <key name="speak-tutorial-messages" type="b">
+      <default>true</default>
+      <summary>Speak tutorial messages</summary>
+    </key>
+    <key name="repeated-character-limit" type="i">
+      <default>4</default>
+      <summary>Threshold for repeated character compression</summary>
+    </key>
+    <key name="speak-blank-lines" type="b">
+      <default>true</default>
+      <summary>Speak blank lines</summary>
+    </key>
+    <key name="speak-row-in-gui-table" type="b">
+      <default>true</default>
+      <summary>Speak full row in GUI tables</summary>
+    </key>
+    <key name="speak-row-in-document-table" type="b">
+      <default>true</default>
+      <summary>Speak full row in document tables</summary>
+    </key>
+    <key name="speak-row-in-spreadsheet" type="b">
+      <default>false</default>
+      <summary>Speak full row in spreadsheets</summary>
+    </key>
+    <key name="announce-cell-span" type="b">
+      <default>true</default>
+      <summary>Announce cell span</summary>
+    </key>
+    <key name="announce-cell-coordinates" type="b">
+      <default>true</default>
+      <summary>Announce cell coordinates</summary>
+    </key>
+    <key name="announce-spreadsheet-cell-coordinates" type="b">
+      <default>true</default>
+      <summary>Announce spreadsheet cell coordinates</summary>
+    </key>
+    <key name="always-announce-selected-range-in-spreadsheet" type="b">
+      <default>false</default>
+      <summary>Always announce selected range in spreadsheets</summary>
+    </key>
+    <key name="announce-cell-headers" type="b">
+      <default>true</default>
+      <summary>Announce cell headers</summary>
+    </key>
+    <key name="announce-blockquote" type="b">
+      <default>true</default>
+      <summary>Announce blockquotes</summary>
+    </key>
+    <key name="announce-form" type="b">
+      <default>true</default>
+      <summary>Announce forms</summary>
+    </key>
+    <key name="announce-grouping" type="b">
+      <default>true</default>
+      <summary>Announce groupings/panels</summary>
+    </key>
+    <key name="announce-landmark" type="b">
+      <default>true</default>
+      <summary>Announce landmarks</summary>
+    </key>
+    <key name="announce-list" type="b">
+      <default>true</default>
+      <summary>Announce lists</summary>
+    </key>
+    <key name="announce-table" type="b">
+      <default>true</default>
+      <summary>Announce tables</summary>
+    </key>
+    <key name="only-speak-displayed-text" type="b">
+      <default>false</default>
+      <summary>Only speak displayed text</summary>
+    </key>
+    <key name="speak-progress-bar-updates" type="b">
+      <default>true</default>
+      <summary>Speak progress bar updates</summary>
+    </key>
+    <key name="progress-bar-speech-interval" type="i">
+      <default>10</default>
+      <summary>Progress bar speech update interval in seconds</summary>
+    </key>
+    <key name="progress-bar-speech-verbosity" enum="org.gnome.Orca.ProgressBarVerbosity">
+      <default>'application'</default>
+      <summary>Progress bar speech verbosity (all, application, window)</summary>
+    </key>
+    <key name="messages-are-detailed" type="b">
+      <default>true</default>
+      <summary>Use detailed informative messages</summary>
+    </key>
+    <key name="verbosity-level" enum="org.gnome.Orca.VerbosityLevel">
+      <default>'verbose'</default>
+      <summary>Speech verbosity level (brief, verbose)</summary>
+    </key>
+    <key name="speak-indentation-and-justification" type="b">
+      <default>false</default>
+      <summary>Speak indentation and justification</summary>
+    </key>
+    <key name="speak-indentation-only-if-changed" type="b">
+      <default>false</default>
+      <summary>Speak indentation only if changed</summary>
+    </key>
+    <key name="monitor-font-size" type="i">
+      <default>14</default>
+      <summary>Speech monitor font size</summary>
+    </key>
+    <key name="monitor-foreground" type="s">
+      <default>'#ffffff'</default>
+      <summary>Speech monitor foreground color</summary>
+    </key>
+    <key name="monitor-background" type="s">
+      <default>'#000000'</default>
+      <summary>Speech monitor background color</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Spellcheck">
+    <key name="spell-error" type="b">
+      <default>true</default>
+      <summary>Spell misspelled word</summary>
+    </key>
+    <key name="spell-suggestion" type="b">
+      <default>true</default>
+      <summary>Spell suggested correction</summary>
+    </key>
+    <key name="present-context" type="b">
+      <default>true</default>
+      <summary>Present context/surrounding sentence</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.StructuralNavigation">
+    <key name="wraps" type="b">
+      <default>true</default>
+      <summary>Wrap when reaching top/bottom</summary>
+    </key>
+    <key name="large-object-text-length" type="i">
+      <default>75</default>
+      <summary>Minimum text length for large objects</summary>
+    </key>
+    <key name="enabled" type="b">
+      <default>true</default>
+      <summary>Enable structural navigation</summary>
+    </key>
+    <key name="triggers-focus-mode" type="b">
+      <default>false</default>
+      <summary>Structural navigation triggers focus mode</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.SystemInformation">
+    <key name="date-format" type="s">
+      <default>'%x'</default>
+      <summary>Date format string</summary>
+    </key>
+    <key name="time-format" type="s">
+      <default>'%X'</default>
+      <summary>Time format string</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.TableNavigation">
+    <key name="enabled" type="b">
+      <default>true</default>
+      <summary>Enable table navigation</summary>
+    </key>
+    <key name="skip-blank-cells" type="b">
+      <default>false</default>
+      <summary>Skip blank cells during navigation</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.TextAttributes">
+    <key name="attributes-to-speak" type="as">
+      <default>@as []</default>
+      <summary>Text attributes to speak</summary>
+    </key>
+    <key name="attributes-to-braille" type="as">
+      <default>@as []</default>
+      <summary>Text attributes to mark in braille</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.TypingEcho">
+    <key name="key-echo" type="b">
+      <default>true</default>
+      <summary>Enable key echo</summary>
+    </key>
+    <key name="character-echo" type="b">
+      <default>false</default>
+      <summary>Echo inserted characters</summary>
+    </key>
+    <key name="word-echo" type="b">
+      <default>false</default>
+      <summary>Echo completed words</summary>
+    </key>
+    <key name="sentence-echo" type="b">
+      <default>false</default>
+      <summary>Echo completed sentences</summary>
+    </key>
+    <key name="alphabetic-keys" type="b">
+      <default>true</default>
+      <summary>Echo alphabetic keys</summary>
+    </key>
+    <key name="numeric-keys" type="b">
+      <default>true</default>
+      <summary>Echo numeric keys</summary>
+    </key>
+    <key name="punctuation-keys" type="b">
+      <default>true</default>
+      <summary>Echo punctuation keys</summary>
+    </key>
+    <key name="space" type="b">
+      <default>true</default>
+      <summary>Echo space key</summary>
+    </key>
+    <key name="modifier-keys" type="b">
+      <default>true</default>
+      <summary>Echo modifier keys</summary>
+    </key>
+    <key name="function-keys" type="b">
+      <default>true</default>
+      <summary>Echo function keys</summary>
+    </key>
+    <key name="action-keys" type="b">
+      <default>true</default>
+      <summary>Echo action keys</summary>
+    </key>
+    <key name="navigation-keys" type="b">
+      <default>false</default>
+      <summary>Echo navigation keys</summary>
+    </key>
+    <key name="diacritical-keys" type="b">
+      <default>false</default>
+      <summary>Echo diacritical keys</summary>
+    </key>
+  </schema>
+  <schema id="org.gnome.Orca.Voice">
+    <key name="family-name" type="s">
+      <default>''</default>
+      <summary>Voice family name</summary>
+    </key>
+    <key name="family-lang" type="s">
+      <default>''</default>
+      <summary>Voice family language</summary>
+    </key>
+    <key name="family-dialect" type="s">
+      <default>''</default>
+      <summary>Voice family dialect</summary>
+    </key>
+    <key name="family-gender" type="s">
+      <default>''</default>
+      <summary>Voice family gender</summary>
+    </key>
+    <key name="family-variant" type="s">
+      <default>''</default>
+      <summary>Voice family variant</summary>
+    </key>
+    <key name="established" type="b">
+      <default>false</default>
+      <summary>Whether this voice type has been user-customized</summary>
+    </key>
+    <key name="rate" type="i">
+      <default>50</default>
+      <summary>Speech rate (0-100)</summary>
+    </key>
+    <key name="pitch" type="d">
+      <default>5.0</default>
+      <summary>Speech pitch (0.0-10.0)</summary>
+    </key>
+    <key name="volume" type="d">
+      <default>10.0</default>
+      <summary>Speech volume (0.0-10.0)</summary>
+    </key>
+  </schema>
+</schemalist>

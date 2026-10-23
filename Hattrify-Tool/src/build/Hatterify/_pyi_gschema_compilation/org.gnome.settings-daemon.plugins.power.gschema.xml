@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema gettext-domain="gnome-settings-daemon" id="org.gnome.settings-daemon.plugins.power" path="/org/gnome/settings-daemon/plugins/power/">
+    <key name="idle-brightness" type="i">
+      <default>30</default>
+      <summary>The brightness of the screen when idle</summary>
+      <description>This is the laptop panel screen brightness used when the session is idle.</description>
+    </key>
+    <key name="idle-dim" type="b">
+      <default>true</default>
+      <summary>Dim the screen after a period of inactivity</summary>
+      <description>If the screen should be dimmed to save power when the computer is idle.</description>
+    </key>
+    <key name="sleep-inactive-ac-timeout" type="i">
+      <default>900</default>
+      <summary>Sleep timeout computer when on AC</summary>
+      <description>The amount of time in seconds the computer on AC power needs to be inactive before it goes to sleep. A value of 0 means never.</description>
+    </key>
+    <key name="sleep-inactive-ac-type" enum="org.gnome.settings-daemon.GsdPowerActionType">
+      <default>'suspend'</default>
+      <summary>Whether to hibernate, suspend or do nothing when inactive</summary>
+      <description>The type of sleeping that should be performed when the computer is inactive.</description>
+    </key>
+    <key name="sleep-inactive-battery-timeout" type="i">
+      <default>900</default>
+      <summary>Sleep timeout computer when on battery</summary>
+      <description>The amount of time in seconds the computer on battery power needs to be inactive before it goes to sleep. A value of 0 means never.</description>
+    </key>
+    <key name="sleep-inactive-battery-type" enum="org.gnome.settings-daemon.GsdPowerActionType">
+      <default>'suspend'</default>
+      <summary>Whether to hibernate, suspend or do nothing when inactive</summary>
+      <description>The type of sleeping that should be performed when the computer is inactive.</description>
+    </key>
+    <key name="ambient-enabled" type="b">
+      <default>true</default>
+      <summary>Enable the ALS sensor</summary>
+      <description>If the ambient light sensor functionality is enabled.</description>
+    </key>
+    <key name="power-button-action" enum="org.gnome.settings-daemon.GsdPowerButtonActionType">
+      <default>'suspend'</default>
+      <summary>Power button action</summary>
+      <description>The action to take when the system power button is pressed. Virtual machines only honor the 'nothing' action, and will shutdown otherwise. Tablets always suspend, ignoring all the other action options.</description>
+    </key>
+    <key name="power-saver-profile-on-low-battery" type="b">
+      <default>true</default>
+      <summary>Enable power-saver profile when battery is low</summary>
+      <description>Automatically enable the "power-saver" profile using power-profiles-daemon if the battery is low.</description>
+    </key>
+  </schema>
+</schemalist>

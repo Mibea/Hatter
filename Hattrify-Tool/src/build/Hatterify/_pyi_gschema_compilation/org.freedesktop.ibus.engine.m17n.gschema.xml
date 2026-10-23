@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.freedesktop.ibus.engine.m17n">
+    <key name="lookup-table-orientation" type="i">
+      <default>2</default>
+    </key>
+    <key name="preedit-background" type="s">
+      <default>'none'</default>
+    </key>
+    <key name="preedit-foreground" type="s">
+      <default>'none'</default>
+    </key>
+    <key name="preedit-underline" type="i">
+      <default>0</default>
+    </key>
+    <key name="use-us-layout" type="b">
+      <default>false</default>
+    </key>
+  </schema>
+</schemalist>

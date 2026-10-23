@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  https://gitlab.gnome.org/GNOME/glib/blob/master/gio/gschema.dtd
+  /usr/share/glib-2.0/schemas/gschema.dtd
+-->
+<!DOCTYPE schemalist [
+  <!ELEMENT schemalist (schema|enum|flags)* >
+  <!ATTLIST schemalist gettext-domain CDATA #IMPLIED >
+
+  <!ELEMENT schema (key|child|override)* >
+  <!ATTLIST schema id             CDATA #REQUIRED
+                   path           CDATA #IMPLIED
+                   gettext-domain CDATA #IMPLIED
+                   extends        CDATA #IMPLIED
+                   list-of        CDATA #IMPLIED >
+
+  <!-- enumerated and flags types -->
+  <!-- each value element maps a nick to a numeric value -->
+  <!ELEMENT enum (value*) >
+  <!ATTLIST enum id CDATA #REQUIRED >
+
+  <!ELEMENT flags (value*) >
+  <!ATTLIST flags id CDATA #REQUIRED >
+
+  <!ELEMENT value EMPTY >
+  <!-- nick must be at least 2 characters long -->
+  <!-- value must be parsable as a 32-bit integer -->
+  <!ATTLIST value nick  CDATA #REQUIRED
+                  value CDATA #REQUIRED >
+
+  <!ELEMENT key (default|summary?|description?|range?|choices?|aliases?)* >
+  <!-- name can only contain lowercase letters, numbers and '-' -->
+  <!-- type must be a GVariant type string -->
+  <!-- enum must be the id of an enum type that has been defined earlier -->
+  <!-- flags must be the id of a flags type that has been defined earlier -->
+  <!-- exactly one of type, enum or flags must be given -->
+  <!ATTLIST key name  CDATA #REQUIRED
+                type  CDATA #IMPLIED
+                enum  CDATA #IMPLIED
+                flags CDATA #IMPLIED >
+
+  <!-- the default value is specified a a serialized GVariant,
+       i.e. you have to include the quotes when specifying a string -->
+  <!ELEMENT default (#PCDATA) >
+  <!-- the presence of the l10n attribute marks a default value for
+       translation, its value is the gettext category to use -->
+  <!-- if context is present, it specifies msgctxt to use -->
+  <!ATTLIST default l10n    (messages|time) #IMPLIED
+                    context CDATA           #IMPLIED >
+
+  <!ELEMENT summary (#PCDATA) >
+  <!ELEMENT description (#PCDATA) >
+
+  <!-- range is only allowed for keys with numeric type -->
+  <!ELEMENT range EMPTY >
+  <!-- min and max must be parseable as values of the key type and
+       min must be less than or equal to max -->
+  <!ATTLIST range min CDATA #IMPLIED
+                  max CDATA #IMPLIED >
+
+  <!-- choices is only allowed for keys with string or string array type -->
+  <!ELEMENT choices (choice+) >
+  <!-- each choice element specifies one possible value -->
+  <!ELEMENT choice EMPTY >
+  <!ATTLIST choice value CDATA #REQUIRED >
+
+  <!-- aliases is only allowed for keys with enumerated type or with choices -->
+  <!ELEMENT aliases (alias+) >
+  <!-- each alias element specifies an alias for one of the possible values -->
+  <!ELEMENT alias EMPTY >
+  <!ATTLIST alias value  CDATA #REQUIRED
+                  target CDATA #REQUIRED >
+
+  <!ELEMENT child EMPTY >
+  <!ATTLIST child name   CDATA #REQUIRED
+                  schema CDATA #REQUIRED >
+
+  <!ELEMENT override (#PCDATA) >
+  <!ATTLIST override name    CDATA #REQUIRED
+                     l10n    CDATA #IMPLIED
+                     context CDATA #IMPLIED >
+]>
+
+<schemalist gettext-domain='dconf-editor'>
+  <schema id="ca.desrt.dconf-editor.Lib">
+    <key name="window-width" type="i">
+      <default>540</default>
+      <!-- see AdaptativeWindow.width-request at data/ui/adaptative-window.ui:22 -->
+      <!-- range min="350"/ FIXME -->
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/iagno/window-width' -->
+      <summary>The width of the window</summary>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/iagno/window-width' -->
+      <description>The width of the main window in pixels.</description>
+    </key>
+    <key name="window-height" type="i">
+      <default>500</default>
+      <!-- see AdaptativeWindow.height-request at data/ui/adaptative-window.ui:21 -->
+      <!-- range min="284"/ FIXME -->
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/iagno/window-height' -->
+      <summary>The height of the window</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/iagno/window-height' -->
+      <description>The height of the main window in pixels.</description>
+    </key>
+    <key name="window-is-maximized" type="b">
+      <default>false</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /org/gnome/iagno/window-is-maximized' -->
+      <summary>A flag to enable maximized mode</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /org/gnome/iagno/window-is-maximized' -->
+      <description>If “true”, the main window starts in maximized mode.</description>
+    </key>
+  </schema>
+
+  <enum id="ca.desrt.dconf-editor.Behaviour">
+    <value value="0" nick="unsafe"/>
+    <value value="1" nick="safe"/>
+    <value value="2" nick="always-confirm-implicit"/>
+    <value value="3" nick="always-confirm-explicit"/>
+    <value value="4" nick="always-delay"/>
+  </enum>
+  <flags id="ca.desrt.dconf-editor.RelocatableSchemasEnabledMappings">
+    <value value="1" nick="User"/>
+    <value value="2" nick="Built-in"/>
+    <value value="4" nick="Internal"/>
+    <value value="8" nick="Startup"/>
+  </flags>
+  <schema id="ca.desrt.dconf-editor.Settings" path="/ca/desrt/dconf-editor/">
+    <child schema="ca.desrt.dconf-editor.Demo" name="demo"/>
+    <key name="restore-view" type="b">
+      <default>true</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/restore-view' -->
+      <summary>A flag to restore the last view</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/restore-view' -->
+      <description>If “true”, Dconf Editor tries at launch to navigate to the path described in the “saved-view” key.</description>
+    </key>
+    <key name="saved-pathbar-path" type="s">
+      <default>'/'</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/saved-pathbar-path' -->
+      <summary>A path to restore the pathbar state</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/saved-pathbar-path' -->
+      <description>If the “restore-view” key is set to “true”, and if the path requested at startup is a parent path of this one, Dconf Editor tries to restore the pathbar state at this path.</description>
+    </key>
+    <key name="saved-view" type="s">
+      <default>'/'</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/saved-view' -->
+      <summary>A path to restore the last view</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/saved-view' -->
+      <description>If the “restore-view” key is set to “true”, Dconf Editor tries at launch to navigate to this path.</description>
+    </key>
+    <key name="show-warning" type="b">
+      <default>true</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/show-warning' -->
+      <summary>Show initial warning</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/show-warning' -->
+      <description>If “true”, Dconf Editor opens a popup when launched reminding the user to be careful.</description>
+    </key>
+    <key name="small-keys-list-rows" type="b">
+      <default>false</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/small-keys-list-rows' -->
+      <summary>A flag to enable small rows for keys list</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/small-keys-list-rows' -->
+      <description>If “true”, the keys list use smaller rows.</description>
+    </key>
+    <key name="behaviour" enum="ca.desrt.dconf-editor.Behaviour">
+      <default>'always-confirm-implicit'</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/behaviour' -->
+      <summary>Change the behaviour of a key value change request</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/behaviour' -->
+      <description>The “unsafe” value is discouraged: for keys that have a non-special-cased type, it updates the key value each time something changes in the entry, so including intermediate states. The “safe” value asks for confirmation in these cases, but allows instant changes for booleans and nullable booleans, enums and flags. The “always-confirm-implicit” and “always-confirm-explicit” values always asks for confirmation, but the first applies the change if you change path whereas the second dismiss it. The “always-delay” value adds each change in delay mode, allowing to apply multiple keys at once.</description>
+    </key>
+    <key name="sort-case-sensitive" type="b">
+      <default>false</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/sort-case-sensitive' -->
+      <summary>A flag to sort keys list case-sensitively</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/sort-case-sensitive' -->
+      <description>GSettings doesn’t allow keys to use upper-case in their names, but installation paths of schemas can. If “true”, the keys list is sorted case-sensitively, with in usual order upper-case folders first.</description>
+    </key>
+    <key type="b" name="mouse-use-extra-buttons">
+      <default>true</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/mouse-use-extra-buttons' -->
+      <summary>Use “Back” and “Forward” mouse button events</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/mouse-use-extra-buttons' -->
+      <description>For users with mice that have buttons for “Forward” and “Back”, this key will determine if any action is taken inside of a browser window when either is pressed.</description>
+    </key>
+    <key type="i" name="mouse-back-button">
+      <default>8</default>
+      <range min="6" max="14"/>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/mouse-back-buttons' -->
+      <summary>Mouse button to activate the “Back” command in browser window</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/mouse-back-buttons' -->
+      <description>For users with mice that have buttons for “Forward” and “Back”, this key will set which button activates the “Back” command in a browser window. Possible values range between 6 and 14.</description>
+    </key>
+    <key type="i" name="mouse-forward-button">
+      <default>9</default>
+      <range min="6" max="14"/>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/mouse-forward-buttons' -->
+      <summary>Mouse button to activate the “Forward” command in browser window</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/mouse-forward-buttons' -->
+      <description>For users with mice that have buttons for “Forward” and “Back”, this key will set which button activates the “Forward” command in a browser window. Possible values range between 6 and 14.</description>
+    </key>
+    <key type="b" name="refresh-settings-schema-source">
+      <default>true</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/refresh-settings-schema-source' -->
+      <summary>A flag to check for added or removed schemas</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/refresh-settings-schema-source' -->
+      <description>Dconf Editor can monitor if schemas are added or removed from the multiple possible locations. That’s done by checking every three seconds if the schemas list has changed. As this way to do is suboptimal, this function can be disabled by setting this flag to “false”. Note that this option will be removed when a better way to do things is found.</description>
+    </key>
+    <key name="relocatable-schemas-enabled-mappings" flags="ca.desrt.dconf-editor.RelocatableSchemasEnabledMappings">
+      <default>['User', 'Built-in', 'Internal', 'Startup']</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/relocatable-schemas-enabled-mappings' -->
+      <summary>Enabled relocatable schema mapping facilities</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/relocatable-schemas-enabled-mappings' -->
+      <description>Flags for the relocatable schemas mapping facilities. “User” enables mappings defined by the “relocatable-schemas-user-paths” key; “Built-in” enables well-known mappings hardcoded into Dconf Editor; “Internal” is reserved for Dconf Editor own mappings; “Startup” is for mapping a relocatable schema from the command-line.</description>
+    </key>
+    <key name="relocatable-schemas-user-paths" type="a{ss}">
+      <default>{'ca.desrt.dconf-editor.Demo.Relocatable':'/ca/desrt/dconf-editor/Demo/relocatable/'}</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/relocatable-schemas-user-paths' -->
+      <summary>Mapping of paths to manually associated schemas</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/relocatable-schemas-user-paths' -->
+      <description>A dictionary that maps schema IDs with path specifications. It is used to allow the user to associate a relocatable schema to certain paths. Path specifications may contain wildcards in the form of empty segments (e.g. /ca/desrt/dconf-editor//), defining possibly multiple paths. The same schema ID may be associated with multiple path specifications.</description>
+    </key>
+    <key name="use-shortpaths" type="b">
+      <default>false</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/use-shortpaths' -->
+      <summary>A flag for skipping unnecessary subfolders</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/use-shortpaths' -->
+      <description>When a folder only contains one subfolder and no keys, Dconf Editor can jump to that subfolder directly. This flag enables that behaviour.</description>
+    </key>
+  </schema>
+  <schema id="ca.desrt.dconf-editor.Bookmarks">
+    <key name="bookmarks" type="as">
+      <default>[]</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/bookmarks' -->
+      <summary>A list of bookmarked paths</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/bookmarks' -->
+      <description>Contains all paths bookmarked by the user as an array of strings.</description>
+    </key>
+    <key name="small-bookmarks-rows" type="b">
+      <default>false</default>
+      <!-- Translators: summary of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/small-bookmarks-rows' -->
+      <summary>A flag to enable small rows for bookmarks list</summary>
+      <!-- Translators: description of a settings key, see 'dconf-editor /ca/desrt/dconf-editor/small-bookmarks-rows' -->
+      <description>If “true”, the bookmarks list use smaller rows.</description>
+    </key>
+  </schema>
+  <enum id="ca.desrt.dconf-editor.DemoEnum">
+    <value value="0" nick="Red"/>
+    <value value="4" nick="White"/>
+    <value value="2" nick="Blue"/>
+    <value value="3" nick="Yellow"/>
+    <value value="1" nick="Green"/>
+  </enum>
+  <flags id="ca.desrt.dconf-editor.DemoFlags">
+    <value value="16" nick="Red"/>      <!-- 0 validates, multiple times; https://bugzilla.gnome.org/show_bug.cgi?id=756735 -->
+    <value value="4" nick="White"/>
+    <value value="2" nick="Blue"/>
+    <value value="8" nick="Yellow"/>
+    <value value="1" nick="Green"/>
+  </flags>
+  <enum id="ca.desrt.dconf-editor.DemoWeirdEnum">
+    <value value="0" nick="only-choice"/>
+  </enum>
+  <schema id="ca.desrt.dconf-editor.Demo" path="/ca/desrt/dconf-editor/Demo/">
+    <child schema="ca.desrt.dconf-editor.Demo.Conflict1" name="conflict1"/>
+    <child schema="ca.desrt.dconf-editor.Demo.Conflict2" name="conflict2"/>
+    <key name="boolean" type="b">
+      <default>true</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/boolean' -->
+      <summary>A boolean, type ‘b’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/boolean' -->
+      <description>Booleans can only take two values, “true” or “false”.</description>
+    </key>
+    <key name="boolean-nullable" type="mb">
+      <default>nothing</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/boolean-nullable' -->
+      <summary>A nullable boolean, type ‘mb’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/boolean-nullable' -->
+      <description>GSettings allows nullable types, that are similar to other types but could take a “nothing” value. A nullable boolean can only take three values, “true”, “false” and “nothing”.</description>
+    </key>
+    <key name="byte" type="y">
+      <default>66</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/byte' -->
+      <summary>A byte (unsigned), type ‘y’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/byte' -->
+      <description>A byte value is an integer between 0 and 255. It may be used to pass around characters.</description>
+    </key>
+    <key name="bytestring" type="ay">
+      <default>[72, 101, 108, 108, 108]</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/bytestring' -->
+      <summary>A bytestring, type ‘ay’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/bytestring' -->
+      <description>The bytestring type is commonly used to pass around strings that may not be valid utf8. In that case, the convention is that the nul terminator character should be included as the last character in the array.</description>
+    </key>
+    <key name="bytestring-array" type="aay">
+      <default>[[72, 101, 108, 108, 108], [87, 111, 114, 108, 100], [33]]</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/bytestring-array' -->
+      <summary>A bytestring array, type ‘aay’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/bytestring-array' -->
+      <description>This is the type of an array of bytestrings. The bytestring type is commonly used to pass around strings that may not be valid utf8.</description>
+    </key>
+    <key name="dbus-handle" type="h">
+      <default>0</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-handle' -->
+      <summary>A D-Bus handle type, type ‘h’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-handle' -->
+      <description>The handle type is a 32-bit signed integer value that is, by convention, used as an index into an array of file descriptors that are sent alongside a D-Bus message.&#xA;&#xA;If you are not interacting with D-Bus, then there is no reason to make use of this type.</description>
+    </key>
+    <key name="dbus-object-path" type="o">
+      <default>'/ca/desrt/dconf_editor'</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-object-path' -->
+      <summary>A D-Bus object path, type ‘o’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-object-path' -->
+      <description>An object path is used to identify D-Bus objects at a given destination on the bus.&#xA;&#xA;If you are not interacting with D-Bus, then there is no reason to make use of this type.</description>
+    </key>
+    <key name="dbus-object-path-array" type="ao">
+      <default>['/ca/desrt/dconf_editor/menus/appmenu', '/ca/desrt/dconf_editor/window/1']</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-object-path-array' -->
+      <summary>A D-Bus object path array, type ‘ao’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-object-path-array' -->
+      <description>An object path array could contain any number of object paths (including none: “[]”).&#xA;&#xA;If you are not interacting with D-Bus, then there is no reason to make use of this type.</description>
+    </key>
+    <key name="dbus-signature" type="g">
+      <default>'ii'</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-signature' -->
+      <summary>A D-Bus signature, type ‘g’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dbus-signature' -->
+      <description>A D-Bus signature is a string used as type signature for a D-Bus method or message.&#xA;&#xA;If you are not interacting with D-Bus, then there is no reason to make use of this type.</description>
+    </key>
+    <key name="dict-entry" type="{ss}">
+      <default>{'color', 'red'}</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dict-entry' -->
+      <summary>A dictionary entry of type ‘{ss}’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dict-entry' -->
+      <description>A dictionary maps values of a basic type to another value (of any type). A dictionary entry is one such mapping.</description>
+    </key>
+    <key name="dictionary" type="a{sv}">
+      <default>{'title': &#60;'Example'&#62;, 'character': &#60;uint32 56&#62;, 'bold': &#60;true&#62;}</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dictionary' -->
+      <summary>A “vardict”, type ‘a{sv}’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/dictionary' -->
+      <description>A dictionary maps values of a basic type to another value (of any type). One simple use case is to map strings to variants.</description>
+    </key>
+    <key name="double" type="d">
+      <default>3.1415926535897933</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/double' -->
+      <summary>A double, type ‘d’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/double' -->
+      <description>A double value could represent any real number.</description>
+    </key>
+    <key name="enumeration" enum="ca.desrt.dconf-editor.DemoEnum">
+      <default>'White'</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/enumeration' -->
+      <summary>A 5-choices enumeration</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/enumeration' -->
+      <description>Enumerations could be done either with the “enum” attribute, or with a “choices” tag.</description>
+    </key>
+    <key name="flags" flags="ca.desrt.dconf-editor.DemoFlags">
+      <default>["Blue", "White", "Red"]</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/flags' -->
+      <summary>Flags: choose-colors-you-love</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/flags' -->
+      <description>Flags could be set by the “enum” attribute.</description>
+    </key>
+    <key name="integer-16-signed" type="n">
+      <default>-32768</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-16-signed' -->
+      <summary>A short integer, type ‘n’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-16-signed' -->
+      <description>A 16-bit signed integer. See also the “integer-16-unsigned” key.</description>
+    </key>
+    <key name="integer-16-unsigned" type="q">
+      <default>65535</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-16-unsigned' -->
+      <summary>An unsigned short integer, type ‘q’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-16-unsigned' -->
+      <description>A 16-bit unsigned integer. See also the “integer-16-signed” key.</description>
+    </key>
+    <key name="integer-32-signed" type="i">
+      <default>-2147483648</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-32-signed' -->
+      <summary>An usual integer, type ‘i’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-32-signed' -->
+      <description>A 32-bit signed integer. See also the “integer-32-unsigned” key.</description>
+    </key>
+    <key name="integer-32-unsigned" type="u">
+      <default>4294967295</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-32-unsigned' -->
+      <summary>An unsigned usual integer, type ‘u’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-32-unsigned' -->
+      <description>A 32-bit unsigned integer. See also the “integer-32-signed” key.</description>
+    </key>
+    <key name="integer-64-signed" type="x">
+      <default>-9223372036854775808</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-64-signed' -->
+      <summary>A long integer, type ‘x’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-64-signed' -->
+      <description>A 64-bit signed integer. See also the “integer-64-unsigned” key.</description>
+    </key>
+    <key name="integer-64-unsigned" type="t">
+      <default>18446744073709551615</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-64-unsigned' -->
+      <summary>An unsigned long integer, type ‘t’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/integer-64-unsigned' -->
+      <description>A 64-bit unsigned integer. See also the “integer-64-signed” key.</description>
+    </key>
+    <!-- TODO add a nullable-(unsigned-)integer -->
+    <key name="number-with-range" type="i">
+      <default>3</default>
+      <range min="-2" max="10"/>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/number-with-range' -->
+      <summary>A number with range</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/number-with-range' -->
+      <description>Every numeral setting (integers and unsigned integers of every type, plus doubles) could be limited to a custom range of values. For example, this integer could only take a value between -2 and 10.</description> <!-- handle do not accept range; TODO mention bytes -->
+    </key>
+    <key name="pair-of-integers" type="(ii)">
+      <default>(800, 600)</default>
+      <!-- Translators: do not forget the parenthesis, they are meaningful; summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/pair-of-integers' -->
+      <summary>A custom type, here ‘(ii)’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/pair-of-integers' -->
+      <description>Dconf Editor lets you edit any settings type supported by GSettings, falling back on a string entry when it doesn’t have a better way to do. Here is a tuple of two 32-bit signed integers.</description>
+    </key>
+    <key name="string" type="s">
+      <default>'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/string' -->
+      <summary>A string, type ‘s’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/string' -->
+      <description>The string type could accept any utf8 string. Note that an empty string “''” is not the same as NULL (nothing); see also the “string-nullable” key.</description>
+    </key>
+    <key name="string-array" type="as">
+      <default>['orange', 'banana', 'pear']</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/string-array' -->
+      <summary>A string array, type ‘as’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/string-array' -->
+      <description>A string array contains any number of strings of whatever length. It may be an empty array, “[]”.</description>
+    </key>
+    <key name="string-nullable" type="ms">
+      <default>nothing</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/string-nullable' -->
+      <summary>A nullable string, type ‘ms’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/string-nullable' -->
+      <description>GSettings allows nullable types, that are similar to other types but could take a “nothing” value. A nullable string can take any string as value, including the empty string “''”, or can be NULL (nothing).</description>
+    </key>
+    <key name="variant" type="v">
+      <default>&#60;@mmb just nothing&#62;</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/variant' -->
+      <summary>A variant, type ‘v’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/variant' -->
+      <description>Variants could be stored inside variants, and consequently as a GSettings type. Their representation use the XML brackets (‘&#60;’ and ‘&#62;’ characters, in a gschema file “&amp;#60;” and “&amp;#62;” respectively), with a parsable representation of their content inside. If unclear, the type can be given in the value with a prefix annotation like “@x” (where “x” is the type string) or “int64”. See https://docs.gtk.org/glib/gvariant-text-format.html for complete documentation.</description>
+    </key>
+    <key name="weird-enum" enum="ca.desrt.dconf-editor.DemoWeirdEnum">
+      <default>'only-choice'</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/weird-enum' -->
+      <summary>A 1-choice enumeration</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/weird-enum' -->
+      <description>An enumeration could contain only one item, but that’s probably an error. Dconf Editor warns you in that case.</description>
+    </key>
+    <key name="weird-range" type="i">
+      <default>5</default>
+      <range min="5" max="5"/>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/weird-range' -->
+      <summary>A 1-choice integer value</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/weird-range' -->
+      <description>A range could limit an integer key to only allow one value, but that’s probably an error. Dconf Editor warns you in that case.</description>
+    </key>
+    <key name="weird-triv" type="()">
+      <default>()</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/weird-triv' -->
+      <summary>The empty tuple, type and value “()”</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/weird-triv' -->
+      <description>There’s an empty tuple type (called sometimes “triv”) that is a tuple with no content, and can only take “()” as value.</description>
+    </key>
+  </schema>
+  <schema id="ca.desrt.dconf-editor.Demo.Empty" path="/ca/desrt/dconf-editor/Demo/Empty/">
+  </schema>
+  <schema id="ca.desrt.dconf-editor.Demo.EmptyRelocatable">
+  </schema>
+  <schema id="ca.desrt.dconf-editor.Demo.Relocatable">
+    <key name="boolean" type="b">
+      <default>false</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/relocatable/boolean' (with default /ca/desrt/dconf-editor/relocatable-* settings) -->
+      <summary>A boolean, type ‘b’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/relocatable/boolean' (with default /ca/desrt/dconf-editor/relocatable-* settings) -->
+      <description>An usual boolean value, defined by a relocatable schema.</description>
+    </key>
+    <key name="integer" type="i">
+      <default>4</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/relocatable/integer' (with default /ca/desrt/dconf-editor/relocatable-* settings) -->
+      <summary>An usual integer, type ‘i’</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/relocatable/integer' (with default /ca/desrt/dconf-editor/relocatable-* settings) -->
+      <description>A 32-bit signed integer, defined by a relocatable schema.</description>
+    </key>
+    <key name="flags" flags="ca.desrt.dconf-editor.DemoFlags">
+      <default>["Blue", "White", "Red"]</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/relocatable/flags' (with default /ca/desrt/dconf-editor/relocatable-* settings) -->
+      <summary>Flags: choose-colors-you-love</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor /ca/desrt/dconf-editor/Demo/relocatable/flags' (with default /ca/desrt/dconf-editor/relocatable-* settings) -->
+      <description>Flags could be set by the “enum” attribute.</description>
+    </key>
+  </schema>
+  <schema id="ca.desrt.dconf-editor.Demo.Conflict1" path="/ca/desrt/dconf-editor/Demo/Conflict/">
+    <key name="a-non-conflicting-key" type="b">
+      <default>true</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 a-non-conflicting-key' -->
+      <summary>A normal non-conflicting key from Conflict1</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 a-non-conflicting-key' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. Non-conflicting keys should have no issues.</description>
+    </key>
+    <key name="default-value-conflict" type="i">
+      <default>1</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 default-value-conflict' -->
+      <summary>Conflicting key defaulting to “1” that should give an error</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 default-value-conflict' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It shouldn’t be editable as a key mapped to the same path has a different default value.</description>
+    </key>
+    <key name="range-conflict" type="u">
+      <default>0</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 range-conflict' -->
+      <summary>Conflicting key with no range that should give an error</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 range-conflict' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It shouldn’t be editable as a key mapped to the same path has a different range.</description>
+    </key>
+    <key name="type-conflict" type="s">
+      <default>'test'</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 type-conflict' -->
+      <summary>A (simple) string conflicting key that should give a error</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 type-conflict' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It shouldn’t be editable as a key mapped to the same path has a different type.</description>
+    </key>
+    <key name="warning-similar" type="b">
+      <default>true</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 warning-similar' -->
+      <summary>Conflicting key from Conflict1 that should give a warning</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict1 warning-similar' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It can be edited, since the types are compatible, but it is still an issue.</description>
+    </key>
+  </schema>
+  <schema id="ca.desrt.dconf-editor.Demo.Conflict2" path="/ca/desrt/dconf-editor/Demo/Conflict/">
+    <key name="another-non-conflicting-key" type="b">
+      <default>true</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 another-non-conflicting-key' -->
+      <summary>A normal non-conflicting key from Conflict2</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 another-non-conflicting-key' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. Non-conflicting keys should have no issues.</description>
+    </key>
+    <key name="default-value-conflict" type="i">
+      <default>2</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 default-value-conflict' -->
+      <summary>Conflicting key defaulting to “2” that should give an error</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 default-value-conflict' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It shouldn’t be editable as a key mapped to the same path has a different default value.</description>
+    </key>
+    <key name="range-conflict" type="u">
+      <default>0</default>
+      <range min="0" max="5"/>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 range-conflict' -->
+      <summary>Conflicting key with range 0~5 that should give an error</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 range-conflict' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It shouldn’t be editable as a key mapped to the same path has a different range.</description>
+    </key>
+    <key name="type-conflict" type="ms">
+      <default>'test'</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 type-conflict' -->
+      <summary>A nullable-string conflicting key that should give an error</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 type-conflict' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It shouldn’t be editable as a key mapped to the same path has a different type.</description>
+    </key>
+    <key name="warning-similar" type="b">
+      <default>true</default>
+      <!-- Translators: summary of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 warning-similar' -->
+      <summary>Conflicting key from Conflict2 that should give a warning</summary>
+      <!-- Translators: description of a demo key, see 'dconf-editor ca.desrt.dconf-editor.Demo.Conflict2 warning-similar' -->
+      <description>This key is a test for multiple schemas in the same path with conflicting keys. It can be edited, since the types are compatible, but it is still an issue.</description>
+    </key>
+  </schema>
+</schemalist>

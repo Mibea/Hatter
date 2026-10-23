@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/ibus/engine/hangul/"
+          id="org.freedesktop.ibus.engine.hangul">
+    <key name="hangul-keyboard" type="s">
+      <default>'2'</default>
+      <summary>Hangul keyboard</summary>
+      <description></description>
+    </key>
+    <key name="initial-input-mode" type="s">
+      <default>'latin'</default>
+      <summary>Initial input mode</summary>
+      <description></description>
+    </key>
+    <key name="word-commit" type="b">
+      <default>false</default>
+      <summary>Word commit</summary>
+      <description></description>
+    </key>
+    <key name="auto-reorder" type="b">
+      <default>true</default>
+      <summary>Auto reorder</summary>
+      <description></description>
+    </key>
+    <key name="switch-keys" type="s">
+      <default>'Hangul,Shift+space'</default>
+      <summary>Switch keys</summary>
+      <description></description>
+    </key>
+    <key name="hanja-keys" type="s">
+      <default>'Hangul_Hanja,F9'</default>
+      <summary>Hanja keys</summary>
+      <description></description>
+    </key>
+    <key name="on-keys" type="s">
+      <default>''</default>
+      <summary>On keys</summary>
+      <description></description>
+    </key>
+    <key name="off-keys" type="s">
+      <default>'Escape'</default>
+      <summary>Off keys</summary>
+      <description></description>
+    </key>
+    <key name="disable-latin-mode" type="b">
+      <default>false</default>
+      <summary>Disable Latin mode</summary>
+      <description></description>
+    </key>
+    <key name="use-event-forwarding" type="b">
+      <default>true</default>
+      <summary>Enable event forwarding workaround</summary>
+      <description></description>
+    </key>
+    <key name="preedit-mode" type="s">
+      <choices>
+	<choice value="none" />
+	<choice value="syllable" />
+	<choice value="word" />
+      </choices>
+      <default>'syllable'</default>
+      <summary>Preedit mode</summary>
+      <description></description>
+    </key>
+  </schema>
+</schemalist>

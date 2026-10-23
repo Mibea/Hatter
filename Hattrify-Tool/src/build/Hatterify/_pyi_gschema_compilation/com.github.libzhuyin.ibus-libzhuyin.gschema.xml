@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schemalist>
+  <schema path="/com/github/libzhuyin/ibus-libzhuyin/" id="com.github.libzhuyin.ibus-libzhuyin">
+    <key name="always-input-num" type="b">
+      <default>false</default>
+      <summary>Always Input Numbers by Input Pad</summary>
+    </key>
+    <key name="candidate-keys" type="s">
+      <default>'1234567890'</default>
+      <summary>Candidate Choose Keys</summary>
+    </key>
+    <key name="candidate-num" type="i">
+      <default>10</default>
+      <summary>Candidates per Page</summary>
+    </key>
+    <key name="candidates-after-cursor" type="b">
+      <default>true</default>
+      <summary>Show Candidates After the Cursor</summary>
+    </key>
+    <key name="chinese-mode" type="b">
+      <default>true</default>
+      <summary>Use Chinese Mode When Start-up</summary>
+    </key>
+    <key name="easy-symbol" type="b">
+      <default>true</default>
+      <summary>Easy Symbols</summary>
+    </key>
+    <key name="full-half-width" type="b">
+      <default>false</default>
+      <summary>Use Full Width When Start-up</summary>
+    </key>
+    <key name="fuzzy-zhuyin" type="b">
+      <default>false</default>
+      <summary>Fuzzy Zhuyin</summary>
+    </key>
+    <key name="fuzzy-zhuyin-an-ang" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for an and ang</summary>
+    </key>
+    <key name="fuzzy-zhuyin-en-eng" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for en and eng</summary>
+    </key>
+    <key name="fuzzy-zhuyin-in-ing" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for in and ing</summary>
+    </key>
+    <key name="fuzzy-zhuyin-f-h" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for f and h</summary>
+    </key>
+    <key name="fuzzy-zhuyin-g-k" type="b">
+      <default>false</default>
+      <summary>Fuzzy Zhuyin for g and k</summary>
+    </key>
+    <key name="fuzzy-zhuyin-l-n" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for l and n</summary>
+    </key>
+    <key name="fuzzy-zhuyin-l-r" type="b">
+      <default>false</default>
+      <summary>Fuzzy Zhuyin for l and r</summary>
+    </key>
+    <key name="fuzzy-zhuyin-c-ch" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for c and ch</summary>
+    </key>
+    <key name="fuzzy-zhuyin-s-sh" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for s and sh</summary>
+    </key>
+    <key name="fuzzy-zhuyin-z-zh" type="b">
+      <default>true</default>
+      <summary>Fuzzy Zhuyin for z and zh</summary>
+    </key>
+    <key name="keyboard-layout" type="i">
+      <default>0</default>
+      <summary>Keyboard Layout</summary>
+    </key>
+    <key name="need-tone" type="b">
+      <default>true</default>
+      <summary>Need tone information</summary>
+    </key>
+    <key name="space-show-candidates" type="b">
+      <default>false</default>
+      <summary>Use Space Key to Show Candidates</summary>
+    </key>
+    <key name="traditional-chinese" type="b">
+      <default>true</default>
+      <summary>Use Traditional Chinese When Start-up</summary>
+    </key>
+    <key name="user-symbol" type="b">
+      <default>true</default>
+      <summary>Use Symbols</summary>
+    </key>
+    <key name="import-dictionary" type="s">
+      <default>''</default>
+      <summary>Import Dictionary</summary>
+    </key>
+    <key name="clear-user-data" type="s">
+      <default>''</default>
+      <summary>Clean User Data</summary>
+    </key>
+  </schema>
+</schemalist>

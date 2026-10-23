@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="video-downloader">
+  <schema id="com.github.unrud.VideoDownloader" path="/com/github/unrud/VideoDownloader/">
+    <key type="s" name="download-folder">
+      <default>'xdg-download/VideoDownloader'</default>
+    </key>
+
+    <key type="b" name="prefer-mpeg">
+      <default>false</default>
+    </key>
+
+    <key type="as" name="automatic-subtitles">
+      <default>[]</default>
+    </key>
+
+    <key type="s" name="mode">
+      <choices>
+        <choice value="audio"/>
+        <choice value="video"/>
+      </choices>
+      <default>'audio'</default>
+    </key>
+
+    <key type="u" name="resolution">
+      <default>1080</default>
+    </key>
+  </schema>
+</schemalist>

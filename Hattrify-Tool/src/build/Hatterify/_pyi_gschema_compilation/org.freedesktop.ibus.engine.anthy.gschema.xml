@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/ibus/engine/anthy/common/"
+          id="org.freedesktop.ibus.engine.anthy.common">
+    <key name="input-mode" type="i">
+      <default>0</default>
+      <summary>Input Mode</summary>
+      <description></description>
+    </key>
+    <key name="typing-method" type="i">
+      <default>0</default>
+      <summary>Typing Mode</summary>
+      <description></description>
+    </key>
+    <key name="conversion-segment-mode" type="i">
+      <default>0</default>
+      <summary>Conversion Segment Mode</summary>
+      <description></description>
+    </key>
+    <key name="show-input-mode" type="b">
+      <default>true</default>
+      <summary>Show Input Mode</summary>
+      <description></description>
+    </key>
+    <key name="show-typing-method" type="b">
+      <default>false</default>
+      <summary>Show Typing Mode</summary>
+      <description></description>
+    </key>
+    <key name="show-segment-mode" type="b">
+      <default>false</default>
+      <summary>Show Segment Mode</summary>
+      <description></description>
+    </key>
+    <key name="show-dict-mode" type="b">
+      <default>true</default>
+      <summary>Show Dictionary Mode</summary>
+      <description></description>
+    </key>
+    <key name="show-dict-config" type="b">
+      <default>false</default>
+      <summary>Show Dictionary Configuration</summary>
+      <description></description>
+    </key>
+    <key name="show-preferences" type="b">
+      <default>true</default>
+      <summary>Show Preferences</summary>
+      <description></description>
+    </key>
+    <key name="period-style" type="i">
+      <default>0</default>
+      <summary>Period Style</summary>
+      <description></description>
+    </key>
+    <key name="symbol-style" type="i">
+      <default>1</default>
+      <summary>Symbol Style</summary>
+      <description></description>
+    </key>
+    <key name="ten-key-mode" type="i">
+      <default>1</default>
+      <summary>Ten Key Mode</summary>
+      <description></description>
+    </key>
+    <key name="behavior-on-focus-out" type="i">
+      <default>0</default>
+      <summary>Behavior on Focus out</summary>
+      <description></description>
+    </key>
+    <key name="behavior-on-period" type="i">
+      <default>0</default>
+      <summary>Behavior on Period</summary>
+      <description></description>
+    </key>
+    <key name="trigger-periods" type="s">
+      <default>',.、。，．'</default>
+      <summary>Trigger Periods</summary>
+      <description></description>
+    </key>
+    <key name="page-size" type="i">
+      <default>10</default>
+      <summary>Page Size</summary>
+      <description></description>
+    </key>
+    <key name="half-width-symbol" type="b">
+      <default>false</default>
+      <summary>Half Width Symbol</summary>
+      <description></description>
+    </key>
+    <key name="half-width-number" type="b">
+      <default>false</default>
+      <summary>Half Width Number</summary>
+      <description></description>
+    </key>
+    <key name="half-width-space" type="b">
+      <default>false</default>
+      <summary>Half Width Space</summary>
+      <description></description>
+    </key>
+    <key name="latin-with-shift" type="b">
+      <default>true</default>
+      <summary>Latin with Shift</summary>
+      <description></description>
+    </key>
+    <key name="shortcut-type" type="s">
+      <default>'default'</default>
+      <summary>Shortcut Type</summary>
+      <description></description>
+    </key>
+    <key name="dict-admin-command" type="as">
+      <default>['/usr/bin/kasumi-unicode', 'kasumi-unicode']</default>
+      <summary>Dictionary Administration Command</summary>
+      <description></description>
+    </key>
+    <key name="add-word-command" type="as">
+      <default>['/usr/bin/kasumi-unicode', 'kasumi-unicode', '-a']</default>
+      <summary>Add Word Command</summary>
+      <description></description>
+    </key>
+    <key name="dict-config-icon" type="s">
+      <default>'/usr/share/pixmaps/kasumi.png'</default>
+      <summary>Dictionary configuration icon</summary>
+      <description></description>
+    </key>
+    <key name="keyboard-layouts" type="as">
+      <default>['default', 'jp', 'us',
+                'jp[ctrl:swapcaps]', 'us[ctrl:swapcaps]',
+                'jp[ctrl:swapcaps,compose:rctrl]',
+                'us[ctrl:swapcaps,compose:rctrl]',
+                'jp[japan:kana_lock]',
+                'jp[japan:nicola_f_bs]',
+                'jp[japan:nicola_f_bs,ctrl:swapcaps]',
+                'jp[japan:hztg_escape]',
+                'jp[japan:hztg_escape,ctrl:swapcaps]'
+               ]
+      </default>
+      <summary>Keyboard Layouts</summary>
+      <description></description>
+    </key>
+  </schema>
+  <schema path="/org/freedesktop/ibus/engine/anthy/romaji-typing-rule/"
+          id="org.freedesktop.ibus.engine.anthy.romaji-typing-rule">
+    <key name="method" type="s">
+      <default>'default'</default>
+      <summary>Method</summary>
+      <description></description>
+    </key>
+    <key name="list" type="a{sv}">
+      <!--
+      ##0 MS-IME
+      # http://www.filibeto.org/sun/lib/solaris10-docs/E19253-01/819-7844/appe-1-4/index.html
+      ##1 ATOK
+      # http://www.filibeto.org/sun/lib/solaris10-docs/E19253-01/819-7844/appe-1-3/index.html
+      ##2 Gairaigo http://ja.wikipedia.org/wiki/%E5%A4%96%E6%9D%A5%E8%AA%9E
+      ##3 ANSI/BSI Suggestions http://en.wikipedia.org/wiki/Katakana
+      ##4 Historical kana http://en.wikipedia.org/wiki/Romanization_of_Japanese
+      # Maybe we need a compatibility between MS-IME and ibus-anthy.
+      -->
+      <default>
+        {
+          'default': &lt;{
+            'minus'                 : &lt;'ー'&gt;,
+            'a'                     : &lt;'あ'&gt;,
+            'i'                     : &lt;'い'&gt;,
+            'u'                     : &lt;'う'&gt;,
+            'e'                     : &lt;'え'&gt;,
+            'o'                     : &lt;'お'&gt;,
+            'x-a'                   : &lt;'ぁ'&gt;,
+            'x-i'                   : &lt;'ぃ'&gt;,
+            'x-u'                   : &lt;'ぅ'&gt;,
+            'x-e'                   : &lt;'ぇ'&gt;,
+            'x-o'                   : &lt;'ぉ'&gt;,
+            'l-a'                   : &lt;'ぁ'&gt;,
+            'l-i'                   : &lt;'ぃ'&gt;,
+            'l-u'                   : &lt;'ぅ'&gt;,
+            'l-e'                   : &lt;'ぇ'&gt;,
+            'l-o'                   : &lt;'ぉ'&gt;,
+            'w-h-a'                 : &lt;'うぁ'&gt;,
+            'w-h-i'                 : &lt;'うぃ'&gt;,
+            'w-h-e'                 : &lt;'うぇ'&gt;,
+            'w-h-o'                 : &lt;'うぉ'&gt;,
+            'w-y-a'                 : &lt;'うゃ'&gt;, <!-- ##2 -->
+            'w-y-u'                 : &lt;'うゅ'&gt;, <!-- ##2 -->
+            'w-y-o'                 : &lt;'うょ'&gt;, <!-- ##2 -->
+            'v-a'                   : &lt;'ヴぁ'&gt;,
+            'v-i'                   : &lt;'ヴぃ'&gt;,
+            'v-u'                   : &lt;'ヴ'&gt;,
+            'v-e'                   : &lt;'ヴぇ'&gt;,
+            'v-o'                   : &lt;'ヴぉ'&gt;,
+            'v-y-a'                 : &lt;'ヴゃ'&gt;,   <!-- ##2 -->
+            'v-y-u'                 : &lt;'ヴゅ'&gt;,   <!-- ##2 -->
+            'v-y-e'                 : &lt;'ヴぃぇ'&gt;, <!-- ##2 -->
+            'v-y-o'                 : &lt;'ヴょ'&gt;,   <!-- ##2 -->
+            'k-a'                   : &lt;'か'&gt;,
+            'k-i'                   : &lt;'き'&gt;,
+            'k-u'                   : &lt;'く'&gt;,
+            'k-e'                   : &lt;'け'&gt;,
+            'k-o'                   : &lt;'こ'&gt;,
+            'l-k-a'                 : &lt;'ヵ'&gt;,
+            'l-k-e'                 : &lt;'ヶ'&gt;,
+<!--          'x-k-a'                 : &lt;'ゕ'&gt;,          -->
+            'x-k-a'                 : &lt;'ヵ'&gt;,
+<!--          'x-k-e'                 : &lt;'ゖ'&gt;,          -->
+            'x-k-e'                 : &lt;'ヶ'&gt;,
+            'g-a'                   : &lt;'が'&gt;,
+            'g-i'                   : &lt;'ぎ'&gt;,
+            'g-u'                   : &lt;'ぐ'&gt;,
+            'g-e'                   : &lt;'げ'&gt;,
+            'g-o'                   : &lt;'ご'&gt;,
+            'k-y-a'                 : &lt;'きゃ'&gt;,
+            'k-y-i'                 : &lt;'きぃ'&gt;,
+            'k-y-u'                 : &lt;'きゅ'&gt;,
+            'k-y-e'                 : &lt;'きぇ'&gt;,
+            'k-y-o'                 : &lt;'きょ'&gt;,
+            'k-w-a'                 : &lt;'くぁ'&gt;,
+            'k-w-i'                 : &lt;'くぃ'&gt;,  <!-- ##2 -->
+            'k-w-u'                 : &lt;'くぅ'&gt;,  <!-- ##2 -->
+            'k-w-e'                 : &lt;'くぇ'&gt;,  <!-- ##2 -->
+            'k-w-o'                 : &lt;'くぉ'&gt;,  <!-- ##2 -->
+            'g-y-a'                 : &lt;'ぎゃ'&gt;,
+            'g-y-i'                 : &lt;'ぎぃ'&gt;,
+            'g-y-u'                 : &lt;'ぎゅ'&gt;,
+            'g-y-e'                 : &lt;'ぎぇ'&gt;,
+            'g-y-o'                 : &lt;'ぎょ'&gt;,
+            'g-w-a'                 : &lt;'ぐぁ'&gt;,
+            'g-w-i'                 : &lt;'ぐぃ'&gt;,  <!-- ##2 -->
+            'g-w-u'                 : &lt;'ぐぅ'&gt;,  <!-- ##2 -->
+            'g-w-e'                 : &lt;'ぐぇ'&gt;,  <!-- ##2 -->
+            'g-w-o'                 : &lt;'ぐぉ'&gt;,  <!-- ##2 -->
+            's-a'                   : &lt;'さ'&gt;,
+            's-i'                   : &lt;'し'&gt;,
+            's-u'                   : &lt;'す'&gt;,
+            's-e'                   : &lt;'せ'&gt;,
+            's-o'                   : &lt;'そ'&gt;,
+            'z-a'                   : &lt;'ざ'&gt;,
+            'z-i'                   : &lt;'じ'&gt;,
+            'z-u'                   : &lt;'ず'&gt;,
+            'z-e'                   : &lt;'ぜ'&gt;,
+            'z-o'                   : &lt;'ぞ'&gt;,
+            's-y-a'                 : &lt;'しゃ'&gt;,
+            's-y-i'                 : &lt;'しぃ'&gt;,
+            's-y-u'                 : &lt;'しゅ'&gt;,
+            's-y-e'                 : &lt;'しぇ'&gt;,
+            's-y-o'                 : &lt;'しょ'&gt;,
+            's-h-a'                 : &lt;'しゃ'&gt;,
+            's-h-i'                 : &lt;'し'&gt;,
+            's-h-u'                 : &lt;'しゅ'&gt;,
+            's-h-e'                 : &lt;'しぇ'&gt;,
+            's-h-o'                 : &lt;'しょ'&gt;,
+            'z-y-a'                 : &lt;'じゃ'&gt;,
+            'z-y-i'                 : &lt;'じぃ'&gt;,
+            'z-y-u'                 : &lt;'じゅ'&gt;,
+            'z-y-e'                 : &lt;'じぇ'&gt;,
+            'z-y-o'                 : &lt;'じょ'&gt;,
+            'j-a'                   : &lt;'じゃ'&gt;,
+            'j-y-a'                 : &lt;'じゃ'&gt;,
+            'j-i'                   : &lt;'じ'&gt;,
+            'j-y-i'                 : &lt;'じぃ'&gt;,
+            'j-u'                   : &lt;'じゅ'&gt;,
+            'j-y-u'                 : &lt;'じゅ'&gt;,
+            'j-e'                   : &lt;'じぇ'&gt;,
+            'j-y-e'                 : &lt;'じぇ'&gt;,
+            'j-o'                   : &lt;'じょ'&gt;,
+            'j-y-o'                 : &lt;'じょ'&gt;,
+            's-w-i'                 : &lt;'すぅぃ'&gt;,  <!-- ##2 -->
+            's-w-e'                 : &lt;'すぇ'&gt;,    <!-- ##2 -->
+            'z-w-e'                 : &lt;'ずぇ'&gt;,    <!-- ##2 -->
+            't-a'                   : &lt;'た'&gt;,
+            't-i'                   : &lt;'ち'&gt;,
+            't-u'                   : &lt;'つ'&gt;,
+            't-s-u'                 : &lt;'つ'&gt;,
+            't-e'                   : &lt;'て'&gt;,
+            't-o'                   : &lt;'と'&gt;,
+            'd-a'                   : &lt;'だ'&gt;,
+            'd-i'                   : &lt;'ぢ'&gt;,
+            'd-u'                   : &lt;'づ'&gt;,
+            'd-e'                   : &lt;'で'&gt;,
+            'd-o'                   : &lt;'ど'&gt;,
+            'x-t-u'                 : &lt;'っ'&gt;,
+            'x-t-s-u'               : &lt;'っ'&gt;,
+            'l-t-u'                 : &lt;'っ'&gt;,
+            'l-t-s-u'               : &lt;'っ'&gt;,
+            't-y-a'                 : &lt;'ちゃ'&gt;,
+            't-y-i'                 : &lt;'ちぃ'&gt;,
+            't-y-u'                 : &lt;'ちゅ'&gt;,
+            't-y-e'                 : &lt;'ちぇ'&gt;,
+            't-y-o'                 : &lt;'ちょ'&gt;,
+            'c-y-a'                 : &lt;'ちゃ'&gt;,
+            'c-y-i'                 : &lt;'ちぃ'&gt;,
+            'c-y-u'                 : &lt;'ちゅ'&gt;,
+            'c-y-e'                 : &lt;'ちぇ'&gt;,
+            'c-y-o'                 : &lt;'ちょ'&gt;,
+            'c-h-a'                 : &lt;'ちゃ'&gt;,
+            'c-h-i'                 : &lt;'ち'&gt;,
+            'c-h-u'                 : &lt;'ちゅ'&gt;,
+            'c-h-e'                 : &lt;'ちぇ'&gt;,
+            'c-h-o'                 : &lt;'ちょ'&gt;,
+            'd-y-a'                 : &lt;'ぢゃ'&gt;,
+            'd-y-i'                 : &lt;'ぢぃ'&gt;,
+            'd-y-u'                 : &lt;'ぢゅ'&gt;,
+            'd-y-e'                 : &lt;'ぢぇ'&gt;,
+            'd-y-o'                 : &lt;'ぢょ'&gt;,
+            't-s-a'                 : &lt;'つぁ'&gt;,
+            't-s-i'                 : &lt;'つぃ'&gt;,
+            't-s-e'                 : &lt;'つぇ'&gt;,
+            't-s-o'                 : &lt;'つぉ'&gt;,
+            't-s-y-a'               : &lt;'つゃ'&gt;,    <!-- ##3 -->
+            't-s-y-u'               : &lt;'つゅ'&gt;,    <!-- ##3 -->
+            't-s-y-e'               : &lt;'つぃぇ'&gt;,  <!-- ##3 -->
+            't-s-y-o'               : &lt;'つょ'&gt;,    <!-- ##3 -->
+            'd-z-a'                 : &lt;'づぁ'&gt;,    <!-- ##3 -->
+            'd-z-i'                 : &lt;'づぃ'&gt;,    <!-- ##3 -->
+            'd-z-u'                 : &lt;'づ'&gt;,      <!-- ##4 -->
+            'd-z-e'                 : &lt;'づぇ'&gt;,    <!-- ##3 -->
+            'd-z-o'                 : &lt;'づぉ'&gt;,    <!-- ##3 -->
+            'd-z-y-a'               : &lt;'づゃ'&gt;,    <!-- ##3 -->
+            'd-z-y-u'               : &lt;'づゅ'&gt;,    <!-- ##3 -->
+            'd-z-y-e'               : &lt;'づぃぇ'&gt;,  <!-- ##3 -->
+            'd-z-y-o'               : &lt;'づょ'&gt;,    <!-- ##3 -->
+            't-h-a'                 : &lt;'てゃ'&gt;,
+            't-h-i'                 : &lt;'てぃ'&gt;,
+            't-h-u'                 : &lt;'てゅ'&gt;,
+            't-h-e'                 : &lt;'てぇ'&gt;,
+            't-h-o'                 : &lt;'てょ'&gt;,
+            't-w-u'                 : &lt;'とぅ'&gt;,
+            'd-h-a'                 : &lt;'でゃ'&gt;,
+            'd-h-i'                 : &lt;'でぃ'&gt;,
+            'd-h-u'                 : &lt;'でゅ'&gt;,
+            'd-h-e'                 : &lt;'でぇ'&gt;,
+            'd-h-o'                 : &lt;'でょ'&gt;,
+            'd-w-u'                 : &lt;'どぅ'&gt;,
+            'n-a'                   : &lt;'な'&gt;,
+            'n-i'                   : &lt;'に'&gt;,
+            'n-u'                   : &lt;'ぬ'&gt;,
+            'n-e'                   : &lt;'ね'&gt;,
+            'n-o'                   : &lt;'の'&gt;,
+            'n-y-a'                 : &lt;'にゃ'&gt;,
+            'n-y-i'                 : &lt;'にぃ'&gt;,
+            'n-y-u'                 : &lt;'にゅ'&gt;,
+            'n-y-e'                 : &lt;'にぇ'&gt;,
+            'n-y-o'                 : &lt;'にょ'&gt;,
+            'h-a'                   : &lt;'は'&gt;,
+            'h-i'                   : &lt;'ひ'&gt;,
+            'h-u'                   : &lt;'ふ'&gt;,
+            'h-e'                   : &lt;'へ'&gt;,
+            'h-o'                   : &lt;'ほ'&gt;,
+            'b-a'                   : &lt;'ば'&gt;,
+            'b-i'                   : &lt;'び'&gt;,
+            'b-u'                   : &lt;'ぶ'&gt;,
+            'b-e'                   : &lt;'べ'&gt;,
+            'b-o'                   : &lt;'ぼ'&gt;,
+            'p-a'                   : &lt;'ぱ'&gt;,
+            'p-i'                   : &lt;'ぴ'&gt;,
+            'p-u'                   : &lt;'ぷ'&gt;,
+            'p-e'                   : &lt;'ぺ'&gt;,
+            'p-o'                   : &lt;'ぽ'&gt;,
+            'h-y-a'                 : &lt;'ひゃ'&gt;,
+            'h-y-i'                 : &lt;'ひぃ'&gt;,
+            'h-y-u'                 : &lt;'ひゅ'&gt;,
+            'h-y-e'                 : &lt;'ひぇ'&gt;,
+            'h-y-o'                 : &lt;'ひょ'&gt;,
+            'b-y-a'                 : &lt;'びゃ'&gt;,
+            'b-y-i'                 : &lt;'びぃ'&gt;,
+            'b-y-u'                 : &lt;'びゅ'&gt;,
+            'b-y-e'                 : &lt;'びぇ'&gt;,
+            'b-y-o'                 : &lt;'びょ'&gt;,
+            'p-y-a'                 : &lt;'ぴゃ'&gt;,
+            'p-y-i'                 : &lt;'ぴぃ'&gt;,
+            'p-y-u'                 : &lt;'ぴゅ'&gt;,
+            'p-y-e'                 : &lt;'ぴぇ'&gt;,
+            'p-y-o'                 : &lt;'ぴょ'&gt;,
+            'f-a'                   : &lt;'ふぁ'&gt;,
+            'f-i'                   : &lt;'ふぃ'&gt;,
+            'f-u'                   : &lt;'ふ'&gt;,
+            'f-e'                   : &lt;'ふぇ'&gt;,
+            'f-o'                   : &lt;'ふぉ'&gt;,
+            'f-y-a'                 : &lt;'ふゃ'&gt;,
+            'f-y-i'                 : &lt;'ふぃ'&gt;,
+            'f-y-u'                 : &lt;'ふゅ'&gt;,
+            'f-y-e'                 : &lt;'ふぇ'&gt;,
+            'f-y-o'                 : &lt;'ふょ'&gt;,
+            'b-w-a'                 : &lt;'ぶぁ'&gt;,  <!-- ##2 -->
+            'b-w-e'                 : &lt;'ぶぇ'&gt;,  <!-- ##2 -->
+            'b-w-o'                 : &lt;'ぶぉ'&gt;,  <!-- ##2 -->
+            'p-w-a'                 : &lt;'ぷぁ'&gt;,  <!-- ##2 -->
+            'p-w-e'                 : &lt;'ぷぇ'&gt;,  <!-- ##2 -->
+            'p-w-o'                 : &lt;'ぷぉ'&gt;,  <!-- ##2 -->
+            'm-a'                   : &lt;'ま'&gt;,
+            'm-i'                   : &lt;'み'&gt;,
+            'm-u'                   : &lt;'む'&gt;,
+            'm-e'                   : &lt;'め'&gt;,
+            'm-o'                   : &lt;'も'&gt;,
+            'm-y-a'                 : &lt;'みゃ'&gt;,
+            'm-y-i'                 : &lt;'みぃ'&gt;,
+            'm-y-u'                 : &lt;'みゅ'&gt;,
+            'm-y-e'                 : &lt;'みぇ'&gt;,
+            'm-y-o'                 : &lt;'みょ'&gt;,
+            'y-a'                   : &lt;'や'&gt;,
+            'y-i'                   : &lt;'い'&gt;,
+            'y-u'                   : &lt;'ゆ'&gt;,
+            'y-e'                   : &lt;'いぇ'&gt;,
+            'y-o'                   : &lt;'よ'&gt;,
+            'l-y-a'                 : &lt;'ゃ'&gt;,
+            'l-y-i'                 : &lt;'ぃ'&gt;,
+            'l-y-u'                 : &lt;'ゅ'&gt;,
+            'l-y-e'                 : &lt;'ぇ'&gt;,
+            'l-y-o'                 : &lt;'ょ'&gt;,
+            'x-y-a'                 : &lt;'ゃ'&gt;,
+            'x-y-i'                 : &lt;'ぃ'&gt;,
+            'x-y-u'                 : &lt;'ゅ'&gt;,
+            'x-y-e'                 : &lt;'ぇ'&gt;,
+            'x-y-o'                 : &lt;'ょ'&gt;,
+            'r-a'                   : &lt;'ら'&gt;,
+            'r-i'                   : &lt;'り'&gt;,
+            'r-u'                   : &lt;'る'&gt;,
+            'r-e'                   : &lt;'れ'&gt;,
+            'r-o'                   : &lt;'ろ'&gt;,
+            'r-y-a'                 : &lt;'りゃ'&gt;,
+            'r-y-i'                 : &lt;'りぃ'&gt;,
+            'r-y-u'                 : &lt;'りゅ'&gt;,
+            'r-y-e'                 : &lt;'りぇ'&gt;,
+            'r-y-o'                 : &lt;'りょ'&gt;,
+            'w-a'                   : &lt;'わ'&gt;,
+            'w-i'                   : &lt;'うぃ'&gt;,
+            'w-u'                   : &lt;'う'&gt;,
+            'w-e'                   : &lt;'うぇ'&gt;,
+            'w-o'                   : &lt;'を'&gt;,
+            'l-w-a'                 : &lt;'ゎ'&gt;,
+            'x-w-a'                 : &lt;'ゎ'&gt;,
+            'n-apostrophe'          : &lt;'ん'&gt;,
+            'n-n'                   : &lt;'ん'&gt;,
+            'w-y-i'                 : &lt;'ゐ'&gt;,
+            'w-y-e'                 : &lt;'ゑ'&gt;
+          }&gt;
+        }
+      </default>
+      <summary>List</summary>
+      <description></description>
+    </key>
+  </schema>
+  <schema path="/org/freedesktop/ibus/engine/anthy/kana-typing-rule/"
+          id="org.freedesktop.ibus.engine.anthy.kana-typing-rule">
+    <key name="method" type="s">
+      <default>'jp'</default>
+      <summary>Method</summary>
+      <description></description>
+    </key>
+    <key name="list" type="a{sv}">
+      <default>
+        {
+          'jp': &lt;{
+            <!-- # no modifiers keys -->
+            '1'             : &lt;'ぬ'&gt;,
+            '2'             : &lt;'ふ'&gt;,
+            '3'             : &lt;'あ'&gt;,
+            '4'             : &lt;'う'&gt;,
+            '5'             : &lt;'え'&gt;,
+            '6'             : &lt;'お'&gt;,
+            '7'             : &lt;'や'&gt;,
+            '8'             : &lt;'ゆ'&gt;,
+            '9'             : &lt;'よ'&gt;,
+            '0'             : &lt;'わ'&gt;,
+            'minus'         : &lt;'ほ'&gt;,
+            'asciicircum'   : &lt;'へ'&gt;,
+    
+            'q'             : &lt;'た'&gt;,
+            'w'             : &lt;'て'&gt;,
+            'e'             : &lt;'い'&gt;,
+            'r'             : &lt;'す'&gt;,
+            't'             : &lt;'か'&gt;,
+            'y'             : &lt;'ん'&gt;,
+            'u'             : &lt;'な'&gt;,
+            'i'             : &lt;'に'&gt;,
+            'o'             : &lt;'ら'&gt;,
+            'p'             : &lt;'せ'&gt;,
+            'at'            : &lt;'゛'&gt;,
+            'bracketleft'   : &lt;'゜'&gt;,
+    
+            'a'             : &lt;'ち'&gt;,
+            's'             : &lt;'と'&gt;,
+            'd'             : &lt;'し'&gt;,
+            'f'             : &lt;'は'&gt;,
+            'g'             : &lt;'き'&gt;,
+            'h'             : &lt;'く'&gt;,
+            'j'             : &lt;'ま'&gt;,
+            'k'             : &lt;'の'&gt;,
+            'l'             : &lt;'り'&gt;,
+            'semicolon'     : &lt;'れ'&gt;,
+            'colon'         : &lt;'け'&gt;,
+            'bracketright'  : &lt;'む'&gt;,
+    
+            'z'             : &lt;'つ'&gt;,
+            'x'             : &lt;'さ'&gt;,
+            'c'             : &lt;'そ'&gt;,
+            'v'             : &lt;'ひ'&gt;,
+            'b'             : &lt;'こ'&gt;,
+            'n'             : &lt;'み'&gt;,
+            'm'             : &lt;'も'&gt;,
+            'comma'         : &lt;'ね'&gt;,
+            'period'        : &lt;'る'&gt;,
+            'slash'         : &lt;'め'&gt;,
+<!--              'backslash'     : &lt;'ー'&gt;,                         -->
+            'backslash'     : &lt;'ろ'&gt;,
+    
+            <!-- # shift modifiered keys -->
+            'exclam'        : &lt;'ぬ'&gt;,
+            'quotedbl'      : &lt;'ふ'&gt;,
+            'numbersign'    : &lt;'ぁ'&gt;,
+            'dollar'        : &lt;'ぅ'&gt;,
+            'percent'       : &lt;'ぇ'&gt;,
+            'ampersand'     : &lt;'ぉ'&gt;,
+            'apostrophe'    : &lt;'ゃ'&gt;,
+            'parenleft'     : &lt;'ゅ'&gt;,
+            'parenright'    : &lt;'ょ'&gt;,
+            'asciitilde'    : &lt;'を'&gt;,
+            'equal'         : &lt;'ゑ'&gt;,
+            'bar'           : &lt;'ー'&gt;,
+    
+            'largeq'        : &lt;'た'&gt;,
+            'largew'        : &lt;'て'&gt;,
+            'largee'        : &lt;'ぃ'&gt;,
+            'larger'        : &lt;'す'&gt;,
+            'larget'        : &lt;'ヵ'&gt;,
+            'largey'        : &lt;'ん'&gt;,
+            'largeu'        : &lt;'な'&gt;,
+            'largei'        : &lt;'に'&gt;,
+            'largeo'        : &lt;'ら'&gt;,
+            'largep'        : &lt;'せ'&gt;,
+            'grave'         : &lt;'゛'&gt;,
+    
+            'braceleft'     : &lt;'「'&gt;,
+    
+            'largea'        : &lt;'ち'&gt;,
+            'larges'        : &lt;'と'&gt;,
+            'larged'        : &lt;'し'&gt;,
+            'largef'        : &lt;'ゎ'&gt;,
+            'largeg'        : &lt;'き'&gt;,
+            'largeh'        : &lt;'く'&gt;,
+            'largej'        : &lt;'ま'&gt;,
+            'largek'        : &lt;'の'&gt;,
+            'largel'        : &lt;'り'&gt;,
+            'plus'          : &lt;'れ'&gt;,
+            'asterisk'      : &lt;'ヶ'&gt;,
+    
+            'braceright'    : &lt;'」'&gt;,
+    
+            'largez'        : &lt;'っ'&gt;,
+            'largex'        : &lt;'さ'&gt;,
+            'largec'        : &lt;'そ'&gt;,
+            'largev'        : &lt;'ゐ'&gt;,
+            'largeb'        : &lt;'こ'&gt;,
+            'largen'        : &lt;'み'&gt;,
+            'largem'        : &lt;'も'&gt;,
+            'less'          : &lt;'、'&gt;,
+            'greater'       : &lt;'。'&gt;,
+    
+            'question'      : &lt;'・'&gt;,
+            'underscore'    : &lt;'ろ'&gt;,
+    
+            'yen'           : &lt;'ー'&gt;
+          }&gt;,
+          'us': &lt;{
+            <!-- # no modifiers keys -->
+            'grave'         : &lt;'ろ'&gt;,
+            '1'             : &lt;'ぬ'&gt;,
+            '2'             : &lt;'ふ'&gt;,
+            '3'             : &lt;'あ'&gt;,
+            '4'             : &lt;'う'&gt;,
+            '5'             : &lt;'え'&gt;,
+            '6'             : &lt;'お'&gt;,
+            '7'             : &lt;'や'&gt;,
+            '8'             : &lt;'ゆ'&gt;,
+            '9'             : &lt;'よ'&gt;,
+            '0'             : &lt;'わ'&gt;,
+            'minus'         : &lt;'ほ'&gt;,
+            'equal'         : &lt;'へ'&gt;,
+    
+            'q'             : &lt;'た'&gt;,
+            'w'             : &lt;'て'&gt;,
+            'e'             : &lt;'い'&gt;,
+            'r'             : &lt;'す'&gt;,
+            't'             : &lt;'か'&gt;,
+            'y'             : &lt;'ん'&gt;,
+            'u'             : &lt;'な'&gt;,
+            'i'             : &lt;'に'&gt;,
+            'o'             : &lt;'ら'&gt;,
+            'p'             : &lt;'せ'&gt;,
+            'bracketleft'   : &lt;'゛'&gt;,
+            'bracketright'  : &lt;'゜'&gt;,
+<!--              'backslash'     : &lt;'ー'&gt;,                         -->
+            'backslash'     : &lt;'む'&gt;,
+    
+            'a'             : &lt;'ち'&gt;,
+            's'             : &lt;'と'&gt;,
+            'd'             : &lt;'し'&gt;,
+            'f'             : &lt;'は'&gt;,
+            'g'             : &lt;'き'&gt;,
+            'h'             : &lt;'く'&gt;,
+            'j'             : &lt;'ま'&gt;,
+            'k'             : &lt;'の'&gt;,
+            'l'             : &lt;'り'&gt;,
+            'semicolon'     : &lt;'れ'&gt;,
+            'apostrophe'    : &lt;'け'&gt;,
+    
+            'z'             : &lt;'つ'&gt;,
+            'x'             : &lt;'さ'&gt;,
+            'c'             : &lt;'そ'&gt;,
+            'v'             : &lt;'ひ'&gt;,
+            'b'             : &lt;'こ'&gt;,
+            'n'             : &lt;'み'&gt;,
+            'm'             : &lt;'も'&gt;,
+            'comma'         : &lt;'ね'&gt;,
+            'period'        : &lt;'る'&gt;,
+            'slash'         : &lt;'め'&gt;,
+    
+            <!-- # shift modifiered keys -->
+            'asciitilde'    : &lt;'ろ'&gt;,
+            'exclam'        : &lt;'ぬ'&gt;,
+            'at'            : &lt;'ふ'&gt;,
+            'numbersign'    : &lt;'ぁ'&gt;,
+            'dollar'        : &lt;'ぅ'&gt;,
+            'percent'       : &lt;'ぇ'&gt;,
+            'asciicircum'   : &lt;'ぉ'&gt;,
+            'ampersand'     : &lt;'ゃ'&gt;,
+            'asterisk'      : &lt;'ゅ'&gt;,
+            'parenleft'     : &lt;'ょ'&gt;,
+            'parenright'    : &lt;'を'&gt;,
+            'underscore'    : &lt;'ー'&gt;,
+            'plus'          : &lt;'ゑ'&gt;,
+    
+            'largeq'        : &lt;'た'&gt;,
+            'largew'        : &lt;'て'&gt;,
+            'largee'        : &lt;'ぃ'&gt;,
+            'larger'        : &lt;'す'&gt;,
+            'larget'        : &lt;'ヵ'&gt;,
+            'largey'        : &lt;'ん'&gt;,
+            'largeu'        : &lt;'な'&gt;,
+            'largei'        : &lt;'に'&gt;,
+            'largeo'        : &lt;'ら'&gt;,
+            'largep'        : &lt;'せ'&gt;,
+            'braceleft'     : &lt;'「'&gt;,
+    
+            'braceright'    : &lt;'」'&gt;,
+    
+            'bar'           : &lt;'む'&gt;,
+    
+            'largea'        : &lt;'ち'&gt;,
+            'larges'        : &lt;'と'&gt;,
+            'larged'        : &lt;'し'&gt;,
+            'largef'        : &lt;'ゎ'&gt;,
+            'largeg'        : &lt;'き'&gt;,
+            'largeh'        : &lt;'く'&gt;,
+            'largej'        : &lt;'ま'&gt;,
+            'largek'        : &lt;'の'&gt;,
+            'largel'        : &lt;'り'&gt;,
+            'colon'         : &lt;'れ'&gt;,
+            'quotedbl'      : &lt;'ヶ'&gt;,
+    
+            'largez'        : &lt;'っ'&gt;,
+            'largex'        : &lt;'さ'&gt;,
+            'largec'        : &lt;'そ'&gt;,
+            'largev'        : &lt;'ゐ'&gt;,
+            'largeb'        : &lt;'こ'&gt;,
+            'largen'        : &lt;'み'&gt;,
+            'largem'        : &lt;'も'&gt;,
+            'less'          : &lt;'、'&gt;,
+            'greater'       : &lt;'。'&gt;,
+    
+            'question'      : &lt;'・'&gt;
+          }&gt;
+        }
+      </default>
+      <summary>List</summary>
+      <description></description>
+    </key>
+  </schema>
+  <schema path="/org/freedesktop/ibus/engine/anthy/thumb/"
+          id="org.freedesktop.ibus.engine.anthy.thumb">
+    <key name="keyboard-layout-mode" type="b">
+      <default>true</default>
+      <summary>Keyboard Layout Mode</summary>
+      <description></description>
+    </key>
+    <key name="keyboard-layout" type="i">
+      <default>0</default>
+      <summary>Keyboard Layout</summary>
+      <description></description>
+    </key>
+    <key name="fmv-extension" type="i">
+      <default>2</default>
+      <summary>FMV Extension</summary>
+      <description></description>
+    </key>
+    <key name="handakuten" type="b">
+      <default>false</default>
+      <summary>FMV Extension</summary>
+      <description></description>
+    </key>
+    <key name="rs" type="s">
+      <default>'Henkan'</default>
+      <summary>Right S</summary>
+      <description></description>
+    </key>
+    <key name="ls" type="s">
+      <default>'Muhenkan'</default>
+      <summary>Left S</summary>
+      <description></description>
+    </key>
+    <key name="t1" type="i">
+      <default>100</default>
+      <summary>T1</summary>
+      <description></description>
+    </key>
+    <key name="t2" type="i">
+      <default>75</default>
+      <summary>T2</summary>
+      <description></description>
+    </key>
+  </schema>
+  <schema path="/org/freedesktop/ibus/engine/anthy/thumb-typing-rule/"
+          id="org.freedesktop.ibus.engine.anthy.thumb-typing-rule">
+    <key name="method" type="s">
+      <default>'base'</default>
+      <summary>Method</summary>
+      <description></description>
+    </key>
+    <key name="list" type="a{sv}">
+      <default>
+        {
+          'base': &lt;{
+            'q'             : &lt;['。', '',   'ぁ']&gt;,
+            'w'             : &lt;['か', 'が', 'え']&gt;,
+            'e'             : &lt;['た', 'だ', 'り']&gt;,
+            'r'             : &lt;['こ', 'ご', 'ゃ']&gt;,
+            't'             : &lt;['さ', 'ざ', 'れ']&gt;,
+    
+            'y'             : &lt;['ら', 'よ', 'ぱ']&gt;,
+            'u'             : &lt;['ち', 'に', 'ぢ']&gt;,
+            'i'             : &lt;['く', 'る', 'ぐ']&gt;,
+            'o'             : &lt;['つ', 'ま', 'づ']&gt;,
+            'p'             : &lt;['，',  'ぇ', 'ぴ']&gt;,
+            'at'            : &lt;['、', '',   '']&gt;,
+            'bracketleft'   : &lt;['゛', '゜', '']&gt;,
+    
+            'a'             : &lt;['う', '',   'を']&gt;,
+            's'             : &lt;['し', 'じ', 'あ']&gt;,
+            'd'             : &lt;['て', 'で', 'な']&gt;,
+            'f'             : &lt;['け', 'げ', 'ゅ']&gt;,
+            'g'             : &lt;['せ', 'ぜ', 'も']&gt;,
+    
+            'h'             : &lt;['は', 'み', 'ば']&gt;,
+            'j'             : &lt;['と', 'お', 'ど']&gt;,
+            'k'             : &lt;['き', 'の', 'ぎ']&gt;,
+            'l'             : &lt;['い', 'ょ', 'ぽ']&gt;,
+            'semicolon'     : &lt;['ん', 'っ', '']&gt;,
+    
+            'z'             : &lt;['．',  '',   'ぅ']&gt;,
+            'x'             : &lt;['ひ', 'び', 'ー']&gt;,
+            'c'             : &lt;['す', 'ず', 'ろ']&gt;,
+            'v'             : &lt;['ふ', 'ぶ', 'や']&gt;,
+            'b'             : &lt;['へ', 'べ', 'ぃ']&gt;,
+    
+            'n'             : &lt;['め', 'ぬ', 'ぷ']&gt;,
+            'm'             : &lt;['そ', 'ゆ', 'ぞ']&gt;,
+            'comma'         : &lt;['ね', 'む', 'ぺ']&gt;,
+            'period'        : &lt;['ほ', 'わ', 'ぼ']&gt;,
+            'slash'         : &lt;['・', 'ぉ', '']&gt;,
+    
+            '1'             : &lt;['1',  '',   '？']&gt;,
+            '2'             : &lt;['2',  '',   '／']&gt;,
+            '4'             : &lt;['4',  '',   '「']&gt;,
+            '5'             : &lt;['5',  '',   '」']&gt;,
+    
+            '6'             : &lt;['6',  '［',  '']&gt;,
+            '7'             : &lt;['7',  '］',  '']&gt;,
+            '8'             : &lt;['8',  '（',  '']&gt;,
+            '9'             : &lt;['9',  '）',  '']&gt;,
+            'backslash'     : &lt;['￥', '',  '']&gt;
+          }&gt;,
+          'nicola-j-table': &lt;{
+            'colon'         : &lt;['：', '',   '']&gt;,
+            'at'            : &lt;['、', '',   '']&gt;,
+            'bracketleft'   : &lt;['゛', '゜', '']&gt;,
+            'bracketright'  : &lt;['」', '',   '']&gt;,
+            '8'             : &lt;['8',  '（', '']&gt;,
+            '9'             : &lt;['9',  '）', '']&gt;,
+            '0'             : &lt;['0',  '',   '']&gt;
+          }&gt;,
+          'nicola-a-table': &lt;{
+            'colon'         : &lt;['：', '',   '']&gt;,
+            'at'            : &lt;['＠', '',   '']&gt;,
+            'bracketleft'   : &lt;['、', '',   '']&gt;,
+            'bracketright'  : &lt;['゛', '゜', '']&gt;,
+            '8'             : &lt;['8',  '',   '']&gt;,
+            '9'             : &lt;['9',  '（', '']&gt;,
+            '0'             : &lt;['0',  '）', '']&gt;
+          }&gt;,
+          'nicola-f-table': &lt;{
+            'colon'         : &lt;['、', '',   '']&gt;,
+            'at'            : &lt;['＠', '',   '']&gt;,
+            'bracketleft'   : &lt;['゛', '゜', '']&gt;,
+            'bracketright'  : &lt;['」', '',   '']&gt;,
+            '8'             : &lt;['8',  '（', '']&gt;,
+            '9'             : &lt;['9',  '）', '']&gt;,
+            '0'             : &lt;['0',  '',   '']&gt;
+          }&gt;,
+          'kb231-j-fmv-table': &lt;{
+            '3'             : &lt;['3',  '',   '～']&gt;,
+            '0'             : &lt;['0',  '『', '']&gt;,
+            'minus'         : &lt;['-',  '』', '']&gt;,
+            'equal'         : &lt;['=',  '',   '']&gt;
+          }&gt;,
+          'kb231-a-fmv-table': &lt;{
+            '3'             : &lt;['3',  '',   '～']&gt;,
+            '0'             : &lt;['0',  '）', '']&gt;,
+            'minus'         : &lt;['-',  '『', '']&gt;,
+            'equal'         : &lt;['=',  '』', '']&gt;
+          }&gt;,
+          'kb231-f-fmv-table': &lt;{
+            '3'             : &lt;['3',  '',   '～']&gt;,
+            '0'             : &lt;['0',  '『', '']&gt;,
+            'minus'         : &lt;['-',  '』', '']&gt;,
+            'equal'         : &lt;['=',  '',   '']&gt;
+          }&gt;,
+          'kb611-j-fmv-table': &lt;{
+            'grave'         : &lt;['‘', '',   '']&gt;,
+            'asciicircum'   : &lt;['々', '£',  '']&gt;,
+            'colon'         : &lt;['：', '',   '']&gt;,
+            'at'            : &lt;['、', '¢',  '']&gt;,
+            'bracketleft'   : &lt;['゛', '゜', '']&gt;,
+            <!-- # keysyms are same and keycodes depend on the platforms. -->
+<!--            '￥'            : &lt;[u'￥', u'¬',  u'']&gt;,            -->
+            'backslash'     : &lt;['￥', '¦',  '']&gt;
+          }&gt;,
+          'kb611-a-fmv-table': &lt;{
+            'grave'         : &lt;['々', '',   '£']&gt;,
+            'colon'         : &lt;['：', '',   '']&gt;,
+            'at'            : &lt;['＠', '',   '']&gt;,
+            'bracketleft'   : &lt;['、', '¢',  '']&gt;,
+<!--            '￥'            : &lt;[u'￥', u'¬',  u'']&gt;,            -->
+            'backslash'     : &lt;['￥', '¦',  '']&gt;
+          }&gt;,
+          'kb611-f-fmv-table': &lt;{
+            'grave'         : &lt;['‘', '',   '']&gt;,
+            'asciicircum'   : &lt;['々', '£',  '']&gt;,
+            'colon'         : &lt;['、', '¢',  '']&gt;,
+            'at'            : &lt;['＠', '',   '']&gt;,
+            'bracketleft'   : &lt;['゛', '゜', '']&gt;,
+<!--            '￥'            : &lt;[u'￥', u'¬',  u'']&gt;,           -->
+            'backslash'     : &lt;['￥', '¦',  '']&gt;
+          }&gt;
+        }
+      </default>
+      <summary>List</summary>
+      <description></description>
+    </key>
+  </schema>
+  <schema path="/org/freedesktop/ibus/engine/anthy/dict/"
+          id="org.freedesktop.ibus.engine.anthy.dict">
+    <key name="template" type="v">
+      <default>
+        &lt;('template', '', '', '', false, 300, false, true, false, 'utf-8')&gt;
+      </default>
+      <summary>Template Dictionary</summary>
+      <description></description>
+    </key>
+    <key name="list" type="av">
+    <!-- key type="a(sssbi)" name="dict-items" -->
+      <!-- default>[]</default -->
+      <default>
+        [
+        &lt;('embedded', '般', 'General', '', true, 0, true, true, false, 'utf-8')&gt;,
+        &lt;('zipcode', '〒', 'Zip Code Conversion', '', true, -1, false, true, false, 'utf-8')&gt;,
+        &lt;('symbol', '記', 'Symbol', '', true, -1, true, false, false, 'utf-8')&gt;,
+        &lt;('oldchar', '旧', 'Old Character Style', '', true, -1, false, true, false, 'utf-8')&gt;,
+        &lt;('era', '年', 'Era', '', true, -1, false, true, false, 'utf-8')&gt;,
+        &lt;('emoji', '😊', 'Emoji', '', true, -1, false, true, false, 'utf-8')&gt;
+        ]
+      </default>
+      <summary>Lists</summary>
+      <description></description>
+    </key>
+    <key name="files" type="a{sv}">
+      <default>
+        {
+          'oldchar': &lt;['/usr/share/ibus-anthy/dicts/oldchar.t']&gt;,
+          'era': &lt;['/usr/share/ibus-anthy/dicts/era.t']&gt;,
+          'zipcode': &lt;['/usr/share/ibus-anthy/dicts/zipcode.t']&gt;,
+          'symbol': &lt;['/usr/share/ibus-anthy/dicts/symbol.t']&gt;,
+          'emoji': &lt;['/usr/share/ibus-anthy/dicts/emoji.t']&gt;
+        }
+      </default>
+      <summary>Files</summary>
+      <description></description>
+    </key>
+    <key name="order" type="as">
+      <default>[]</default>
+      <summary>Order</summary>
+      <description></description>
+    </key>
+  </schema>
+  <schema path="/org/freedesktop/ibus/engine/anthy/shortcut/"
+          id="org.freedesktop.ibus.engine.anthy.shortcut">
+    <key name="default" type="a{sv}">
+      <default>
+        {
+          'on_off': &lt;['Zenkaku_Hankaku', 'Ctrl+space', 'Ctrl+J']&gt;,
+          'circle_input_mode': &lt;['Ctrl+comma', 'Ctrl+less']&gt;,
+          <!-- # Removed Hiragana_Katakana key in circle_kana_mode
+                 for latin_with_shift.
+               # Removed Ctrl+period in circle_kana_mode, which is
+                 now Emoji typing on-off shortcut key in IBus core
+                 to follow GNOME desktop.
+               # Ctrl+greater is actually Ctrl+Shift+period in
+                 JP and US layout.
+          -->
+          'circle_kana_mode': &lt;['Ctrl+greater']&gt;,
+<!--          'cancel_pseudo_ascii_mode_key': &lt;['Escape']&gt;,          -->
+          'circle_typing_method': &lt;['Alt+Romaji', 'Ctrl+slash']&gt;,
+          'circle_dict_method': &lt;['Alt+Henkan']&gt;,
+      
+          'insert_space': &lt;['space']&gt;,
+          'insert_alternate_space': &lt;['Shift+space']&gt;,
+          'backspace': &lt;['BackSpace', 'Ctrl+H']&gt;,
+          'delete': &lt;['Delete', 'Ctrl+D']&gt;,
+          'commit': &lt;['Return', 'KP_Enter', 'Ctrl+J', 'Ctrl+M']&gt;,
+          'convert': &lt;['space', 'KP_Space', 'Henkan']&gt;,
+          'predict': &lt;['Tab', 'ISO_Left_Tab']&gt;,
+          'cancel': &lt;['Escape', 'Ctrl+G']&gt;,
+          'reconvert': &lt;['Shift+Henkan']&gt;,
+      
+          'move_caret_first': &lt;['Ctrl+A', 'Home']&gt;,
+          'move_caret_last': &lt;['Ctrl+E', 'End']&gt;,
+          'move_caret_forward': &lt;['Right', 'Ctrl+F']&gt;,
+          'move_caret_backward': &lt;['Left', 'Ctrl+B']&gt;,
+      
+          'select_first_segment': &lt;['Ctrl+A', 'Home']&gt;,
+          'select_last_segment': &lt;['Ctrl+E', 'End']&gt;,
+          'select_next_segment': &lt;['Right', 'Ctrl+F']&gt;,
+          'select_prev_segment': &lt;['Left', 'Ctrl+B']&gt;,
+          'shrink_segment': &lt;['Shift+Left', 'Ctrl+I']&gt;,
+          'expand_segment': &lt;['Shift+Right', 'Ctrl+O']&gt;,
+          'commit_first_segment': &lt;['Shift+Down']&gt;,
+          'commit_selected_segment': &lt;['Ctrl+Down']&gt;,
+      
+          'select_first_candidate': &lt;['Home']&gt;,
+          'select_last_candidate': &lt;['End']&gt;,
+          'select_next_candidate': &lt;['space', 'KP_Space', 'Tab', 'ISO_Left_Tab', 'Henkan', 'Down', 'KP_Add', 'Ctrl+N']&gt;,
+          'select_prev_candidate': &lt;['Shift+Tab', 'Shift+ISO_Left_Tab', 'Up', 'KP_Subtract', 'Ctrl+P']&gt;,
+          'candidates_page_up': &lt;['Page_Up']&gt;,
+          'candidates_page_down': &lt;['Page_Down', 'KP_Tab']&gt;,
+      
+          'select_candidates_1': &lt;['1']&gt;,
+          'select_candidates_2': &lt;['2']&gt;,
+          'select_candidates_3': &lt;['3']&gt;,
+          'select_candidates_4': &lt;['4']&gt;,
+          'select_candidates_5': &lt;['5']&gt;,
+          'select_candidates_6': &lt;['6']&gt;,
+          'select_candidates_7': &lt;['7']&gt;,
+          'select_candidates_8': &lt;['8']&gt;,
+          'select_candidates_9': &lt;['9']&gt;,
+          'select_candidates_0': &lt;['0']&gt;,
+      
+          'convert_to_char_type_forward': &lt;['Muhenkan']&gt;,
+          'convert_to_hiragana': &lt;['F6']&gt;,
+          'convert_to_katakana': &lt;['F7']&gt;,
+          'convert_to_half': &lt;['F8']&gt;,
+          'convert_to_half_katakana': &lt;['Shift+F8']&gt;,
+          'convert_to_wide_latin': &lt;['F9']&gt;,
+          'convert_to_latin': &lt;['F10']&gt;,
+          'convert_to_hiragana_all': &lt;['Shift+F6']&gt;,
+          'convert_to_katakana_all': &lt;['Shift+F7']&gt;,
+          'convert_to_wide_latin_all': &lt;['Shift+F9']&gt;,
+          'convert_to_latin_all': &lt;['Shift+F10']&gt;,
+      
+          'dict_admin': &lt;['F11']&gt;,
+          'add_word': &lt;['F12']&gt;,
+      
+          'hiragana_for_latin_with_shift': &lt;['Hiragana_Katakana']&gt;
+        }
+      </default>
+      <summary>Default</summary>
+      <description></description>
+    </key>
+    <key name="atok" type="a{sv}">
+      <default>
+        {
+          'on_off': &lt;['Henkan', 'Eisu_toggle', 'Zenkaku_Hankaku']&gt;,
+          'circle_input_mode': &lt;['F10']&gt;,
+          'hiragana_mode': &lt;['Hiragana_Katakana']&gt;,
+          'katakana_mode': &lt;['Shift+Hiragana_Katakana']&gt;,
+          'circle_typing_method': &lt;['Romaji', 'Alt+Romaji']&gt;,
+          'circle_dict_method': &lt;['Alt+Henkan']&gt;,
+          'convert': &lt;['space', 'Henkan', 'Shift+space', 'Shift+Henkan']&gt;,
+          'predict': &lt;['Tab']&gt;,
+          'cancel': &lt;['Escape', 'BackSpace', 'Ctrl+H', 'Ctrl+bracketleft']&gt;,
+          'commit': &lt;['Return', 'Ctrl+M']&gt;,
+          'reconvert': &lt;['Shift+Henkan']&gt;,
+      
+          'insert_space': &lt;['space']&gt;,
+          'insert_alternate_space': &lt;['Shift+space']&gt;,
+          'backspace': &lt;['BackSpace', 'Ctrl+H']&gt;,
+          'delete': &lt;['Delete', 'Ctrl+G']&gt;,
+      
+          'move_caret_backward': &lt;['Left', 'Ctrl+K']&gt;,
+          'move_caret_forward': &lt;['Right', 'Ctrl+L']&gt;,
+          'move_caret_first': &lt;['Ctrl+Left']&gt;,
+          'move_caret_last': &lt;['Ctrl+Right']&gt;,
+      
+          'select_prev_segment': &lt;['Shift+Left']&gt;,
+          'select_next_segment': &lt;['Shift+Right']&gt;,
+          'select_first_segment': &lt;['Ctrl+Left']&gt;,
+          'select_last_segment': &lt;['Ctrl+Right']&gt;,
+          'expand_segment': &lt;['Right', 'Ctrl+L']&gt;,
+          'shrink_segment': &lt;['Left', 'Ctrl+K']&gt;,
+          'commit_selected_segment': &lt;['Down', 'Ctrl+N']&gt;,
+      
+          'candidates_page_up': &lt;['Shift+Henkan', 'Page_Up']&gt;,
+          'candidates_page_down': &lt;['Henkan', 'Page_Down']&gt;,
+          'select_next_candidate': &lt;['space', 'Tab', 'Henkan', 'Shift+space', 'Shift+Henkan']&gt;,
+          'select_prev_candidate': &lt;['Up']&gt;,
+      
+          'select_candidates_1': &lt;['1']&gt;,
+          'select_candidates_2': &lt;['2']&gt;,
+          'select_candidates_3': &lt;['3']&gt;,
+          'select_candidates_4': &lt;['4']&gt;,
+          'select_candidates_5': &lt;['5']&gt;,
+          'select_candidates_6': &lt;['6']&gt;,
+          'select_candidates_7': &lt;['7']&gt;,
+          'select_candidates_8': &lt;['8']&gt;,
+          'select_candidates_9': &lt;['9']&gt;,
+          'select_candidates_0': &lt;['0']&gt;,
+      
+          'convert_to_hiragana': &lt;['F6', 'Ctrl+U']&gt;,
+          'convert_to_katakana': &lt;['F7', 'Ctrl+I']&gt;,
+          'convert_to_half': &lt;['F8', 'Ctrl+O']&gt;,
+          'convert_to_half_katakana': &lt;['Shift+F8']&gt;,
+          'convert_to_wide_latin': &lt;['F9', 'Ctrl+P']&gt;,
+          'convert_to_latin': &lt;['F10', 'Ctrl+at']&gt;,
+          'convert_to_hiragana_all': &lt;['Shift+F6']&gt;,
+          'convert_to_katakana_all': &lt;['Shift+F7']&gt;,
+          'convert_to_wide_latin_all': &lt;['Shift+F9']&gt;,
+          'convert_to_latin_all': &lt;['Shift+F10']&gt;,
+      
+          'dict_admin': &lt;['F11']&gt;,
+          'add_word': &lt;['Ctrl+F7']&gt;,
+      
+          'hiragana_for_latin_with_shift': &lt;['Ctrl+J']&gt;
+        }
+      </default>
+      <summary>ATOK</summary>
+      <description></description>
+    </key>
+    <key name="wnn" type="a{sv}">
+      <default>
+        {
+          'on_off': &lt;['Shift+space']&gt;,
+          'convert': &lt;['space']&gt;,
+          'predict': &lt;['Ctrl+Q']&gt;,
+          'cancel': &lt;['Escape', 'Ctrl+G', 'Alt+Down', 'Muhenkan']&gt;,
+          'commit': &lt;['Ctrl+L', 'Ctrl+M', 'Ctrl+J', 'Return']&gt;,
+          'insert_space': &lt;['space']&gt;,
+          'backspace': &lt;['Ctrl+H', 'BackSpace']&gt;,
+          'delete': &lt;['Ctrl+D', 'Delete']&gt;,
+          'circle_dict_method': &lt;['Alt+Henkan']&gt;,
+      
+          'move_caret_backward': &lt;['Ctrl+B', 'Left']&gt;,
+          'move_caret_forward': &lt;['Ctrl+F', 'Right']&gt;,
+          'move_caret_first': &lt;['Ctrl+A', 'Alt+Left']&gt;,
+          'move_caret_last': &lt;['Ctrl+E', 'Alt+Right']&gt;,
+      
+          'select_prev_segment': &lt;['Ctrl+B', 'Left']&gt;,
+          'select_next_segment': &lt;['Ctrl+F', 'Right']&gt;,
+          'select_first_segment': &lt;['Ctrl+A', 'Alt+Left']&gt;,
+          'select_last_segment': &lt;['Ctrl+E', 'Alt+Right']&gt;,
+          'expand_segment': &lt;['Ctrl+O', 'F14']&gt;,
+          'shrink_segment': &lt;['Ctrl+I', 'F13']&gt;,
+      
+          'candidates_page_up': &lt;['Tab']&gt;,
+          'candidates_page_down': &lt;['Shift+Tab']&gt;,
+          'select_next_candidate': &lt;['space', 'Ctrl+Q', 'Ctrl+P', 'Down']&gt;,
+          'select_prev_candidate': &lt;['Ctrl+N', 'Up']&gt;,
+      
+          'select_candidates_1': &lt;['1']&gt;,
+          'select_candidates_2': &lt;['2']&gt;,
+          'select_candidates_3': &lt;['3']&gt;,
+          'select_candidates_4': &lt;['4']&gt;,
+          'select_candidates_5': &lt;['5']&gt;,
+          'select_candidates_6': &lt;['6']&gt;,
+          'select_candidates_7': &lt;['7']&gt;,
+          'select_candidates_8': &lt;['8']&gt;,
+          'select_candidates_9': &lt;['9']&gt;,
+          'select_candidates_0': &lt;['0']&gt;,
+      
+          'convert_to_hiragana': &lt;['F6']&gt;,
+          'convert_to_katakana': &lt;['F7']&gt;,
+          'convert_to_half': &lt;['F8']&gt;,
+          'convert_to_wide_latin': &lt;['F9']&gt;,
+          'convert_to_latin': &lt;['F10']&gt;,
+          'convert_to_hiragana_all': &lt;['Shift+F6']&gt;,
+          'convert_to_katakana_all': &lt;['Shift+F7']&gt;,
+          'convert_to_half_all': &lt;['Shift+F8']&gt;,
+          'convert_to_wide_latin_all': &lt;['Shift+F9']&gt;,
+          'convert_to_latin_all': &lt;['Shift+F10']&gt;,
+      
+          'dict_admin': &lt;['F11']&gt;,
+          'add_word': &lt;['F12']&gt;,
+      
+          'hiragana_for_latin_with_shift': &lt;['Hiragana_Katakana']&gt;
+        }
+      </default>
+      <summary>WNN</summary>
+      <description></description>
+    </key>
+  </schema>
+</schemalist>

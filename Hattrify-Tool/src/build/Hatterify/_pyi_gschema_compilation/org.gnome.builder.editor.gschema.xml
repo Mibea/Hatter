@@ -1,0 +1,159 @@
+<schemalist>
+
+  <flags id="org.gnome.builder.editor.DrawSpaces">
+    <value nick="space" value="1"/>
+    <value nick="tab" value="2"/>
+    <value nick="newline" value="4"/>
+    <value nick="nbsp" value="8"/>
+    <value nick="leading" value="16"/>
+    <value nick="text" value="32"/>
+    <value nick="trailing" value="64"/>
+  </flags>
+
+  <schema id="org.gnome.builder.editor" path="/org/gnome/builder/editor/" gettext-domain="gnome-builder">
+    <key name="keybindings" type="s">
+      <default>'default'</default>
+    </key>
+    <key name="restore-insert-mark" type="b">
+      <default>true</default>
+      <summary>Restore last position</summary>
+      <description>Jump to the last position when reopening a file</description>
+    </key>
+    <key name="show-line-changes" type="b">
+      <default>true</default>
+      <summary>Show modified lines</summary>
+      <description>If enabled, the editor will show line additions and changes next to the source code.</description>
+    </key>
+    <key name="show-line-diagnostics" type="b">
+      <default>true</default>
+      <summary>Show diagnostics next to line number</summary>
+      <description>If enabled, the editor will show diagnostics to the left to the line numbers.</description>
+    </key>
+    <key name="highlight-current-line" type="b">
+      <default>false</default>
+      <summary>Highlight current line</summary>
+      <description>If enabled, the editor will highlight the line containing the cursor.</description>
+    </key>
+    <key name="highlight-matching-brackets" type="b">
+      <default>false</default>
+      <summary>Highlight matching brackets</summary>
+      <description>If enabled, the editor will highlight matching brackets.</description>
+    </key>
+    <key name="show-line-numbers" type="b">
+      <default>true</default>
+      <summary>Show line numbers</summary>
+      <description>If enabled, the editor will show line numbers.</description>
+    </key>
+    <key name="show-relative-line-numbers" type="b">
+      <default>false</default>
+      <summary>Show relative line numbers</summary>
+      <description>If enabled, the editor will show relative line numbers.</description>
+    </key>
+    <key name="show-line-selection-styling" type="b">
+      <default>true</default>
+      <summary>Use line selection styling</summary>
+      <description>If enabled, the editor will use selected style for line numbers for whole lines selected.</description>
+    </key>
+    <key name="smart-backspace" type="b">
+      <default>true</default>
+      <summary>Smart Backspace</summary>
+      <description>Backspace will remove additional spaces to keep you aligned to the indentation size.</description>
+    </key>
+    <key name="smart-home-end" type="s">
+      <choices>
+        <choice value="disabled"/>
+        <choice value="before"/>
+        <choice value="after"/>
+        <choice value="always"/>
+      </choices>
+      <default>'before'</default>
+      <summary>Smart Home/End</summary>
+      <description>Modifies the behavior of Home/End keys.</description>
+    </key>
+    <key name="show-grid-lines" type="b">
+      <default>false</default>
+      <summary>Show grid lines</summary>
+      <description>If enabled, the editor will show grid lines in the document.</description>
+    </key>
+    <key name="use-custom-font" type="b">
+      <default>false</default>
+      <description>If enabled, the editor will respect the font-name setting.</description>
+    </key>
+    <key name="font-name" type="s">
+      <default>"Monospace 10"</default>
+      <description>This setting is only respected if the use-custom-font setting is enabled.</description>
+    </key>
+    <key name="style-scheme-name" type="s">
+      <default>"Adwaita"</default>
+    </key>
+    <key name="map-policy" type="s">
+      <choices>
+        <choice value="never"/>
+        <choice value="auto"/>
+        <choice value="always"/>
+      </choices>
+      <default>'never'</default>
+      <summary>Overview Map Policy</summary>
+      <description>When the overview map should be displayed.</description>
+    </key>
+    <key name="draw-spaces" flags="org.gnome.builder.editor.DrawSpaces">
+      <default>[]</default>
+      <summary>Draw Spaces</summary>
+      <description>The various types of space to draw in the editor.</description>
+    </key>
+    <key name="wrap-text" type="s">
+      <choices>
+        <choice value="never"/>
+        <choice value="whitespace"/>
+        <choice value="always"/>
+      </choices>
+      <default>'never'</default>
+      <summary>Wrap Text</summary>
+      <description>The way to wrap a long line of text for a better visibility.</description>
+    </key>
+    <key name="auto-save" type="b">
+      <default>true</default>
+      <summary>Autosave Enabled</summary>
+      <description>Enable or disable autosave feature.</description>
+    </key>
+    <key name="auto-save-timeout" type="i">
+      <default>60</default>
+      <range min="1" max="999"/>
+      <summary>Autosave Frequency</summary>
+      <description>The number of seconds after modification before auto saving.</description>
+    </key>
+    <key name="completion-n-rows" type="i">
+      <default>7</default>
+      <range min="1" max="32"/>
+      <summary>Completion Row Count</summary>
+      <description>The number of completion rows to display to the user.</description>
+    </key>
+    <key name="line-height" type="d">
+      <default>1.2</default>
+      <range min="0.5" max="10"/>
+      <summary>Line Height</summary>
+      <description>The line height to use for the selected font.</description>
+    </key>
+    <key name="interactive-completion" type="b">
+      <default>true</default>
+      <summary>Interactive Completion</summary>
+      <description>If enabled, Builder will automatically display completion proposals as you type.</description>
+    </key>
+    <key name="min-char-selected" type="i">
+      <default>2</default>
+      <range min="1" max="32"/>
+      <summary>Minimum characters for matching selection.</summary>
+      <description>Specify the minimum number of characters for selection matching.</description>
+    </key>
+    <key name="enable-snippets" type="b">
+      <default>true</default>
+      <summary>Enable Snippets</summary>
+      <description>Allow expanding snippets from the editor by pressing tab after the snippet trigger.</description>
+    </key>
+    <key name="select-first-completion" type="b">
+      <default>false</default>
+      <summary>Select First Completion</summary>
+      <description>Automatically select the first auto-completion entry.</description>
+    </key>
+  </schema>
+</schemalist>
