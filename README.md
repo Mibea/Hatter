@@ -9,7 +9,7 @@ Hatter is a rounded-square icon theme designed primarily for Adwaita, the defaul
 The theme’s design philosophy is to create rounded-square icons that remain faithful to each application’s identity, name, color palette, and branding. Rather than replacing icons with generic alternatives or imitating another operating system, Hatter preserves the character of the original applications wherever possible.
 
 ## Coverage
-A major goal is to provide a polished and complete desktop experience. Icon themes can easily become inconsistent when unsupported applications fall back to mismatched or non-square icons. Hatter addresses this by offering extensive application coverage. At the time of writing, the theme includes approximately 4,800 unique application icons and 12,400 linked application icons.
+A major goal is to provide a polished and complete desktop experience. Icon themes can easily become inconsistent when unsupported applications fall back to mismatched or non-square icons. Hatter addresses this by offering extensive application coverage. At the time of writing, the theme includes approximately 5,000 unique application icons and 12,400 linked application icons.
 
 |Hatter currently covers:|
 |:------- |
