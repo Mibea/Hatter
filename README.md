@@ -49,9 +49,28 @@ Hatter is used daily on Fedora Workstation and tested on other distributions sev
 | :------- |
 | The standard Hatter edition works very well with Cinnamon|
 
+## Install
 
+First build the icon theme
 
+ <pre><code>./Build-Hatter.sh</code></pre>
 
+Then run the installation script from the project directory. Use sudo to install the themes system-wide in /usr/share/icons; without sudo, the script installs them in your user icon directory.
 
+ <pre><code>./Install-Hatter.sh</code></pre>
 
+For a system-wide installation:
 
+<pre><code>sudo ./Install-Hatter.sh</code></pre>
+
+## Package
+
+First build the icon theme
+
+ <pre><code>./Build-Hatter.sh</code></pre>
+
+Then run the packaging script from the project directory:
+
+ <pre><code>./Package-Hatter.sh</code></pre>
+
+It creates Hatter-kde.zip from folders whose names contain kde, and Hatter.zip from the other folders. The ZIP files are placed in the user's Downloads folder. After both archives are created successfully, the script deletes the Build directory.
