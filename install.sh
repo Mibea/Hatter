@@ -53,10 +53,10 @@ if [[ -z "$choice" ]]; then
             printf '\nNo input received. Aborting.\n' >&2
             exit 1
         }
-        [[ "$choice" =~ ^[1-6]$ ]] && break
+        [[ "$choice" =~ ^[1-5]$ ]] && break
         printf 'Invalid choice, please enter a number from 1 to 6.\n' >&2
     done
-elif [[ ! "$choice" =~ ^[1-6]$ ]]; then
+elif [[ ! "$choice" =~ ^[1-5]$ ]]; then
     printf 'Invalid argument: %s (expected a number from 1 to 6)\n' "$choice" >&2
     exit 1
 fi
