@@ -49,7 +49,7 @@ if [[ -z "$choice" ]]; then
     printf '  5) Everything\n\n'
 
     while true; do
-        read -r -p 'Your choice [1-6]: ' choice || {
+        read -r -p 'Your choice [1-5]: ' choice || {
             printf '\nNo input received. Aborting.\n' >&2
             exit 1
         }
