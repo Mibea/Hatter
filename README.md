@@ -40,7 +40,7 @@ Hatter is used daily on Fedora Workstation and tested on other distributions sev
 
 | KDE (on Fedora KDE)|
 | :------- |
-| Hatter-kde works well overall, but it is not completely flawless.|
+| Hatter works well overall, but it is not completely flawless.|
 | The standard Hatter edition is not a great experience. |
 | The default KDE theme and the hatter icon theme do not combine well visually. |
 
@@ -57,12 +57,11 @@ Then run the installation script from the project directory. Use sudo to install
 <pre><code>./Install.sh</code></pre>
 
 You will be presented with an interactive menu.
-1) Hatter only\n'
-2) Hatter + colour variants\n'
-3) Hatter + Yaru colour variants\n'
-4) Hatter + colour variants + Yaru colour variants\n'
-5) Hatter-kde + Hatter-kde-dark\n'
-6) Everything\n\n' 
+1) Hatter only
+2) Hatter + colour variants
+3) Hatter + Yaru colour variants
+4) Hatter + colour variants + Yaru colour variants
+5) Everything
 
 Passing the number as an argument skips the interactive menu.
 
