@@ -40,7 +40,7 @@ Hatter is used daily on Fedora Workstation and tested on other distributions sev
 
 | KDE (on Fedora KDE)|
 | :------- |
-| Hatter-kde works well overall, but it is not completely flawless.|
+| Hatter works well overall, but it is not completely flawless.|
 | The standard Hatter edition is not a great experience. |
 | The default KDE theme and the hatter icon theme do not combine well visually. |
 
@@ -51,26 +51,61 @@ Hatter is used daily on Fedora Workstation and tested on other distributions sev
 
 ## Install
 
-First build the icon theme
-
- <pre><code>./Build-Hatter.sh</code></pre>
 
 Then run the installation script from the project directory. Use sudo to install the themes system-wide in /usr/share/icons; without sudo, the script installs them in your user icon directory.
 
- <pre><code>./Install-Hatter.sh</code></pre>
+<pre><code>./Install.sh</code></pre>
+
+You will be presented with an interactive menu.
+1) Hatter only
+2) Hatter + colour variants
+3) Hatter + Yaru colour variants
+4) Hatter + colour variants + Yaru colour variants
+5) Everything
+
+Passing the number as an argument skips the interactive menu.
+
+<pre><code>./install.sh [1-6]</code></pre>
 
 For a system-wide installation:
 
-<pre><code>sudo ./Install-Hatter.sh</code></pre>
+<pre><code>sudo ./install.sh</code></pre>
 
-## Package
 
-First build the icon theme
+## Build
 
- <pre><code>./Build-Hatter.sh</code></pre>
+Build the icon theme without installing it
 
-Then run the packaging script from the project directory:
+### Usage: build.sh [OPTIONS] [TARGET...]
 
- <pre><code>./Package-Hatter.sh</code></pre>
+Generates Hatter icon themes into a destination directory.
 
-It creates Hatter-kde.zip from folders whose names contain kde, and Hatter.zip from the other folders. The ZIP files are placed in the user's Downloads folder. After both archives are created successfully, the script deletes the Build directory.
+Targets (at least one target or --all is required, unless --list is used):
+  Hatter          the base theme
+  colours         all colour variants (Hatter-Blue ... Hatter-Yellow)
+  yaru            all Yaru colour variants (Hatter-Yaru-Blue ... Hatter-Yaru-Yellow)
+  kde             Hatter-kde and Hatter-kde-dark
+  all             everything (same as --all)
+  <theme-name>    any single theme, e.g. Hatter-Red or Hatter-Yaru-Teal
+
+Options:
+  -d, --dest DIR        output directory (default: ./dist, relative to the
+                        directory you run the script from)
+  -a, --all             build everything
+      --clean-all       first remove every known Hatter theme from DIR,
+                        not only the ones that are about to be built
+      --version VER     write a VERSION file with VER into every built theme
+      --whitespace MODE what to do with file names containing whitespace:
+                        warn (default), fail, or ignore
+      --list            only print the theme names that the given targets
+                        resolve to (all themes if no target is given), then exit
+  -h, --help            show this help
+
+Examples:
+
+   <pre><code>./build.sh --all --dest /tmp/out</code></pre>
+
+   <pre><code>./build.sh Hatter colours --dest "$HOME/.local/share/icons"</code></pre>
+
+   <pre><code>./build.sh Hatter-Red Hatter-Yaru-Red --version 1.4.0</code></pre>
+

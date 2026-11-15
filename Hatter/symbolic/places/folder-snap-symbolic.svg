@@ -14,7 +14,7 @@
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
-     bordercolor="#000000"
+     bordercolor="currentColor"
      borderopacity="0.25"
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
@@ -31,8 +31,17 @@
      inkscape:current-layer="svg4" />
   <defs
      id="defs8" />
-  <path
+    <defs id="defs3051">
+    <style type="text/css" id="current-color-scheme">
+      .ColorScheme-Text {
+        color:#808080;
+      }
+      </style>
+  </defs>
+
+<path class="ColorScheme-Text"
+  fill="currentColor"
      d="M 0,0 8.0000005,9.9999995 V 3 Z M 9.0000005,3 16,6.4999995 14,3 Z m 0,1 V 9.9999995 L 13,5.9999995 Z M 5,7.9999995 2,16 8.0000005,11 Z"
-     style="opacity:1;fill:#000000;fill-opacity:1;stroke-width:1"
+
      id="path1" />
 </svg>
