@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # Hatterify-script
 # Written by Emmanuel Aerssens
 #
@@ -13,22 +15,45 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
-#!/bin/bash
 #
 # Vereisten:
 #   heif-convert
 #   ImageMagick (magick)
 #   base64
+#   cmp (diffutils)
+#   rsvg-convert (optioneel, geeft betere SVG-rendering dan ImageMagick)
 #
 
 set -euo pipefail
+
+# Helderheidsdrempel (0-255): dominante kleur >= drempel geldt als "licht"
+LUMA_THRESHOLD=128
 
 # Mappenstructuur
 mkdir -p IN OUT DONE
 
 shopt -s nullglob nocaseglob
 
-for source_file in IN/*.{avif,png,webp,jpg,jpeg}; do
+#
+# Stap 1: bestanden in IN die al identiek in DONE staan, gewoon wissen
+#
+for source_file in IN/*; do
+
+    [ -f "$source_file" ] || continue
+
+    filename=$(basename "$source_file")
+
+    if [ -f "DONE/$filename" ] && cmp -s "$source_file" "DONE/$filename"; then
+        echo "Reeds verwerkt (identiek in DONE), verwijderd uit IN: $filename"
+        rm -f "$source_file"
+    fi
+
+done
+
+#
+# Stap 2: conversie
+#
+for source_file in IN/*.{avif,png,webp,jpg,jpeg,svg,ico}; do
 
     [ -f "$source_file" ] || continue
 
@@ -53,15 +78,43 @@ for source_file in IN/*.{avif,png,webp,jpg,jpeg}; do
                 continue
             }
             ;;
-            
-        png|webp|jpg|jpeg)
-            magick "$source_file" "$tmp_png" || {
+
+        svg)
+            # Vectorbron op hoge resolutie rasteriseren (transparantie blijft behouden)
+            if command -v rsvg-convert >/dev/null 2>&1; then
+                rsvg-convert -a -w 512 -h 512 -f png -o "$tmp_png" "$source_file" || {
+                    echo "Fout bij converteren van $filename"
+                    rm -f "$tmp_png"
+                    continue
+                }
+            else
+                magick -background none -density 384 "$source_file" "$tmp_png" || {
+                    echo "Fout bij converteren van $filename"
+                    rm -f "$tmp_png"
+                    continue
+                }
+            fi
+            ;;
+
+        ico)
+            # Een .ico bevat meestal meerdere formaten: de grootste frame kiezen
+            ico_idx=$(magick identify -format '%p %w\n' "$source_file" 2>/dev/null \
+                | awk '$2 > max { max = $2; idx = $1 } END { print idx + 0 }') || ico_idx=0
+            magick "${source_file}[${ico_idx:-0}]" "$tmp_png" || {
                 echo "Fout bij converteren van $filename"
                 rm -f "$tmp_png"
                 continue
             }
             ;;
-            
+
+        png|webp|jpg|jpeg)
+            magick "${source_file}[0]" "$tmp_png" || {
+                echo "Fout bij converteren van $filename"
+                rm -f "$tmp_png"
+                continue
+            }
+            ;;
+
         *)
             echo "Onbekend formaat: $filename"
             rm -f "$tmp_png"
@@ -91,16 +144,28 @@ for source_file in IN/*.{avif,png,webp,jpg,jpeg}; do
     g=$((16#${dominant:3:2}))
     b=$((16#${dominant:5:2}))
 
-    # 25% lichter
-    lr=$(( r + (255-r)*25/100 ))
-    lg=$(( g + (255-g)*25/100 ))
-    lb=$(( b + (255-b)*25/100 ))
+    # Waargenomen helderheid (0-255, gewichten volgens ITU-R BT.601)
+    luma=$(( (299*r + 587*g + 114*b) / 1000 ))
 
-    # 30% donkerder
-    dr=$(( r*70/100 ))
-    dg=$(( g*70/100 ))
-    db=$(( b*70/100 ))
+    if [ "$luma" -ge "$LUMA_THRESHOLD" ]; then
 
+        echo "  -> overwegend lichte kleur: donkere gradient"
+
+        # Bovenaan 45%, onderaan 25% van de oorspronkelijke kleur
+        lr=$(( r*45/100 ));  lg=$(( g*45/100 ));  lb=$(( b*45/100 ))
+        dr=$(( r*25/100 ));  dg=$(( g*25/100 ));  db=$(( b*25/100 ))
+
+    else
+
+        echo "  -> overwegend donkere kleur: lichte gradient"
+
+        # Bovenaan 80%, onderaan 55% richting wit
+        lr=$(( r + (255-r)*80/100 ));  lg=$(( g + (255-g)*80/100 ));  lb=$(( b + (255-b)*80/100 ))
+        dr=$(( r + (255-r)*55/100 ));  dg=$(( g + (255-g)*55/100 ));  db=$(( b + (255-b)*55/100 ))
+
+    fi
+
+    # "light" = bovenste gradientkleur, "dark" = onderste (namen behouden voor de SVG-template)
     light=$(printf "#%02X%02X%02X" $lr $lg $lb)
     dark=$(printf "#%02X%02X%02X" $dr $dg $db)
 
@@ -115,15 +180,15 @@ for source_file in IN/*.{avif,png,webp,jpg,jpeg}; do
     #
     # Transparant icoon
     #
-    if awk "BEGIN {exit !($alpha_mean < 0.999)}"; then
+    if awk "BEGIN {exit !($alpha_mean < 0.85)}"; then
 
         echo "  -> transparant icoon"
 
         b64=$(magick "$tmp_png" \
-            -resize 96x96 \
+            -resize 128x128 \
             -background none \
             -gravity center \
-            -extent 96x96 \
+            -extent 128x128 \
             png:- | base64 -w0)
 
         BACKGROUND_RECT='
@@ -138,10 +203,10 @@ for source_file in IN/*.{avif,png,webp,jpg,jpeg}; do
 
         IMAGE_ELEMENT="
   <image
-      x=\"16\"
-      y=\"16\"
-      width=\"96\"
-      height=\"96\"
+      x=\"10\"
+      y=\"10\"
+      width=\"108\"
+      height=\"108\"
       preserveAspectRatio=\"xMidYMid meet\"
       xlink:href=\"data:image/png;base64,$b64\"/>"
 
@@ -149,28 +214,28 @@ for source_file in IN/*.{avif,png,webp,jpg,jpeg}; do
     # Niet-transparant icoon
     #
     else
+    
 
         echo "  -> niet-transparant icoon"
 
-b64=$(magick "$tmp_png" \
-    -resize 112x112^ \
-    -gravity center \
-    -extent 112x112 \
-    png:- | base64 -w0)
+        b64=$(magick "$tmp_png" \
+            -resize 128x128^ \
+            -gravity center \
+            -extent 128x128 \
+            png:- | base64 -w0)
 
         BACKGROUND_RECT=''
 
         IMAGE_ELEMENT="
 
   <image
-      x=\"8\"
-      y=\"8\"
-      width=\"112\"
-      height=\"112\"
+      x=\"6\"
+      y=\"6\"
+      width=\"116\"
+      height=\"116\"
       preserveAspectRatio=\"xMidYMid slice\"
       clip-path=\"url(#roundedClip)\"
       xlink:href=\"data:image/png;base64,$b64\"/>"
-
 
     fi
 
@@ -207,15 +272,15 @@ b64=$(magick "$tmp_png" \
       <feGaussianBlur stdDeviation="2.24"/>
     </filter>
 
-	<clipPath id="roundedClip">
-	  <rect
-	      x="8"
-	      y="8"
-	      width="112"
-	      height="112"
-	      rx="26"
-	      ry="26"/>
-	</clipPath>
+    <clipPath id="roundedClip">
+      <rect
+          x="8"
+          y="8"
+          width="112"
+          height="112"
+          rx="26"
+          ry="26"/>
+    </clipPath>
 
   </defs>
 
@@ -242,14 +307,15 @@ EOF
     #
     # Symlink maken op basis van laatste deel na punt
     #
-   target="${base##*.}"
+    target="${base##*.}"
 
-if [ "$target" != "$base" ]; then
-    (
-        cd OUT
-        ln -sf "${base}.svg" "${target}.svg"
-    )
-fi
+    if [ "$target" != "$base" ]; then
+        (
+            cd OUT
+            ln -sf "${base}.svg" "${target}.svg"
+        )
+    fi
+
     #
     # Bronbestand verplaatsen naar DONE
     #
