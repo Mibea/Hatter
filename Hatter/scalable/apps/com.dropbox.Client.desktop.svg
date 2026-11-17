@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    width="128"
+    height="128"
+    viewBox="0 0 128 128"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+
+    <linearGradient
+        id="bg"
+        x1="0%"
+        y1="0%"
+        x2="0%"
+        y2="100%">
+      <stop offset="0%" stop-color="#CCDFFF"/>
+      <stop offset="100%" stop-color="#8CB8FF"/>
+    </linearGradient>
+
+    <filter
+        id="shadow"
+        x="-0.1"
+        y="-0.1"
+        width="1.2"
+        height="1.2">
+      <feGaussianBlur stdDeviation="2.24"/>
+    </filter>
+
+    <clipPath id="roundedClip">
+      <rect
+          x="8"
+          y="8"
+          width="112"
+          height="112"
+          rx="26"
+          ry="26"/>
+    </clipPath>
+
+  </defs>
+
+  <rect
+      x="8"
+      y="10.624"
+      width="112"
+      height="112"
+      rx="26"
+      ry="26"
+      fill="#000000"
+      opacity="0.25"
+      filter="url(#shadow)"/>
+
+
+  <rect
+      x="8"
+      y="8"
+      width="112"
+      height="112"
+      rx="26"
+      ry="26"
+      fill="url(#bg)"/>
+
+
+  <image
+      x="10"
+      y="10"
+      width="108"
+      height="108"
+      preserveAspectRatio="xMidYMid meet"
+      xlink:href="data:image/png;base64,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"/>
+
+</svg>
