@@ -13,7 +13,8 @@ A major goal is to provide a polished and complete desktop experience. Icon them
 
 |Hatter currently covers:|
 |:------- |
-|99% of Flatpak applications|
+|99% of Flathub applications|
+|99% of Flatpark applications|
 |The 100 highest-rated native Linux games on Steam|
 |Many of the most popular non-native Steam games|
 |Folders, MIME types, devices, maps, and other desktop elements|
