@@ -1,1 +1,67 @@
-threema-web-desktop.svg
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    width="128"
+    height="128"
+    viewBox="0 0 128 128"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+
+    <linearGradient
+        id="bg"
+        x1="0%"
+        y1="0%"
+        x2="0%"
+        y2="100%">
+      <stop offset="0%" stop-color="#e1e1e1"/>
+      <stop offset="100%" stop-color="#bababa"/>
+    </linearGradient>
+
+    <filter
+        id="shadow"
+        x="-0.1"
+        y="-0.1"
+        width="1.2"
+        height="1.2">
+      <feGaussianBlur stdDeviation="2.24"/>
+    </filter>
+
+    <clipPath id="roundedClip">
+      <rect
+          x="8"
+          y="8"
+          width="112"
+          height="112"
+          rx="26"
+          ry="26"/>
+    </clipPath>
+
+  </defs>
+
+  <rect
+      x="8"
+      y="10.624"
+      width="112"
+      height="112"
+      rx="26"
+      ry="26"
+      fill="#000000"
+      opacity="0.25"
+      filter="url(#shadow)"/>
+
+
+
+
+
+  <image
+      x="6"
+      y="6"
+      width="116"
+      height="116"
+      preserveAspectRatio="xMidYMid slice"
+      clip-path="url(#roundedClip)"
+      xlink:href="data:image/png;base64,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"/>
+
+</svg>
